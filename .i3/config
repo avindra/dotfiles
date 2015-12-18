@@ -51,7 +51,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -109,6 +109,9 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+
+# lock with OS + L
+bindsym $mod+L exec i3lock -c 000000
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
