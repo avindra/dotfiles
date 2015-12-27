@@ -10,3 +10,14 @@ alias add="git add -u ."
 alias unstage="git reset HEAD ."
 alias pull="git pull --rebase"
 alias push="git push"
+
+# Mac OS X stuff
+
+export LSCOLORS="ExFxCxDxBxegedabagacad"
+export CLICOLOR=1
+
+if [[ `uname` == "Darwin" ]]; then
+	export PS1="\h:\w \u\$ "
+fi
+
+export EDITOR="atom"
