@@ -18,6 +18,11 @@ export CLICOLOR=1
 
 if [[ `uname` == "Darwin" ]]; then
 	export PS1="\h:\w \u\$ "
+	# Make atom the editor for RN
+	export EDITOR="atom"
 fi
 
-export EDITOR="atom"
+# Java
+
+
+export JAVA_HOME=/usr/java/latest
