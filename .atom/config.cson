@@ -1,0 +1,29 @@
+"*":
+  core:
+    disabledPackages: [
+      "metrics"
+      "language-javascript-jsx"
+    ]
+  editor:
+    fontSize: 24
+    invisibles: {}
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "a74b8b50-ea66-c227-573e-a60e46045b67"
+  "language-babel": {}
+  linter: {}
+  minimap:
+    absoluteMode: true
+  tabs:
+    usePreviewTabs: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+".js.jsx.source":
+  editor:
+    autoIndent: false
+".js.source":
+  editor:
+    tabLength: 2
