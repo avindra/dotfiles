@@ -1,7 +1,6 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
-# The best git aliases in town.
-# If you disagree, you are obviously wrong.
+# Git aliases
 
 alias status="git status"
 alias diff="git diff --cached"
