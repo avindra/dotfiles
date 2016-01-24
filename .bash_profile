@@ -1,6 +1,7 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 # Git aliases
+# todo: move into config
 
 alias status="git status"
 alias diff="git diff --cached"
