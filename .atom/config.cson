@@ -12,6 +12,8 @@
   "exception-reporting":
     userId: "a74b8b50-ea66-c227-573e-a60e46045b67"
   "language-babel": {}
+  "line-ending-selector":
+    defaultLineEnding: "LF"
   linter: {}
   minimap:
     absoluteMode: true
