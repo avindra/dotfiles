@@ -32,6 +32,13 @@ if [[ "$uname" != "Darwin" ]]; then
 	alias grep="grep --color"
 fi
 
+# Alias wget to curl if not available
+ 
+hash wget &> /dev/null
+if [[ $? -eq 1 ]]; then
+	alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
+fi
+
 # Java
 
 export JAVA_HOME=/usr/java/latest
