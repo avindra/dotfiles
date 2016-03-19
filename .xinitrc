@@ -1,2 +1,4 @@
+#!/bin/sh
+
 exec i3
-exec --no-startup-id xsetroot -solid '#111111'
+xsetroot -solid '#111111'
