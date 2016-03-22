@@ -5,8 +5,9 @@
       "language-javascript-jsx"
     ]
   editor:
-    fontSize: 24
+    fontSize: 25
     invisibles: {}
+    showIndentGuide: true
     showInvisibles: true
     tabLength: 4
   "exception-reporting":
