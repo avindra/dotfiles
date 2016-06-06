@@ -3,9 +3,9 @@
     disabledPackages: [
       "metrics"
       "language-javascript-jsx"
+      "fonts"
     ]
   editor:
-    fontFamily: "\"Operator Mono Medium\", monospace"
     fontSize: 21
     invisibles: {}
     showIndentGuide: true
