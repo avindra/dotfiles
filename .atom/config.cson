@@ -5,7 +5,8 @@
       "language-javascript-jsx"
     ]
   editor:
-    fontSize: 25
+    fontFamily: "\"Operator Mono Medium\", monospace"
+    fontSize: 21
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
