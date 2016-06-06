@@ -42,3 +42,7 @@ fi
 # Java
 
 export JAVA_HOME=/usr/java/latest
+
+# Node
+
+export PATH=./node_modules/.bin:$PATH
