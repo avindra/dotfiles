@@ -32,8 +32,8 @@ new_window pixel 4
 hide_edge_borders none
 
 #sound 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+ unmute && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec amixer -q set Master 10%- unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec amixer -q set Master toggle && killall -SIGUSR1 i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
