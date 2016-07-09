@@ -1,14 +1,6 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
-# Git aliases
-# todo: move into config
-
-alias status="git status"
-alias diff="git diff --cached"
-alias add="git add -u ."
-alias unstage="git reset HEAD ."
-alias pull="git pull --rebase"
-alias push="git push"
+. ~/.aliases
 
 # Platform-specific configurations.
 # 1) OS X / iOS (Apple)
