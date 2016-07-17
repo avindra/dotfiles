@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+export EDITOR='vi'
+
+. ~/.aliases
+
+# Java
+
+export JAVA_HOME=/usr/java/latest
+
+# Node
+
+export PATH=./node_modules/.bin:$PATH

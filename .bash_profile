@@ -1,6 +1,6 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
-. ~/.aliases
+. ~/.settings
 
 # Platform-specific configurations.
 # 1) OS X / iOS (Apple)
@@ -30,11 +30,3 @@ hash wget &> /dev/null
 if [[ $? -eq 1 ]]; then
 	alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
 fi
-
-# Java
-
-export JAVA_HOME=/usr/java/latest
-
-# Node
-
-export PATH=./node_modules/.bin:$PATH

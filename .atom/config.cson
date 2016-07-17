@@ -6,7 +6,7 @@
       "fonts"
     ]
   editor:
-    fontSize: 22
+    fontSize: 19
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
