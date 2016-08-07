@@ -24,6 +24,21 @@ if [[ "$uname" != "Darwin" ]]; then
 	alias grep="grep --color"
 fi
 
+
+# TODO: move these into a place where they actually
+# get executed on login.
+
+# Hack to allow root
+# TODO: find safer way to do this 
+xhost +
+
+# Disable monitor auto-shutoff
+# TODO: maybe only do this when video
+# apps are active
+xset -dpms
+xset s off
+
+
 # Alias wget to curl if not available
  
 hash wget &> /dev/null
