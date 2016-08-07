@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Client colors
 #              border  backgr  text    indicator
-client.focused #FFFF00 #FFFF00 #000000 #0000ff
+client.focused #8a29ff #8a29ff #ffffff #0000ff
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
