@@ -5,6 +5,7 @@
       "language-javascript-jsx"
       "fonts"
     ]
+    telemetryConsent: "no"
   editor:
     fontSize: 19
     invisibles: {}
