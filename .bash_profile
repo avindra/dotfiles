@@ -11,9 +11,12 @@ if [[ "$uname" == "Darwin" ]]; then
 	export LSCOLORS="ExFxCxDxBxegedabagacad"
 	export CLICOLOR=1
 
-	export PS1="\h:\w \u\$ "
+	export PS1="\u@\h:\w \$ "
 	# Make atom the editor for RN
 	export EDITOR="atom"
+
+	export NVM_DIR="$HOME/.nvm"
+	. "/usr/local/opt/nvm/nvm.sh"
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
 	. ~/.work_profile
