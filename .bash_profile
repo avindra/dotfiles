@@ -23,9 +23,7 @@ elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	alias l='ls -alF'
 fi
 
-if [[ "$uname" != "Darwin" ]]; then
-	alias grep="grep --color"
-fi
+alias grep="grep --color"
 
 # Alias wget to curl if not available
  
