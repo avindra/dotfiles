@@ -29,5 +29,5 @@ alias grep="grep -n --color"
  
 hash wget &> /dev/null
 if [[ $? -eq 1 ]]; then
-	alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
+	alias wget="curl -L -O --retry 999 --retry-max-time 0 -C -"
 fi
