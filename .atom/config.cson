@@ -1,9 +1,23 @@
 "*":
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "metrics"
       "language-javascript-jsx"
       "fonts"
+      "tree-view"
     ]
     telemetryConsent: "no"
   editor:
@@ -20,15 +34,58 @@
   linter: {}
   minimap:
     absoluteMode: true
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  nuclide:
+    "nuclide-buck":
+      compileErrorDiagnostics: false
+    "nuclide-ctags":
+      disableWithHack: false
+    "nuclide-file-tree":
+      showOpenFiles: false
+    "nuclide-home":
+      showHome: false
+    use:
+      "nuclide-blame-provider-hg": false
+      "nuclide-buck": false
+      "nuclide-debugger-iwdp": false
+      "nuclide-debugger-native": false
+      "nuclide-debugger-php": false
+      "nuclide-hg-conflict-resolver": false
+      "nuclide-hg-repository": false
+      "nuclide-language-hack": false
+      "nuclide-language-reason": false
+      "nuclide-objc": false
+      "nuclide-react-native": false
+      "nuclide-swift": false
   tabs:
     usePreviewTabs: true
   welcome:
     showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
+".ansi.text":
+  editor:
+    tabLength: 4
+".hack.html.text":
+  editor:
+    tabLength: 4
+".hackfragment.source":
+  editor:
+    tabLength: 4
+".hg-commit.text":
+  editor:
+    tabLength: 4
+".hover.reason.source.type":
+  editor:
+    tabLength: 4
 ".js.jsx.source":
   editor:
     autoIndent: false
 ".js.source":
   editor:
     tabLength: 2
+".reason.source":
+  editor:
+    tabLength: 4
