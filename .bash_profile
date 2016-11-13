@@ -11,6 +11,8 @@ if [[ "$uname" == "Darwin" ]]; then
 	export LSCOLORS="ExFxCxDxBxegedabagacad"
 	export CLICOLOR=1
 
+
+	source /usr/local/etc/bash_completion
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
 	GIT_PS1_SHOWDIRTYSTATE=true
 
