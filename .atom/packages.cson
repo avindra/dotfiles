@@ -1,0 +1,7 @@
+packages: [
+  "file-icons"
+  "highlight-selected"
+  "minimap"
+  "minimap-highlight-selected"
+  "package-sync"
+]
