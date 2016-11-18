@@ -1,7 +1,9 @@
 packages: [
   "file-icons"
   "highlight-selected"
+  "language-babel"
   "minimap"
   "minimap-highlight-selected"
+  "nuclide"
   "package-sync"
 ]

@@ -83,6 +83,7 @@
 ".js.jsx.source":
   editor:
     autoIndent: false
+    tabLength: 2
 ".js.source":
   editor:
     tabLength: 2
