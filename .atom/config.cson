@@ -32,6 +32,8 @@
   "line-ending-selector":
     defaultLineEnding: "LF"
   linter: {}
+  "linter-eslint":
+    fixOnSave: true
   minimap:
     absoluteMode: true
     plugins:

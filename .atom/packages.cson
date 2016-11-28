@@ -2,6 +2,8 @@ packages: [
   "file-icons"
   "highlight-selected"
   "language-babel"
+  "linter"
+  "linter-eslint"
   "minimap"
   "minimap-highlight-selected"
   "nuclide"
