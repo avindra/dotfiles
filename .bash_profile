@@ -18,6 +18,8 @@ if [[ "$uname" == "Darwin" ]]; then
 
 	export PS1='\u@\h:\w $(__git_ps1) \$ '
 
+	alias ldd='otool -L'
+
 	export NVM_DIR="$HOME/.nvm"
 	. "/usr/local/opt/nvm/nvm.sh"
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
