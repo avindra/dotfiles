@@ -22,6 +22,19 @@ if [[ "$uname" == "Darwin" ]]; then
 
 	export NVM_DIR="$HOME/.nvm"
 	. "/usr/local/opt/nvm/nvm.sh"
+
+	togglewifi() {
+		echo -n "Wifi coming down ..."
+		networksetup -setairportpower en0 off
+		echo "done"
+		sleep 3
+		echo -n "Wifi coming up..."
+		networksetup -setairportpower en0 on
+		echo "done"
+	}
+
+	export -f togglewifi
+
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
 	. ~/.work_profile
