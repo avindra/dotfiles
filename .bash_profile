@@ -35,9 +35,9 @@ if [[ "$uname" == "Darwin" ]]; then
 
 	export -f togglewifi
 
+	. ~/.work_profile
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
-	. ~/.work_profile
 	alias l='ls -alF'
 fi
 
