@@ -31,7 +31,8 @@
   "language-babel": {}
   "line-ending-selector":
     defaultLineEnding: "LF"
-  linter: {}
+  linter:
+    errorPanelHeight: 68
   "linter-eslint":
     fixOnSave: true
   minimap:
