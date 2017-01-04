@@ -1,8 +1,11 @@
 packages: [
+  "atom-ternjs"
+  "autocomplete-modules"
   "file-icons"
   "highlight-selected"
   "language-babel"
   "language-docker"
+  "language-ejs"
   "language-nginx"
   "linter"
   "linter-eslint"
