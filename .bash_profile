@@ -36,6 +36,8 @@ if [[ "$uname" == "Darwin" ]]; then
 	export -f togglewifi
 
 	. ~/.work_profile
+	export PATH="$PATH:${HOME}/bin"
+	alias l="ls -alF"
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
