@@ -5,11 +5,13 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\u@\h:\w $(__git_ps1) \$ '
 
+if [[ $HOSTNAME == "avin-linux" ]]; then
+	. ~/.work_profile
+fi
+
 # Platform-specific configurations.
 # 1) OS X / iOS (Apple)
 # 2) cygwin / Windows
-
-
 
 uname=`uname`
 if [[ "$uname" == "Darwin" ]]; then
