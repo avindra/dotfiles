@@ -2,9 +2,14 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
 
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\u@\h:\w $(__git_ps1) \$ '
+
 # Platform-specific configurations.
 # 1) OS X / iOS (Apple)
 # 2) cygwin / Windows
+
+
 
 uname=`uname`
 if [[ "$uname" == "Darwin" ]]; then
@@ -14,9 +19,6 @@ if [[ "$uname" == "Darwin" ]]; then
 
 	source /usr/local/etc/bash_completion
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
-	GIT_PS1_SHOWDIRTYSTATE=true
-
-	export PS1='\u@\h:\w $(__git_ps1) \$ '
 
 	alias ldd='otool -L'
 
