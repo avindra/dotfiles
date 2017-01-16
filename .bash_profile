@@ -7,6 +7,7 @@ export PS1='\u@\h:\w $(__git_ps1) \$ '
 
 if [[ $HOSTNAME == "avin-linux" ]]; then
 	. ~/.work_profile
+	export TERMINAL="xfce4-terminal"
 fi
 
 # Platform-specific configurations.
