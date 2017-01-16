@@ -26,6 +26,7 @@ client.unfocused #612585 $unfocused #ffffff #0000ff
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:FontAwesome, DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 20px
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -40,7 +41,7 @@ hide_edge_borders both
 #sound 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +1% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -1% && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec amixer -q set Master toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle && killall -SIGUSR1 i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
