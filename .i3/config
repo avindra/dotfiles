@@ -47,7 +47,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle && killall -SIGUSR1 i3st
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status -c ~/.i3status.conf
 	colors {
-       		background #0D0D0D
+       		background #191919
 	        separator #00ff00
 	        statusline #b3ffb3
 	        focused_workspace $focused $focused #FFFFFF
