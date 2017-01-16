@@ -12,7 +12,7 @@
 set $mod Mod4
 
 set $active #8a29ff
-set $focused  #b317fe
+set $focused #fe5817
 set $unfocused #6a5b73
 
 # Client colors
@@ -36,7 +36,7 @@ font pango:DejaVu Sans Mono 20px
 
 new_window pixel 1
 
-hide_edge_borders both
+hide_edge_borders none
 
 #sound 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +1% && killall -SIGUSR1 i3status
