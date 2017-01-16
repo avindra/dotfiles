@@ -25,8 +25,11 @@ TitleMode=TERMINAL_TITLE_REPLACE
 FontName=Inconsolata Medium 16
 BackgroundMode=TERMINAL_BACKGROUND_IMAGE
 BackgroundImageFile=/home/avindra/Pictures/blade_runner_rachel_by_kr0npr1nz-d74o5qk.jpg
-BackgroundImageShading=0.940000
+BackgroundImageShading=0.890000
 BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_CENTERED
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingUnlimited=TRUE
-
+ColorCursor=#f8f8f8f8f2f2
+ColorForeground=#f8f8f8f8f2f2
+ColorBackground=#272728282222
+ColorPalette=#272728282222;#f9f926267272;#a6a6e2e22e2e;#f4f4bfbf7575;#6666d9d9efef;#aeae8181ffff;#a1a1efefe4e4;#f8f8f8f8f2f2;#757571715e5e;#f9f926267272;#a6a6e2e22e2e;#f4f4bfbf7575;#6666d9d9efef;#aeae8181ffff;#a1a1efefe4e4;#f9f9f8f8f5f5
