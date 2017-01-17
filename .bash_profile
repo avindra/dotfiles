@@ -57,3 +57,5 @@ hash wget &> /dev/null
 if [[ $? -eq 1 ]]; then
 	alias wget="curl -L -O --retry 999 --retry-max-time 0 -C -"
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
