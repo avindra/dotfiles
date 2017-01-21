@@ -5,19 +5,19 @@ set backspace=indent,eol,start
 
 
 " Vim plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 
 Plug 'vim-syntastic/syntastic'
 Plug 'mxw/vim-jsx'
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
 
 
 let g:jsx_ext_required = 0
-
 
 
 
