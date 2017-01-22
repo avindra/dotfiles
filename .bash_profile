@@ -35,6 +35,9 @@ if [[ "$uname" == "Darwin" ]]; then
 	export LSCOLORS="ExFxCxDxBxegedabagacad"
 	export CLICOLOR=1
 
+	# fix broken crontab editing on macos
+	alias crontab="VIM_CRONTAB=true crontab"
+
 
 	source /usr/local/etc/bash_completion
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
