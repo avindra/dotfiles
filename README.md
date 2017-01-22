@@ -35,7 +35,17 @@ git checkout -f -t origin/master
 
 `Manual`: Do upgrades manually with `git pull`.
 
-`Automatic`: Put in crontab. Do it for all devices. `30 12 * * *` for `lunchtime every day`.
+---
+
+`Automatic`: Put in __crontab__ Do it for all devices.
+
+
+`Crontab integration`: The following line runs an update at **lunchtime every day**:
+
+
+```cron
+30   12   * * * /usr/bin/su - ${USER} -c 'git pull' > /tmp/dotfileupdater 2>&1
+```
 
 
 ## Resets
