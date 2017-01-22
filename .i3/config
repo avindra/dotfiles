@@ -193,3 +193,5 @@ bindsym Ctrl+Tab focus right
 bindsym Ctrl+Shift+Tab focus left
 
 bindsym $mod+grave workspace back_and_forth
+
+bindsym $mod+F2 exec renameFocusedWindow.sh
