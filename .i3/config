@@ -148,20 +148,40 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# primary bar
 bar {
-	status_command i3status -c ~/.i3status.conf
-	separator_symbol "|"
+
+	tray_output DVI-2
+	output HDMI-1
 	colors {
        		background #191919
 	        separator #00ff00
 	        statusline #b3ffb3
-	        focused_workspace $focused $focused #FFFFFF
-	        active_workspace $active $active #FFFFFF
-	        inactive_workspace #5F5F5F $unfocused #808080
+	        focused_workspace $focused $focused #ffffff
+	        active_workspace $active $active #ffffff
+	        inactive_workspace #5f5f5f $unfocused #808080
 ###	        urgent_workspace #2f343a #900000 #ffffff
 	}
+	position top
+}
+
+# secondary screen for primary bar
+# colors have to be duplicated, unfortunately
+bar {
+
+	status_command i3status -c ~/.i3status.conf
+	separator_symbol "|"
+	output DVI-2
+	colors {
+       		background #191919
+	        separator #00ff00
+	        statusline #b3ffb3
+	        focused_workspace $focused $focused #ffffff
+	        active_workspace $active $active #ffffff
+	        inactive_workspace #5f5f5f $unfocused #808080
+	}
+	position top
+
 }
 
 assign [class="^Steam"] 5
