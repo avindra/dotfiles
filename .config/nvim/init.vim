@@ -13,12 +13,12 @@ Plug 'mxw/vim-jsx'
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
 
 let g:jsx_ext_required = 0
-
 
 
 " Syntastic settings
