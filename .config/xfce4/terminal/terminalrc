@@ -23,7 +23,6 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 TitleMode=TERMINAL_TITLE_REPLACE
 FontName=Inconsolata Medium 16
-BackgroundMode=TERMINAL_BACKGROUND_IMAGE
 BackgroundImageFile=/home/avindra/Pictures/blade_runner_rachel_by_kr0npr1nz-d74o5qk.jpg
 BackgroundImageShading=0.890000
 BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_CENTERED
