@@ -16,9 +16,33 @@ What's the downside of this approach? Mostly that I'm limited to `~` (i.e., no m
 
 Make `~` a git repo. That's it! [Stolen from a great StackOverflow post](http://stackoverflow.com/a/18999726/270302):
 
+Note: `cd` without any arguments automatically changes to your home folder.
+
 ```bash
+cd
 git init
+
 git remote add origin git@github.com:avindra/dotfiles.git
 git fetch
-git checkout -t origin/master
+
+# The -f flag will overwrite ALL files
+# this is good because it makes doing updates OR full resets very easy
+git checkout -f -t origin/master
+```
+
+
+## Upgrades
+
+`Manual`: Do upgrades manually with `git pull`.
+
+`Automatic`: Put in crontab. Do it for all devices. `30 12 * * *` for `lunchtime every day`.
+
+
+## Resets
+
+Deleting the `.git` folder 
+
+```bash
+cd
+rm -fr .git
 ```
