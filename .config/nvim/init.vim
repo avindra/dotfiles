@@ -3,6 +3,9 @@ set number
 set relativenumber
 set backspace=indent,eol,start
 
+" Paste to and from system clipboard
+set clipboard+=unnamedplus
+
 
 " Vim plugins
 call plug#begin('~/.local/share/nvim/plugged')
