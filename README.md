@@ -39,9 +39,14 @@ git checkout -f -t origin/master
 
 `Automatic`: Put in __crontab__ Do it for all devices.
 
-
 `Crontab integration`: The following line runs an update at **lunchtime every day**:
 
+`As user`:
+```cron
+30   12   * * * cd && git pull --rebase > /tmp/dotfileupdater 2>&1
+```
+
+`or as root`:
 
 ```cron
 30   12   * * * /usr/bin/su - ${USER} -c 'git pull' > /tmp/dotfileupdater 2>&1
