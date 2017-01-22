@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+alias reload=". ~/.bash_profile"
+
 alias status="git status"
 alias statusclean="status -uno"
 alias diff="git diff --cached"
