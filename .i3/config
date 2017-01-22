@@ -44,7 +44,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym Print      exec xfce4-screenshooter
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -75,9 +75,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
 
 # parent / child container focus
 bindsym $mod+a focus parent
@@ -192,3 +189,5 @@ workspace_auto_back_and_forth yes
 # pageup/pagedown for workspace cycle
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
+
+bindsym $mod+grave workspace back_and_forth
