@@ -8,6 +8,10 @@ export PS1='\u@\h:\w $(__git_ps1) \$ '
 if [[ $HOSTNAME == "avin-linux" ]]; then
 	. ~/.work_profile
 	export TERMINAL="xfce4-terminal"
+	
+	# Save history immediately
+	shopt -s histappend
+	PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 fi
 
 # Platform-specific configurations.
