@@ -8,7 +8,30 @@ alias statusfull="git status"
 alias status="git status -uno"
 
 
-alias diff="git diff --cached"
+###
+## Super diff
+## 1. `diff` by itself shows a diff of cached
+## 2. `diff` with two file-like arguments uses git's differ to compare them
+## 3. everything else passes through to `git diff`
+###
+function diff() {
+	if [[ "$#" -eq 0 ]]; then
+		git diff --cached
+		return $?
+	fi
+	if [[ "$#" -eq 2 ]]; then
+		if [[ -f "$1" && -f "$2" ]]; then
+			git diff --no-index $1 $2
+			return $?
+		fi
+	fi
+
+	git diff "$@"
+
+}
+
+export -f diff
+
 alias add="git add -u"
 alias addall="add ."
 alias unstage="git reset HEAD ."
