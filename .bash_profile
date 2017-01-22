@@ -2,6 +2,9 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
 
+# Less options
+export LESS="-RFX"
+
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\u@\h:\w $(__git_ps1) \$ '
 
