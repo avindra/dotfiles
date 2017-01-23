@@ -1,0 +1,13 @@
+################################################################################
+## ~/.inputrc
+##
+## Control the behaviour of the readline library
+##
+################################################################################
+
+set colored-completion-prefix on
+set colored-stats on
+set blink-matching-paren on
+
+# prevent macos insane default
+set expand-tilde off
