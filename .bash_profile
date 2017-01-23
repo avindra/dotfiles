@@ -1,6 +1,7 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
+. ~/.homeenv
 
 # Fuzzy finder uses git ls-tree by default (fast)
 export FZF_DEFAULT_COMMAND='
@@ -38,6 +39,11 @@ if [[ "$uname" == "Darwin" ]]; then
 	# fix broken crontab editing on macos
 	alias crontab="VIM_CRONTAB=true crontab"
 
+	# show diff ps1 if sshing in from home
+	connectingClient=`echo "$SSH_CLIENT" | perl -pe 's/ .+/ /g' 2> /dev/null | tr -d '[:space:]'`
+	if [[ "$connectingClient" == "${HOME_IP}" ]]; then
+		PS1='osx:\w $(__git_ps1) \$ '
+	fi
 
 	source /usr/local/etc/bash_completion
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
