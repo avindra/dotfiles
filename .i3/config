@@ -159,7 +159,7 @@ bar {
 	        inactive_workspace #5f5f5f $unfocused #808080
 ###	        urgent_workspace #2f343a #900000 #ffffff
 	}
-	position top
+	position bottom
 }
 
 # secondary screen for primary bar
@@ -177,7 +177,7 @@ bar {
 	        active_workspace $active $active #ffffff
 	        inactive_workspace #5f5f5f $unfocused #808080
 	}
-	position top
+	position bottom
 
 }
 
