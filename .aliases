@@ -34,7 +34,7 @@ export -f diff
 
 alias add="git add -u"
 alias addall="add ."
-alias unstage="git reset HEAD ."
+alias unstage="git reset HEAD"
 alias pull="git pull --rebase"
 alias push="git push"
 alias dammit="git commit --amend --no-edit"
