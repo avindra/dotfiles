@@ -36,6 +36,9 @@ if [[ "$uname" == "Darwin" ]]; then
 	export LSCOLORS="ExFxCxDxBxegedabagacad"
 	export CLICOLOR=1
 
+	# Local python bin
+	export PATH="~/Library/Python/2.7/bin/:$PATH"
+
 	# fix broken crontab editing on macos
 	alias crontab="VIM_CRONTAB=true crontab"
 
@@ -44,6 +47,10 @@ if [[ "$uname" == "Darwin" ]]; then
 	if [[ "$connectingClient" == "${HOME_IP}" ]]; then
 		PS1='osx:\w $(__git_ps1) \$ '
 	fi
+
+	function chromeless() {
+		open -n -a 'Google Chrome' --args "--app=$1"
+	}
 
 	source /usr/local/etc/bash_completion
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
