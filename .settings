@@ -14,3 +14,7 @@ export PATH=./node_modules/.bin:$PATH
 # Rust
 
 export PATH="~/.cargo/bin:$PATH"
+
+# pip install --user
+
+export PATH="~/.local/bin:$PATH"
