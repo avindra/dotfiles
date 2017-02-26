@@ -20,6 +20,7 @@ client.unfocused #846796 $unfocused  #ffffff #0000ff
 
 # App-specific color settings
 for_window [class="Chromium-browser"] title_format "<span foreground='#ffc1df'>%title</span>"
+for_window [class="Google-chrome"] title_format "<span foreground='#59dff7'>%title</span>"
 for_window [class="Xfce4-terminal"] title_format "<span foreground='#7fff83'>%title</span>"
 
 focus_follows_mouse yes 
