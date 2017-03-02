@@ -153,8 +153,8 @@ bindsym $mod+r mode "resize"
 # primary bar
 bar {
 
-	tray_output DVI-2
-	output HDMI-1
+	tray_output DVI-0
+	output HDMI-0
 	colors {
        		background #191919
 	        separator #00ff00
@@ -173,7 +173,7 @@ bar {
 
 	status_command i3status -c ~/.i3status.conf
 	separator_symbol "|"
-	output DVI-2
+	output DVI-0
 	colors {
        		background #191919
 	        separator #00ff00
