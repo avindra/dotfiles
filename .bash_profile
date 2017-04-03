@@ -21,7 +21,7 @@ export PS1='\u@\h:\w $(__git_ps1) \$ '
 if [[ $HOSTNAME == "avin-linux" ]]; then
 	. ~/.work_profile
 	export TERMINAL="xfce4-terminal"
-	
+
 	# Save history immediately
 	shopt -s histappend
 	PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
@@ -60,6 +60,25 @@ if [[ "$uname" == "Darwin" ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "/usr/local/opt/nvm/nvm.sh"
 
+	# Yarn global bin
+	export PATH="$PATH:`yarn global bin 2> /dev/null`"
+
+    # SSH into the xhyve vm
+    # https://forums.docker.com/t/is-it-possible-to-ssh-to-the-xhyve-machine/17426/5
+    function d4mexec() {
+        extraFlags=""
+        if [[ "$1" == "tty" ]]; then
+            extraFlags="-t"
+            shift
+        fi
+        docker run --rm  -i ${extraFlags} --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh "$@"
+    }
+    function d4mssh() {
+        d4mexec tty "$@"
+    }
+    export -f d4mexec
+    export -f d4mssh
+
 	togglewifi() {
 		echo -n "Wifi coming down ..."
 		networksetup -setairportpower en0 off
@@ -84,7 +103,7 @@ fi
 alias grep="grep -n --color"
 
 # Alias wget to curl if not available
- 
+
 hash wget &> /dev/null
 if [[ $? -eq 1 ]]; then
 	alias wget="curl -L -O --retry 999 --retry-max-time 0 -C -"
