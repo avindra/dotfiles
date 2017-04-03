@@ -31,10 +31,12 @@
   "language-babel": {}
   "line-ending-selector":
     defaultLineEnding: "LF"
-  linter:
-    errorPanelHeight: 68
+  linter: {}
   "linter-eslint":
     fixOnSave: true
+  "linter-ui-default":
+    panelHeight: 84
+    showPanel: true
   minimap:
     absoluteMode: true
     plugins:
