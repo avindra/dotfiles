@@ -98,6 +98,8 @@ if [[ "$uname" == "Darwin" ]]; then
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
+elif [[ "$uname" == "Linux" ]]; then
+    alias pbcopy="xclip -selection c"
 fi
 
 alias grep="grep -n --color"

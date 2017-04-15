@@ -49,6 +49,8 @@
       disableWithHack: false
     "nuclide-file-tree":
       showOpenFiles: false
+    "nuclide-flow":
+      warnOnNotInstalled: false
     "nuclide-home":
       showHome: false
     use:
