@@ -35,7 +35,7 @@
   "linter-eslint":
     fixOnSave: true
   "linter-ui-default":
-    panelHeight: 84
+    panelHeight: 279
     showPanel: true
   minimap:
     absoluteMode: true
@@ -49,8 +49,6 @@
       disableWithHack: false
     "nuclide-file-tree":
       showOpenFiles: false
-    "nuclide-flow":
-      warnOnNotInstalled: false
     "nuclide-home":
       showHome: false
     use:

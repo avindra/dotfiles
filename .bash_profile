@@ -52,6 +52,8 @@ if [[ "$uname" == "Darwin" ]]; then
 		open -n -a 'Google Chrome' --args "--app=$1"
 	}
 
+	export GPG_TTY=`tty`
+
 	source /usr/local/etc/bash_completion
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
 
