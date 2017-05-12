@@ -3,6 +3,8 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 . ~/.settings
 . ~/.homeenv
 
+export GPG_TTY=`tty`
+
 # Fuzzy finder uses git ls-tree by default (fast)
 export FZF_DEFAULT_COMMAND='
   (git ls-tree -r --name-only HEAD ||
@@ -31,6 +33,7 @@ fi
 # 1) OS X / iOS (Apple)
 # 2) cygwin / Windows
 
+
 uname=`uname`
 if [[ "$uname" == "Darwin" ]]; then
 	export LSCOLORS="ExFxCxDxBxegedabagacad"
@@ -52,7 +55,6 @@ if [[ "$uname" == "Darwin" ]]; then
 		open -n -a 'Google Chrome' --args "--app=$1"
 	}
 
-	export GPG_TTY=`tty`
     if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
         source ~/.gnupg/.gpg-agent-info
         export GPG_AGENT_INFO
