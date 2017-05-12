@@ -32,7 +32,6 @@ font pango:DejaVu Sans Mono 20px
 
 # borders
 new_window pixel 2
-hide_edge_borders smart
 
 # Sound hotkeys for Daskeyboard
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +1% && killall -SIGUSR1 i3status
@@ -69,14 +68,15 @@ bindsym $mod+Shift+Right move right
 # split horizontal or vertical orientation
 bindsym $mod+h split h
 bindsym $mod+v split v
+bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# change container layout (tabbed, toggle split)
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -85,32 +85,45 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
+# Workspaces
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7"
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
+
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # lock with OS + L
 bindsym $mod+L exec i3lock -c 000000
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -187,7 +200,7 @@ bar {
 }
 
 assign [class="^Steam"] 5
-workspace 5 output HDMI-0
+workspace $ws5 output HDMI-0
 
 workspace_auto_back_and_forth yes
 
@@ -200,3 +213,18 @@ bindsym Ctrl+Shift+Tab focus left
 bindsym $mod+grave workspace back_and_forth
 
 bindsym $mod+F2 exec renameFocusedWindow.sh
+
+gaps inner 10
+gaps outer 10
+
+exec_always --no-startup-id xsetbg -fillscreen ~/.config/wallpaper
+
+# luke smith bindings
+bindsym $mod+s		gaps inner current plus 5
+bindsym $mod+Shift+s	gaps inner current minus 5
+
+bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
+bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
+
