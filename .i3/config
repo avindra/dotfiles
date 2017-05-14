@@ -35,9 +35,9 @@ font pango:DejaVu Sans Mono 20px
 new_window pixel 2
 
 # Sound hotkeys for Daskeyboard
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +1% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -1% && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 5 +1% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 5 -1% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec pactl set-sink-mute 5 toggle && killall -SIGUSR1 i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

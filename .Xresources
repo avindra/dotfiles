@@ -61,4 +61,6 @@ URxvt.keysym.Mod4-k:      \ echo -ne '\\033c'\n
 URxvt.keysym.C-Prior: command:\033]720;1\007
 URxvt.keysym.C-Next: command:\033]721;1\007
 
+URxvt.transparent: true
+URxvt.shading: 20
 

@@ -64,6 +64,9 @@
       "nuclide-objc": false
       "nuclide-react-native": false
       "nuclide-swift": false
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
   tabs:
     usePreviewTabs: true
   welcome:
