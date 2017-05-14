@@ -42,8 +42,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle && killall -SIGUSR1 i3st
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# App launching hotkeys
 bindsym $mod+Return exec urxvt
+bindsym $mod+C      exec google-chrome
 
 # screenshotting
 bindsym Print      exec xfce4-screenshooter
@@ -219,7 +220,7 @@ gaps inner 10
 gaps outer 10
 
 exec_always --no-startup-id xsetbg -fillscreen ~/.config/wallpaper
-
+exec_always --no-startup-id setxkbmap -option caps:backspace
 # luke smith bindings
 bindsym $mod+s		gaps inner current plus 5
 bindsym $mod+Shift+s	gaps inner current minus 5
