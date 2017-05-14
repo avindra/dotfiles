@@ -50,3 +50,15 @@ rofi.color-active:                   argb:272f1e2e, #815ba4, argb:2f2f1e2e, argb
 rofi.color-window:                   #2f1e2e, argb:36ef6155, argb:2fef6155
 ! Separator style (none, dash, solid)
 rofi.separator-style:                dash
+
+URxvt.scrollBar: false
+URxvt.font: xft:inconsolata:medium:size=16
+URxvt.letterSpace: -1
+
+! Mocks Mod+K behavior in iTerm2 to clear scroll buffer
+URxvt.keysym.Mod4-k:      \ echo -ne '\\033c'\n
+
+URxvt.keysym.C-Prior: command:\033]720;1\007
+URxvt.keysym.C-Next: command:\033]721;1\007
+
+

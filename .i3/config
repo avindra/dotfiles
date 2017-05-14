@@ -24,7 +24,8 @@ for_window [class="Google-chrome"] title_format "<span foreground='#59dff7'>%tit
 for_window [class="Xfce4-terminal"] title_format "<span foreground='#7fff83'>%title</span>"
 
 focus_follows_mouse yes 
-mouse_warping none
+# Disabled so rofi appears on "active" monitor
+# mouse_warping none
 
 # Font for window titles. 
 font pango:FontAwesome, DejaVu Sans Mono 8
@@ -42,7 +43,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle && killall -SIGUSR1 i3st
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec urxvt
 
 # screenshotting
 bindsym Print      exec xfce4-screenshooter
