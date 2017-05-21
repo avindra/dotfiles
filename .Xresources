@@ -61,7 +61,4 @@ URxvt.keysym.Mod4-k: command:\033c
 
 URxvt.keysym.C-Prior: command:\033]720;1\007
 URxvt.keysym.C-Next: command:\033]721;1\007
-
-URxvt.transparent: true
-URxvt.shading: 20
-
+URxvt.depth: 24
