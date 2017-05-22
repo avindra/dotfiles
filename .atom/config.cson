@@ -1,5 +1,6 @@
 "*":
   core:
+    autoHideMenuBar: true
     customFileTypes:
       "source.ini": [
         ".buckconfig"
