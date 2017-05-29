@@ -56,8 +56,9 @@ URxvt.font: xft:inconsolata:medium:size=16
 URxvt.letterSpace: -1
 
 ! Mocks Mod+K behavior in iTerm2 to clear scroll buffer
+! Mod4 = Super
 ! credit: https://superuser.com/a/1150111/59068
-URxvt.keysym.Mod4-k: command:\033c
+URxvt.keysym.C-k: command:\033c
 
 URxvt.keysym.C-Prior: command:\033]720;1\007
 URxvt.keysym.C-Next: command:\033]721;1\007

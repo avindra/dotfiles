@@ -55,21 +55,34 @@ bindsym $mod+q kill
 # start app launcher
 bindsym $mod+d exec "i3-dmenu-desktop --dmenu='rofi -show combi 'run, window''"
 
-# Use the cursor keys to change focus
+# vim bindings for basic window management
+bindsym $mod+h		focus left
+bindsym $mod+Shift+h	move left 30
+
+bindsym $mod+j		focus down
+bindsym $mod+Shift+j	move down 30
+
+bindsym $mod+k		focus up
+bindsym $mod+Shift+k	move up 30
+
+bindsym $mod+l		focus right
+bindsym $mod+Shift+l	move right 30
+
+# Keep arrow keys bound 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Arrow bindings for movement as well
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split horizontal or vertical orientation
-bindsym $mod+h split h
-bindsym $mod+v split v
+# bindsym $mod+h split h - tbd: used in vim bindings
+# bindsym $mod+v split v - tbd
 bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
@@ -112,8 +125,8 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# lock with OS + L
-bindsym $mod+L exec i3lock -c 000000
+# lock
+bindsym $mod+x exec i3lock -c 000000
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
