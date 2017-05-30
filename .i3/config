@@ -232,7 +232,7 @@ bindsym $mod+F2 exec renameFocusedWindow.sh
 gaps inner 10
 gaps outer 10
 
-exec_always --no-startup-id xsetbg -fillscreen ~/.config/wallpaper
+exec_always --no-startup-id feh --bg-tile ~/.config/wallpaper
 exec_always --no-startup-id setxkbmap -option caps:backspace
 # luke smith bindings
 bindsym $mod+s		gaps inner current plus 5
