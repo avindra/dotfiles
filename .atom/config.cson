@@ -18,7 +18,6 @@
       "metrics"
       "language-javascript-jsx"
       "fonts"
-      "tree-view"
     ]
     telemetryConsent: "no"
     themes: [
@@ -41,7 +40,6 @@
     fixOnSave: true
   "linter-ui-default":
     panelHeight: 279
-    showPanel: true
   minimap:
     absoluteMode: true
     plugins:
