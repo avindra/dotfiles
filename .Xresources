@@ -35,21 +35,23 @@
 *.color7:       #d3d0c8
 *.color15:      #f2f0ec
 
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-! Use extended color scheme
-rofi.color-enabled:                  true
-! Color scheme for normal row
-rofi.color-normal:                   argb:a02f1e2e, #b4b4b4, argb:a02f1e2e, argb:54815ba4, #ffffff
-! Color scheme for urgent row
-rofi.color-urgent:                   argb:272f1e2e, #ef6155, argb:2f2f1e2e, argb:54815ba4, #ef6155
-! Color scheme for active row
-rofi.color-active:                   argb:272f1e2e, #815ba4, argb:2f2f1e2e, argb:54815ba4, #815ba4
-! Color scheme window
-rofi.color-window:                   #2f1e2e, argb:36ef6155, argb:2fef6155
-! Separator style (none, dash, solid)
-rofi.separator-style:                dash
+! Rofi
+rofi.color-window: argb:c82d303b, #7c8389, #1d1f21
+rofi.color-normal: argb:31d1f21, #c4cbd4, argb:31d1f21, #4084d6, #f9f9f9
+rofi.color-urgent: argb:2c1d1f21, #cc6666, argb:e54b5160, #a54242, #f9f9f9
+rofi.color-active: argb:2c1d1f21, #65acff, argb:e44b5160, #4491ed, #f9f9f9
+rofi.font: Inconsolata 16
+rofi.bw: 0
+rofi.padding: 300
+rofi.lines: 8
+rofi.line-margin: 0
+rofi.eh: 2
+rofi.fullscreen: true
+rofi.separator-style: solid
+rofi.matching: fuzzy
+rofi.terminal: urxvt-256color
+rofi.display-combi: $
+! Urxvt
 
 URxvt.scrollBar: false
 URxvt.font: xft:inconsolata:medium:size=16
