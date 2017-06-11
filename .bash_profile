@@ -18,7 +18,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export LESS="-RFX"
 
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\u@\h:\w $(__git_ps1) \$ '
 
 if [[ $HOSTNAME == "avin-linux" ]]; then
 	. ~/.work_profile
@@ -27,6 +26,8 @@ if [[ $HOSTNAME == "avin-linux" ]]; then
 	# Save history immediately
 	shopt -s histappend
 	PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+	export PS1='\w $(__git_ps1) > '
 fi
 
 # Platform-specific configurations.
@@ -44,6 +45,8 @@ if [[ "$uname" == "Darwin" ]]; then
 
 	# fix broken crontab editing on macos
 	alias crontab="VIM_CRONTAB=true crontab"
+
+	export PS1=' \w $(__git_ps1) > '
 
 	# show diff ps1 if sshing in from home
 	connectingClient=`echo "$SSH_CLIENT" | perl -pe 's/ .+/ /g' 2> /dev/null | tr -d '[:space:]'`
