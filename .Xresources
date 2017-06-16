@@ -56,6 +56,7 @@ rofi.display-combi: $
 URxvt.scrollBar: false
 URxvt.font: xft:inconsolata:medium:size=16
 URxvt.letterSpace: -1
+! URxvt.blurRadius: 20
 
 ! Mocks Mod+K behavior in iTerm2 to clear scroll buffer
 ! Mod4 = Super
