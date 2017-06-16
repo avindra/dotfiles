@@ -68,10 +68,11 @@
       "nuclide-react-native": false
       "nuclide-swift": false
   "prettier-atom":
-    formatOnSaveOptions:
-      enabled: true
+    formatOnSaveOptions: {}
   tabs:
     usePreviewTabs: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:
