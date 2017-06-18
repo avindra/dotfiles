@@ -65,7 +65,7 @@ URxvt.keysym.C-k: command:\033c
 
 URxvt.keysym.C-Prior: command:\033]720;1\007
 URxvt.keysym.C-Next: command:\033]721;1\007
-URxvt.depth: 24
+URxvt.depth: 32
 
-URxvt.transparent:   true
-URxvt.shading:       40 
+URxvt.foreground: grey90
+URxvt.background: rgba:0000/0000/0000/aaaa
