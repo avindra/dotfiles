@@ -49,7 +49,7 @@ rofi.eh: 2
 rofi.fullscreen: true
 rofi.separator-style: solid
 rofi.matching: fuzzy
-rofi.terminal: urxvt-256color
+rofi.terminal: urxvtc-256color
 rofi.display-combi: $
 ! Urxvt
 
