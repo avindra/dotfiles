@@ -18,6 +18,11 @@
       "metrics"
       "language-javascript-jsx"
       "fonts"
+      "github"
+      "link"
+      "markdown-preview"
+      "styleguide"
+      "welcome"
     ]
     telemetryConsent: "no"
     themes: [
