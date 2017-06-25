@@ -82,6 +82,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+B bar hidden_state toggle
+
 # split horizontal or vertical orientation
 # bindsym $mod+h split h - tbd: used in vim bindings
 # bindsym $mod+v split v - tbd
@@ -182,6 +184,8 @@ bindsym $mod+r mode "resize"
 
 # primary bar
 bar {
+	mode hide
+	i3bar_command i3bar -t
 
 	tray_output DVI-0
 	output HDMI-0
@@ -200,12 +204,14 @@ bar {
 # secondary screen for primary bar
 # colors have to be duplicated, unfortunately
 bar {
+	mode hide
+	i3bar_command i3bar -t
 
 	status_command i3status -c ~/.i3status.conf
 	separator_symbol "|"
 	output DVI-0
 	colors {
-       		background #191919
+       		background $transparent
 	        separator #00ff00
 	        statusline #b3ffb3
 	        focused_workspace $focused $focused #ffffff
