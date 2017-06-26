@@ -3,9 +3,18 @@ set number
 set relativenumber
 set backspace=indent,eol,start
 
+nnoremap <F3> :set hlsearch!<CR>
+
+filetype plugin on
+
 " Paste to and from system clipboard
 set clipboard+=unnamedplus
 
+" luke guides
+autocmd FileType tex inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+" luke tex
+autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
 
 " Vim plugins
 call plug#begin('~/.local/share/nvim/plugged')
