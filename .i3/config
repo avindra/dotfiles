@@ -13,6 +13,9 @@ set $focused #fe5817
 set $unfocused #553b66
 set $transparent #00000000
 
+set $screenLeft HDMI-0
+set $screenRight DVI-0
+
 # Client colors
 #              border  backgr  text    indicator
 client.focused $focused $focused #ffffff #0000ff
@@ -187,8 +190,8 @@ bar {
 	mode hide
 	i3bar_command i3bar -t
 
-	tray_output DVI-0
-	output HDMI-0
+	tray_output $screenRight
+	output $screenLeft
 	colors {
        		background $transparent
 	        separator #00ff00
@@ -209,7 +212,7 @@ bar {
 
 	status_command i3status -c ~/.i3status.conf
 	separator_symbol "|"
-	output DVI-0
+	output $screenRight
 	colors {
        		background $transparent
 	        separator #00ff00
@@ -223,8 +226,8 @@ bar {
 }
 
 assign [class="^Steam"] $ws5
-workspace $ws1 output HDMI-0
-workspace $ws5 output HDMI-0
+workspace $ws1 output $screenLeft
+workspace $ws5 output $screenLeft
 
 workspace_auto_back_and_forth yes
 
