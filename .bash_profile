@@ -19,7 +19,7 @@ export LESS="-RFX"
 
 GIT_PS1_SHOWDIRTYSTATE=true
 
-if [[ $HOSTNAME == "avin-linux" ]]; then
+if [[ $HOSTNAME == "dolores" ]]; then
 	. ~/.work_profile
 	export TERMINAL="xfce4-terminal"
 
