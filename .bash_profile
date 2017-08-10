@@ -19,24 +19,25 @@ export LESS="-RFX"
 
 GIT_PS1_SHOWDIRTYSTATE=true
 
+# Platform-specific configurations.
+# 1) OS X / iOS (Apple)
+# 2) cygwin / Windows
+
+uname=`uname`
 if [[ $HOSTNAME == "dolores" ]]; then
 	. ~/.work_profile
-	export TERMINAL="xfce4-terminal"
+	export TERMINAL="urxvtc"
+fi
 
+
+if [[ "$uname" == "Linux" ]]; then
+	alias pbcopy="xclip -selection c"
 	# Save history immediately
 	shopt -s histappend
 	PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 	export PS1='\w $(__git_ps1) > '
-fi
-
-# Platform-specific configurations.
-# 1) OS X / iOS (Apple)
-# 2) cygwin / Windows
-
-
-uname=`uname`
-if [[ "$uname" == "Darwin" ]]; then
+elif [[ "$uname" == "Darwin" ]]; then
 	export LSCOLORS="ExFxCxDxBxegedabagacad"
 	export CLICOLOR=1
 
@@ -111,8 +112,6 @@ if [[ "$uname" == "Darwin" ]]; then
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
-elif [[ "$uname" == "Linux" ]]; then
-    alias pbcopy="xclip -selection c"
 fi
 
 alias grep="grep -n --color"
