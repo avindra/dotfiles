@@ -13,6 +13,8 @@ set $focused #fe5817
 set $unfocused #553b66
 set $transparent #00000000
 
+set $term urxvtc-256color
+
 set $screenLeft HDMI-0
 set $screenRight DVI-0
 
@@ -48,8 +50,10 @@ bindsym XF86AudioMute exec pactl set-sink-mute $sink toggle && killall -SIGUSR1 
 floating_modifier $mod
 
 # App launching hotkeys
-bindsym $mod+Return exec urxvtc-256color
+bindsym $mod+Return exec $term
 bindsym $mod+C      exec google-chrome
+
+bindsym Control+Shift+Escape  exec $term -e htop
 
 # screenshotting
 bindsym Print      exec xfce4-screenshooter

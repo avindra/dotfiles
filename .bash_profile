@@ -20,7 +20,8 @@ export LESS="-RFX"
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # Platform-specific configurations.
-# 1) OS X / iOS (Apple)
+# 1) Linux
+# 2) macOS / iOS (aka. Apple)
 # 2) cygwin / Windows
 
 uname=`uname`
