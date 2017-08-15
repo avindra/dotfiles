@@ -56,7 +56,8 @@ bindsym $mod+C      exec google-chrome
 bindsym Control+Shift+Escape  exec $term -e htop
 
 # screenshotting
-bindsym Print      exec xfce4-screenshooter
+bindsym Print         exec flameshot full
+bindsym Shift+Print   exec flameshot gui
 
 # kill focused window
 bindsym $mod+q kill
