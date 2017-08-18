@@ -46,12 +46,16 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SI
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume $sink -1% && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec pactl set-sink-mute $sink toggle && killall -SIGUSR1 i3status
 
+
+bindsym $mod+XF86AudioPlay exec firejail google-play-music-desktop-player
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # App launching hotkeys
 bindsym $mod+Return exec $term
-bindsym $mod+C      exec google-chrome
+bindsym $mod+C      exec firejail google-chrome
+bindsym $mod+M      exec firejail slack
 
 bindsym Control+Shift+Escape  exec $term -e htop
 
