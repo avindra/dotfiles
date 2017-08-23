@@ -18,3 +18,7 @@ export PATH="~/.cargo/bin:$PATH"
 # pip install --user
 
 export PATH="~/.local/bin:$PATH"
+
+# ruby install --user
+
+export PATH="~/.gem/ruby/2.4.0/bin:$PATH"
