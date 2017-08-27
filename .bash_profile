@@ -55,9 +55,11 @@ elif [[ "$uname" == "Darwin" ]]; then
 	export -f _expand
 
 	# show diff ps1 if sshing in from home
-	connectingClient=`echo "$SSH_CLIENT" | perl -pe 's/ .+/ /g' 2> /dev/null | tr -d '[:space:]'`
-	if [[ "$connectingClient" == "${HOME_IP}" ]]; then
-		PS1='osx:\w $(__git_ps1) \$ '
+	if [[ -n "$SSH_CLIENT" ]]; then
+		connectingClient=`echo "$SSH_CLIENT" | perl -pe 's/ .+/ /g' 2> /dev/null | tr -d '[:space:]'`
+		if [[ "$connectingClient" == "${HOME_IP}" ]]; then
+			PS1='osx:\w $(__git_ps1) \$ '
+		fi
 	fi
 
 	function chromeless() {
@@ -71,17 +73,16 @@ elif [[ "$uname" == "Darwin" ]]; then
         eval $(gpg-agent --daemon)
     fi
 
-	source /usr/local/etc/bash_completion
-	source /usr/local/etc/bash_completion.d/git-prompt.sh
+ 	source /usr/local/etc/bash_completion
+
+	# fix BSD nonsense
+	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 	alias ldd='otool -L'
 
-	export NVM_DIR="$HOME/.nvm"
-	. "/usr/local/opt/nvm/nvm.sh"
-
-	# Yarn global bin
-	export PATH="$PATH:`yarn global bin 2> /dev/null`"
-
+	NODEBIN=$(dirname $(readlink -f `which node`))
+	export PATH="$NODEBIN:$PATH"
     # SSH into the xhyve vm
     # https://forums.docker.com/t/is-it-possible-to-ssh-to-the-xhyve-machine/17426/5
     function d4mexec() {
