@@ -39,8 +39,6 @@ if [[ "$uname" == "Linux" ]]; then
 
 	export PS1='\w $(__git_ps1) > '
 elif [[ "$uname" == "Darwin" ]]; then
-	export LSCOLORS="ExFxCxDxBxegedabagacad"
-	export CLICOLOR=1
 
 	# Local python bin
 	export PATH="~/Library/Python/2.7/bin/:$PATH"
@@ -53,6 +51,21 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# Disable annoying tilde expansion
 	_expand() { :; }
 	export -f _expand
+
+	# Only needed for mac-specific "ls"
+	# The coreutils version will work with the alias
+	# instead.
+	export LSCOLORS="ExFxCxDxBxegedabagacad"
+	export CLICOLOR=1
+
+	alias ls="_ls"
+	alias ll="ls -l"
+	_ls ()
+	{
+	    local IFS=' ';
+	    command ls $LS_OPTIONS ${1+"$@"}
+	}
+	export -f _ls
 
 	# show diff ps1 if sshing in from home
 	if [[ -n "$SSH_CLIENT" ]]; then
