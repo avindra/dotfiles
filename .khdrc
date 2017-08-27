@@ -1,0 +1,120 @@
+
+ ### KWM settings
+# Enable kwm compatibility mode
+#khd kwm on
+
+# set color of default mode
+#khd mode default color 0xFF8EC13E
+
+# Enable the resize mode
+#khd mode resize prefix on
+#khd mode resize timeout 1
+#khd mode resize restore default
+#khd mode resize color 0xFFFC703F
+
+#khd mode padding prefix on
+#khd mode padding timeout 1
+#khd mode padding restore default
+#khd mode padding color 0xFFFF0000
+
+### KWM settings - for KHD v3.0.0
+khd mode default on_enter chunkc config border focused color 0xFF8EC13E
+khd mode resize on_enter chunkc config border focused color 0xFFFC703F
+khd mode padding on_enter chunkc config border focused color 0xFFFF0000
+khd mode resize prefix on
+khd mode resize timeout 1
+khd mode resize restore default
+khd mode padding prefix on
+khd mode padding timeout 1
+khd mode padding restore default
+
+# when 'default' mode is NOT active, any key-combination that
+# does not correspond to a valid bind will be suppressed.
+# this is enabled by default, and must be explicitly set to 'off'.
+khd void_unlisted_bind off
+
+# Quit Kwm
+cmd + alt + ctrl - q : chunkc quit
+
+# Reload Khd config
+cmd + shift - r : khd -e "reload"
+
+# Set focus
+cmd - h             : chunkc tiling::window --focus west
+cmd - j             : chunkc tiling::window --focus south
+cmd - k             : chunkc tiling::window --focus north
+cmd - l             : chunkc tiling::window --focus east
+# Launch terminal
+cmd - return : open -na /Applications/iTerm.app
+cmd + shift - escape : /Users/agoolcharan/Dev/alacritty/target/release/alacritty -e htop
+cmd - c : open -na /Applications/Google\ Chrome.app
+
+# Set Space Tiling Mode To BSP
+cmd + alt + ctrl - b : kwmc space -t bsp
+
+# Set Space Tiling Mode To Monocle
+cmd + alt + ctrl - m : kwmc space -t monocle
+
+# Set Space Tiling Mode To Floating
+cmd + alt + ctrl - f : kwmc space -t float
+
+# Rotate Window-Tree By 90degrees (Clockwise)
+cmd + alt + ctrl - r : kwmc tree rotate 90
+
+# Mark focused window
+cmd + ctrl - x : kwmc window -mk focused
+
+# Detach Marked Window And Reinsert At Focused Window
+cmd + ctrl - v : kwmc window -m mark
+
+# Modify Container
+cmd + ctrl - t : kwmc window -c split-mode toggle
+
+# Resize windows - 0x32 = `
+ctrl + shift - 0x32 : khd -e "mode activate resize"
+ctrl + shift - p : khd -e "mode activate padding"
+
+resize - left : chunkc window -c expand 0.05 west
+resize + shift - left : chunkc window -c reduce 0.05 west
+resize - down : chunkc window -c expand 0.05 south
+resize + shift - down : chunkc window -c reduce 0.05 south
+resize - up : chunkc window -c expand 0.05 north
+resize + shift - up : chunkc window -c reduce 0.05 north
+resize - right : chunkc window -c expand 0.05 east
+resize + shift - right : chunkc window -c reduce 0.05 east
+
+# Move focused window in same screen
+resize + ctrl - left : chunkc window -s west
+resize + ctrl - down : chunkc window -s south
+resize + ctrl - up : chunkc window -s north
+resize + ctrl - right : chunkc window -s east
+
+# Float current focused window
+resize - z : chunkc window -z fullscreen
+resize - a : chunkc window -z parent
+resize - q : chunkc window -t focused
+
+# Adjust padding of active space
+padding - up : chunkc space -p increase top
+padding - down : chunkc space -p increase bottom
+padding - left : chunkc space -p increase left
+padding - right : chunkc space -p increase right
+padding + shift - up : chunkc space -p decrease top
+padding + shift - down : chunkc space -p decrease bottom
+padding + shift - left : chunkc space -p decrease left
+padding + shift - right : chunkc space -p decrease right
+
+# Move focused window to space
+cmd + alt + ctrl - left : chunkc window -m space left
+cmd + alt + ctrl - right : chunkc window -m space right
+
+# Move focused window to screen
+cmd + alt + ctrl - 0 : chunkc window -m display 0
+cmd + alt + ctrl - 1 : chunkc window -m display 1
+
+
+# Change orientation of window
+alt - t : chunkc tiling::window --toggle float
+cmd - f : chunkc tiling::window --toggle fullscreen
+cmd + shift - f : chunkc tiling::window --toggle native-fullscreen
+
