@@ -48,7 +48,11 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# fix broken crontab editing on macos
 	alias crontab="VIM_CRONTAB=true crontab"
 
-	PS1='$(exit_code=$?; [[ $exit_code -eq 0 ]] && tput setaf 2 || tput setaf 1; echo -n ""; tput sgr0) \w $(__git_ps1) > '
+	PS1=' \w $(__git_ps1) > '
+
+	# Disable annoying tilde expansion
+	_expand() { :; }
+	export -f _expand
 
 	# show diff ps1 if sshing in from home
 	connectingClient=`echo "$SSH_CLIENT" | perl -pe 's/ .+/ /g' 2> /dev/null | tr -d '[:space:]'`
