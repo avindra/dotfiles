@@ -39,15 +39,38 @@ cmd + alt + ctrl - q : chunkc quit
 # Reload Khd config
 cmd + shift - r : khd -e "reload"
 
-# Set focus
+# Set focus (vim bindings)
 cmd - h             : chunkc tiling::window --focus west
 cmd - j             : chunkc tiling::window --focus south
 cmd - k             : chunkc tiling::window --focus north
 cmd - l             : chunkc tiling::window --focus east
+
+# Set focus (arrow bindings)
+cmd - left             : chunkc tiling::window --focus west
+cmd - down             : chunkc tiling::window --focus south
+cmd - up               : chunkc tiling::window --focus north
+cmd - right            : chunkc tiling::window --focus east
+
+# Switch back to previous workspace
+cmd - 0x32 : `id=$(chunkc get _last_active_desktop); khd -p "cmd - $id" &> /dev/null`
+cmd - tab         : `khd -p "ctrl - right" &> /dev/null`
+shift + cmd - tab : `khd -p "ctrl - left" &> /dev/null`
+
+## Resize
+cmd - y 	: chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+cmd - u 	: chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+cmd - i 	: chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+cmd - o 	: chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+# Modes
+cmd - e :  chunkc tiling::window --toggle split
+
 # Launch terminal
 cmd - return : open -na /Applications/iTerm.app
 cmd + shift - escape : /Users/agoolcharan/Dev/alacritty/target/release/alacritty -e htop
 cmd - c : open -na /Applications/Google\ Chrome.app
+cmd - d : open -na /Applications/Launchpad.app
+cmd - x : /Users/agoolcharan/bin/lock
 
 # Set Space Tiling Mode To BSP
 cmd + alt + ctrl - b : kwmc space -t bsp
@@ -84,10 +107,10 @@ resize - right : chunkc window -c expand 0.05 east
 resize + shift - right : chunkc window -c reduce 0.05 east
 
 # Move focused window in same screen
-resize + ctrl - left : chunkc window -s west
-resize + ctrl - down : chunkc window -s south
-resize + ctrl - up : chunkc window -s north
-resize + ctrl - right : chunkc window -s east
+shift + cmd - h : chunkc tiling::window --warp west
+shift + cmd - j : chunkc tiling::window --warp south
+shift + cmd - k : chunkc tiling::window --warp north
+shift + cmd - l : chunkc tiling::window --warp east
 
 # Float current focused window
 resize - z : chunkc window -z fullscreen
@@ -104,9 +127,16 @@ padding + shift - down : chunkc space -p decrease bottom
 padding + shift - left : chunkc space -p decrease left
 padding + shift - right : chunkc space -p decrease right
 
-# Move focused window to space
-cmd + alt + ctrl - left : chunkc window -m space left
-cmd + alt + ctrl - right : chunkc window -m space right
+# send window to desktop
+# shift + alt - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+# shift + alt - z : chunkc tiling::window --send-to-desktop prev
+# shift + alt - c : chunkc tiling::window --send-to-desktop next
+shift + cmd - 1 : chunkc tiling::window --send-to-desktop 1
+shift + cmd - 2 : chunkc tiling::window --send-to-desktop 2
+shift + cmd - 3 : chunkc tiling::window --send-to-desktop 3
+shift + cmd - 4 : chunkc tiling::window --send-to-desktop 4
+shift + cmd - 5 : chunkc tiling::window --send-to-desktop 5
+shift + cmd - 6 : chunkc tiling::window --send-to-desktop 6
 
 # Move focused window to screen
 cmd + alt + ctrl - 0 : chunkc window -m display 0
