@@ -1,3 +1,13 @@
+.nvm
+.config/yarn
+.local/share/fish
+.node-gyp
+.atom/packages
+.vscode
+.cargo
+go
+.m2
+.rustup
 .cache/
 .homeenv
 .work_profile
