@@ -51,6 +51,10 @@ cmd - down             : chunkc tiling::window --focus south
 cmd - up               : chunkc tiling::window --focus north
 cmd - right            : chunkc tiling::window --focus east
 
+# Set focused monitor
+cmd + shift - left   : chunkc tiling::monitor -f prev
+cmd + shift - right  : chunkc tiling::monitor -f next
+
 # Switch back to previous workspace
 cmd - 0x32 : `id=$(chunkc get _last_active_desktop); khd -p "cmd - $id" &> /dev/null`
 cmd - tab         : `khd -p "ctrl - right" &> /dev/null`
