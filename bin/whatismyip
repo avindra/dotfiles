@@ -1,0 +1,2 @@
+#!/bin/sh
+curl http://whatismyip.akamai.com;echo

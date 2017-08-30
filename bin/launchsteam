@@ -1,0 +1,3 @@
+#!/bin/bash
+
+STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0 steam
