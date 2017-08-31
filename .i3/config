@@ -8,8 +8,9 @@
 
 set $mod Mod4
 
-set $active #8a29ff
-set $focused #fe5817
+set $active #00a9ff
+set $indicator #68ccff
+set $focused #00a9ff
 set $unfocused #553b66
 set $transparent #00000000
 
@@ -20,9 +21,9 @@ set $screenRight DVI-0
 
 # Client colors
 #              border  backgr  text    indicator
-client.focused $focused $focused #ffffff #0000ff
-client.focused_inactive $active $active #ffffff #0000ff
-client.unfocused #846796 $unfocused  #ffffff #0000ff
+client.focused $focused $focused #ffffff $indicator
+client.focused_inactive $active $active #ffffff $active
+client.unfocused #846796 $unfocused  #ffffff $unfocused
 
 # App-specific color settings
 for_window [class="Chromium-browser"] title_format "<span foreground='#ffc1df'>%title</span>"
