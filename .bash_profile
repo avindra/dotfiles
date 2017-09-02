@@ -5,6 +5,9 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 export GPG_TTY=`tty`
 
+
+alias v="vi"
+
 # Fuzzy finder uses git ls-tree by default (fast)
 export FZF_DEFAULT_COMMAND='
   (git ls-tree -r --name-only HEAD ||
