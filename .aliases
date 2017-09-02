@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+### .alaises
+###    A collection of favorite aliases, as well as useful functions.
+###
+
 alias reload=". ~/.bash_profile"
 
 # Status hides untracked
@@ -40,3 +44,14 @@ alias push="git push"
 alias dammit="git commit --amend --no-edit"
 alias fuckitall="git checkout -- ."
 alias commit="git commit -v"
+
+## Favorites
+
+function weather() {
+	city=$1
+	curl -H 'User-Agent: curl' http://wttr.in/${city}
+}
+
+export -f weather
+
+alias v="vi"
