@@ -1,10 +1,25 @@
-# This file has been auto-generated.
+# This i3 config has been hand tailored with tricks
+# from the net (YouTube, forums, etc) and the main
+# docs (http://i3wm.org/docs/userguide.html).
 #
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
+# It has a few dependencies:
+#  * compton    - Compositor to reduce tearing and
+#                 enable fading effects
+#  * rofi       - Launcher
+#  * feh        - Setting the wallpaper, with solid
+#                 multi-monitor support
+#  * flameshot  - Taking screenshots
+#  * htop       - Process management
+#  * firejail   - For sandboxing untrusted binaries
 #
-
-# See http://i3wm.org/docs/userguide.html for a complete reference
+# Assumptions:
+#  * PulseAudio is being used instead of just ALSA for
+#    sound.
+#  * Some of my personal hardware settings are
+#    hardcoded, for instance, my sound id.
+#
+# Other dependencies:
+#  * FontAwesome font - for workspace icons
 
 set $mod Mod4
 
