@@ -1,13 +1,14 @@
-syntax on
+
 set number
 set relativenumber
 set backspace=indent,eol,start
 
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F3>      :set hlsearch!<CR>
+nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR> 
 
 filetype plugin on
 
-" Paste to and from system clipboard
+" Paste from and to system clipboard
 set clipboard+=unnamedplus
 
 " luke guides
@@ -53,6 +54,12 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 nmap <C-T> :FZF<CR>
+nmap <C-Q> :q!<CR>
+
+" EZ MODE Ctrl+S to save shortcut.
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 if $VIM_CRONTAB == "true"
     set nobackup

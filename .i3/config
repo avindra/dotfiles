@@ -255,8 +255,21 @@ bar {
 }
 
 assign [class="^Steam"] $ws5
+
+# All odd workspaces on left screen,
+#    even workspaces on right screen.
+
 workspace $ws1 output $screenLeft
+workspace $ws3 output $screenLeft
 workspace $ws5 output $screenLeft
+workspace $ws7 output $screenLeft
+workspace $ws9 output $screenLeft
+
+workspace $ws2 output $screenRight
+workspace $ws4 output $screenRight
+workspace $ws6 output $screenRight
+workspace $ws8 output $screenRight
+workspace $ws10 output $screenRight
 
 workspace_auto_back_and_forth yes
 

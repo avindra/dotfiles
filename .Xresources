@@ -67,5 +67,9 @@ URxvt.keysym.C-Prior: command:\033]720;1\007
 URxvt.keysym.C-Next: command:\033]721;1\007
 URxvt.depth: 32
 
-URxvt.foreground: grey90
-URxvt.background: rgba:0000/0000/0000/aaaa
+! Enable these for transparency
+! disabled for now to make pywal play
+! better
+
+! URxvt.foreground: grey95
+! URxvt.background: rgba:0000/0000/0000/aaaa
