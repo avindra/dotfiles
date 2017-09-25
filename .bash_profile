@@ -94,6 +94,9 @@ elif [[ "$uname" == "Darwin" ]]; then
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+	# Prefer brew python over system python
+	export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 	alias ldd='otool -L'
 
 	NODEBIN=$(dirname $(readlink -f `which node`))
