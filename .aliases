@@ -59,3 +59,14 @@ alias v="vi"
 
 # Go back to root shell
 alias dropback="fg"
+unalias dir
+
+# Dir switcher (favorites)
+function dir() {
+	dir=`~/bin/lib/dir`
+	if [[ -n $dir ]]; then
+		echo "Switching to $dir... "
+		cd "$dir"
+	fi
+}
+export -f dir

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Load my personal folder settings
+source ~/.config/dir/list
+
+function getList() {
+	for name in "${!folders[@]}"
+		do echo "$name"
+	done
+}
+
+list=`getList`
+
+choice=`echo "$list" | fzf --height 40%`
+
+if [[ -n $choice ]]; then
+	echo "${folders[$choice]}"
+fi
