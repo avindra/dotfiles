@@ -21,6 +21,9 @@
 # Other dependencies:
 #  * FontAwesome font - for workspace icons
 
+set $alt Mod1
+set $esc Mod2
+set $ctrl Mod3
 set $mod Mod4
 
 set $active #00a9ff
@@ -62,12 +65,59 @@ new_window pixel 2
 
 # Sound hotkeys for Daskeyboard
 set $sink alsa_output.pci-0000_00_14.2.analog-surround-21
+
+
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status
+bindsym $esc+XF86AudioRaiseVolume exec pactl set-sink-volume $sink +5% && killall -SIGUSR1 i3status
+
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume $sink -1% && killall -SIGUSR1 i3status
+bindsym $esc+XF86AudioLowerVolume exec pactl set-sink-volume $sink -5% && killall -SIGUSR1 i3status
+
 bindsym XF86AudioMute exec pactl set-sink-mute $sink toggle && killall -SIGUSR1 i3status
+
+bindsym XF86Calculator exec renameFocusedWindow.sh
 
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
 bindsym $mod+XF86AudioPlay exec firejail google-play-music-desktop-player
+
+###### SPECIAL SCRIPTS
+# Keypad area
+#    PHYSICAL LAYOUT
+#
+#    [   ]  [   ]  [   ]  [   ]
+#    [   ]  [   ]  [   ]  [   ]
+#    [   ]  [   ]  [   ]  [   ]
+#    
+#    EZ-MODE MAPPING
+#
+#    variable name (without $)
+#
+#     [ V1 ] [ V2 ] [ V3 ] [ V4 ]   top
+#     [ X1 ] [ X2 ] [ X3 ] [ X4 ]   middle
+#     [ O1 ] [ O2 ] [ O3 ] [ O4 ]   bottom
+#
+#    REAL MAPPING
+#
+#    KP_3  KP_6  KP_9   KP_ADD
+#    KP_2  KP_5  KP_8   KP_Subtract
+#    KP_1  KP_4  KP_7   KP_0
+
+set $V1 KP_3
+set $V2 KP_6
+set $V3 KP_9
+set $V4 KP_ADD
+
+set $X1 KP_2
+set $X2 KP_5 
+set $X3 KP_8
+set $X4 KP_Subtract
+
+set $O1 KP_1
+set $O2 KP_4
+set $O3 KP_7 
+set $O4 KP_0 
+
+bindsym $mod+$X4 exec $term -e htop
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -283,6 +333,8 @@ bindsym $mod+grave workspace back_and_forth
 
 bindsym $mod+F2 exec renameFocusedWindow.sh
 
+smart_gaps on
+smart_borders no_gaps
 gaps inner 10
 gaps outer 10
 
