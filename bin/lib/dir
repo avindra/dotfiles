@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
 # Load my personal folder settings
-source ~/.config/dir/list
+config="$HOME/.config/dir/list"
+
+# Arg parsing
+if [[ $# -eq 1 ]] && [[ $1 == 'cfg' ]]; then
+	$EDITOR $config
+	exit 0
+fi
+
+source $config
 
 function getList() {
 	for name in "${!folders[@]}"

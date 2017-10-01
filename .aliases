@@ -59,11 +59,21 @@ alias v="vi"
 
 # Go back to root shell
 alias dropback="fg"
-unalias dir
+
+# remove DOS-like dir alias for "ls" if it exists
+alias dir &> /dev/null
+if [[ $? -eq 0 ]]; then
+	unalias dir
+fi
 
 # Dir switcher (favorites)
 function dir() {
-	dir=`~/bin/lib/dir`
+	prog="$HOME/bin/lib/dir"
+	if [[ $# -ne 0 ]]; then
+		$prog $@
+		return $?
+	fi
+	dir=`$prog`
 	if [[ -n $dir ]]; then
 		echo "Switching to $dir... "
 		cd "$dir"
