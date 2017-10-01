@@ -33,7 +33,7 @@ git checkout -f -t origin/master
 
 ## Upgrades
 
-`Manual`: Do upgrades manually with `git pull`.
+`Manual`: Do upgrades manually with `git pull`. `dotfile-update` is a function that can be used instead, to stash local changes automatically.
 
 ---
 

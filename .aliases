@@ -36,6 +36,13 @@ function diff() {
 
 export -f diff
 
+function dotfile_update() {
+	git stash
+	git pull --rebase
+	git stash apply
+}
+export -f dotfile_update
+
 alias add="git add -u"
 alias addall="add ."
 alias unstage="git reset HEAD"
