@@ -3,6 +3,10 @@ set number
 set relativenumber
 set backspace=indent,eol,start
 
+" Disable help docs
+inoremap <F1>      <NOP>
+noremap <F1>      <NOP>
+
 nnoremap <F3>      :set hlsearch!<CR>
 nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR> 
 
