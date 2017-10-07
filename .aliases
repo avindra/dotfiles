@@ -83,7 +83,7 @@ function dir() {
 	dir=`$prog`
 	if [[ -n $dir ]]; then
 		echo "Switching to $dir... "
-		cd "$dir"
+		pushd "$dir"
 	fi
 }
 export -f dir
