@@ -187,16 +187,16 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # Workspaces
-set $ws1 "1 "
-set $ws2 "2  "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
-set $ws6 "6 "
-set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
-set $ws10 "10 "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 
 # switch to workspace
@@ -273,8 +273,8 @@ bar {
 	output $screenLeft
 	colors {
        		background $transparent
-	        separator #00ff00
-	        statusline #b3ffb3
+	        separator #0000ff
+	        statusline #ff0000
 	        focused_workspace $focused $focused #ffffff
 	        active_workspace $active $active #ffffff
 	        inactive_workspace #5f5f5f $unfocused #808080
@@ -289,8 +289,7 @@ bar {
 	mode hide
 	i3bar_command i3bar -t
 
-	status_command i3status -c ~/.i3status.conf
-	separator_symbol "|"
+	status_command bumblebee-status -m disk:root memory date time pasink -p root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d" -t gruvbox-powerline
 	output $screenRight
 	colors {
        		background $transparent
@@ -339,6 +338,7 @@ gaps inner 10
 gaps outer 10
 
 exec_always --no-startup-id feh --bg-tile ~/.config/wallpaper
+exec_always --no-startup-id ~/restartpulse
 exec_always --no-startup-id setxkbmap -option caps:backspace
 exec_always --no-startup-id compton -f -b
 exec --no-startup-id urxvtd-256color -f -q

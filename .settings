@@ -22,3 +22,7 @@ export PATH="~/.local/bin:$PATH"
 # ruby install --user
 
 export PATH="~/.gem/ruby/2.4.0/bin:$PATH"
+
+# Go
+
+export PATH="~/go/bin:$PATH"
