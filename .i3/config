@@ -51,6 +51,7 @@ for_window [class="Google-chrome"] title_format "<span foreground='#59dff7'>%tit
 for_window [class="Xfce4-terminal"] title_format "<span foreground='#7fff83'>%title</span>"
 
 for_window [class="flameshot" title="Save As"] floating enable
+for_window [class="Google-chrome" title="^Google Hangouts - .+@gmail.com$"] floating disable
 
 focus_follows_mouse yes 
 # Disabled so rofi appears on "active" monitor
