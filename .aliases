@@ -24,9 +24,15 @@ function diff() {
 		return $?
 	fi
 	if [[ "$#" -eq 2 ]]; then
+		# Diff two files
 		if [[ -f "$1" && -f "$2" ]]; then
 			git diff --no-index $1 $2
 			return $?
+		fi
+
+		# Diff two folders
+		if [[ -d "$1" && -d "$2" ]]; then
+			/usr/bin/diff -ruN "$1" "$2"
 		fi
 	fi
 
@@ -87,3 +93,13 @@ function dir() {
 	fi
 }
 export -f dir
+
+# Syntax highlight the file, with the
+# familiarity of "cat"
+# 
+# "cat" with "ccat"
+# sudo zypper i \
+# 	python3-pygmentize \   # For ccat
+# 	highlight              # For cats
+alias ccat="pygmentize"
+alias cats="highlight -O ansi"
