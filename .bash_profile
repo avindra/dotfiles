@@ -30,6 +30,7 @@ uname=`uname`
 if [[ $HOSTNAME == "dolores" ]]; then
 	. ~/.work_profile
 	export TERMINAL="urxvtc"
+	export TMPDIR="/mnt/4tb/Scratch/tmp"
 fi
 
 
@@ -158,3 +159,7 @@ alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 ## "bash-sensible" options
 shopt -s autocd 2> /dev/null
 PROMPT_DIRTRIM=4
+
+# Disable Software Flow Control (C-s C-q)
+# https://unix.stackexchange.com/a/72092/63602
+stty -ixon

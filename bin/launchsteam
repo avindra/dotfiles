@@ -1,3 +1,5 @@
 #!/bin/bash
 
-STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0 steam
+export STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0
+
+`nohup steam 2> /dev/null`

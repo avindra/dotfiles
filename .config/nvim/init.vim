@@ -58,14 +58,29 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 nmap <C-T> :FZF<CR>
-nmap <C-Q> :q!<CR>
+
+" buffer managent
+nmap <C-Q> :q<CR>
+nmap <C-W> :bdelete<CR>
+" persistent buffers
+" 'set viminfo=%' . &viminfo
 
 " EZ MODE Ctrl+S to save shortcut.
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
+" i3 like cursor focusing, with alt instead of meta
+nmap <silent> <A-j> :wincmd k<CR>
+nmap <silent> <A-k> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
+
+" CTRL+P to open vim settings
+noremap <buffer> <silent> <C-P>          :edit /home/avindra/.config/nvim/init.vim<CR>
+
 if $VIM_CRONTAB == "true"
     set nobackup
     set nowritebackup
 endif
+

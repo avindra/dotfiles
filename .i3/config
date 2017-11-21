@@ -2,6 +2,10 @@
 # from the net (YouTube, forums, etc) and the main
 # docs (http://i3wm.org/docs/userguide.html).
 #
+# resize mode is completely unused here
+#
+# $mod + R should be used for something else.
+#
 # It has a few dependencies:
 #  * compton    - Compositor to reduce tearing and
 #                 enable fading effects
@@ -34,14 +38,14 @@ set $transparent #00000000
 
 set $term urxvtc-256color
 
-set $screenLeft HDMI-0
-set $screenRight DVI-0
+set $screenLeft HDMI-A-0
+set $screenRight DVI-I-0
 
 # Client colors
-#              border  backgr  text    indicator
-client.focused $focused $focused #ffffff $indicator
-client.focused_inactive $active $active #ffffff $active
-client.unfocused #846796 $unfocused  #ffffff $unfocused
+#                       border    backgr     text     indicator
+client.focused          $focused  $focused   #ffffff  $indicator
+client.focused_inactive $active   $active    #ffffff  $active
+client.unfocused        #846796   $unfocused #ffffff  $unfocused
 
 # App-specific settings
 # App-specific color settings
@@ -76,7 +80,7 @@ bindsym $esc+XF86AudioLowerVolume exec pactl set-sink-volume $sink -5% && killal
 
 bindsym XF86AudioMute exec pactl set-sink-mute $sink toggle && killall -SIGUSR1 i3status
 
-bindsym XF86Calculator exec renameFocusedWindow.sh
+bindsym XF86Calculator exec ~/bin/mouse/active.py
 
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
 bindsym $mod+XF86AudioPlay exec firejail google-play-music-desktop-player
@@ -124,9 +128,11 @@ bindsym $mod+$X4 exec $term -e htop
 floating_modifier $mod
 
 # App launching hotkeys
-bindsym $mod+Return exec $term
-bindsym $mod+C      exec firejail google-chrome
-bindsym $mod+M      exec firejail slack
+bindsym $mod+Return   exec $term
+# Freedom first
+bindsym $mod+C        exec firefox
+bindsym $mod+alt+C    exec killall firefox && firefox
+bindsym $mod+M        exec firejail slack
 
 bindsym Control+Shift+Escape  exec $term -e htop
 
@@ -180,8 +186,11 @@ bindsym $mod+e layout toggle split
 
 
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# Fullscreen interactions design
+#
+# toggle tiling / floating with C-R
+bindsym $mod+R floating toggle
+popup_during_fullscreen leave_fullscreen
 
 # parent / child container focus
 bindsym $mod+a focus parent
@@ -263,7 +272,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
 
 # primary bar
 bar {
@@ -339,7 +347,7 @@ gaps inner 10
 gaps outer 10
 
 exec_always --no-startup-id feh --bg-tile ~/.config/wallpaper
-exec_always --no-startup-id ~/restartpulse
+exec_always --no-startup-id ~/bin/restartpulse
 exec_always --no-startup-id setxkbmap -option caps:backspace
 exec_always --no-startup-id compton -f -b
 exec --no-startup-id urxvtd-256color -f -q

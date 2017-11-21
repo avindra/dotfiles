@@ -103,3 +103,6 @@ export -f dir
 # 	highlight              # For cats
 alias ccat="pygmentize"
 alias cats="highlight -O ansi"
+
+
+alias clock="tty-clock -c -s -t"
