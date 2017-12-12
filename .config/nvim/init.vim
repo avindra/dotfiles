@@ -25,7 +25,7 @@ autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
 call plug#begin('~/.local/share/nvim/plugged')
 
 
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic' too damn slow. find replacement
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx'
 Plug 'ruanyl/vim-fixmyjs'
@@ -41,6 +41,7 @@ call plug#end()
 let g:jsx_ext_required = 0
 
 
+if 0
 " Syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -56,6 +57,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+endif
 
 nmap <C-T> :FZF<CR>
 
