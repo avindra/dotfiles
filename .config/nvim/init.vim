@@ -63,7 +63,7 @@ nmap <C-T> :FZF<CR>
 
 " buffer managent
 nmap <C-Q> :q<CR>
-nmap <C-W> :bdelete<CR>
+" nmap <C-W> :bdelete<CR>
 " persistent buffers
 " 'set viminfo=%' . &viminfo
 

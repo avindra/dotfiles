@@ -44,7 +44,7 @@ if [[ "$uname" == "Linux" ]]; then
 elif [[ "$uname" == "Darwin" ]]; then
 
 	# Local python bin
-	export PATH="~/Library/Python/2.7/bin/:$PATH"
+	export PATH="~/Library/Python/2.7/bin:$PATH"
 
 	# fix broken crontab editing on macos
 	alias crontab="VIM_CRONTAB=true crontab"
@@ -98,6 +98,11 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# Prefer brew python over system python
 	export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+
+	# Java pls
+	export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home"
+	export JDK_HOME="$JAVA_HOME"
+
 	alias ldd='otool -L'
 
 	NODEBIN=$(dirname $(readlink -f `which node`))
@@ -133,7 +138,7 @@ elif [[ "$uname" == "Darwin" ]]; then
 	. ~/.work_profile
 	export PATH="$PATH:${HOME}/bin"
 	alias l="ls -alF"
-	alias update="brew update && brew upgrade && brew cu && apm update -c false"
+	alias update="brew update && brew upgrade && brew cu"
 elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
 	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
@@ -163,3 +168,5 @@ PROMPT_DIRTRIM=4
 # Disable Software Flow Control (C-s C-q)
 # https://unix.stackexchange.com/a/72092/63602
 stty -ixon
+
+eval "$(direnv hook bash)"

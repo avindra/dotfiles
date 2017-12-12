@@ -106,3 +106,9 @@ alias cats="highlight -O ansi"
 
 
 alias clock="tty-clock -c -s -t"
+
+function ssl_check() {
+  echo | openssl s_client -showcerts -servername $1 -connect $1:$2 2>/dev/null | openssl x509 -inform pem -noout -text
+}
+
+export -f ssl_check
