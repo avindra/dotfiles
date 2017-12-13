@@ -69,7 +69,7 @@ font pango:DejaVu Sans Mono 20px
 new_window pixel 2
 
 # Sound hotkeys for Daskeyboard
-set $sink alsa_output.pci-0000_00_14.2.analog-surround-21
+set $sink alsa_output.pci-0000_00_14.2.analog-stereo
 
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status
