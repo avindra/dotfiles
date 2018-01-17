@@ -5,7 +5,8 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 export GPG_TTY=`tty`
 
-
+# dedupe bash history
+export HISTCONTROL=ignoreboth:erasedups
 
 # Fuzzy finder uses git ls-tree by default (fast)
 export FZF_DEFAULT_COMMAND='
