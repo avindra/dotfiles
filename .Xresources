@@ -72,7 +72,7 @@ URxvt.depth: 32
 ! better
 
 ! URxvt.foreground: grey95
-! URxvt.background: rgba:0000/0000/0000/aaaa
+URxvt.background: rgba:0000/0000/0000/aaaa
 !
 
-URxvt.background: black
+! URxvt.background: black
