@@ -27,7 +27,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # 2) macOS / iOS (aka. Apple)
 # 2) cygwin / Windows
 
-uname=`uname`
+uname=`uname -o`
 if [[ $HOSTNAME == "dolores" ]]; then
 	. ~/.work_profile
 	export TERMINAL="urxvtc"
@@ -71,18 +71,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 	}
 	export -f _ls
 
-	# show diff ps1 if sshing in from home
-	if [[ -n "$SSH_CLIENT" ]]; then
-		connectingClient=`echo "$SSH_CLIENT" | perl -pe 's/ .+/ /g' 2> /dev/null | tr -d '[:space:]'`
-		if [[ "$connectingClient" == "${HOME_IP}" ]]; then
-			PS1='osx:\w $(__git_ps1) \$ '
-		fi
-	fi
-
-	function chromeless() {
-		open -n -a 'Google Chrome' --args "--app=$1"
-	}
-
     if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
         source ~/.gnupg/.gpg-agent-info
         export GPG_AGENT_INFO
@@ -99,30 +87,7 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# Prefer brew python over system python
 	export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-
-	# Java pls
-	export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home"
-	export JDK_HOME="$JAVA_HOME"
-
 	alias ldd='otool -L'
-
-	NODEBIN=$(dirname $(readlink -f `which node`))
-	export PATH="$NODEBIN:$PATH"
-    # SSH into the xhyve vm
-    # https://forums.docker.com/t/is-it-possible-to-ssh-to-the-xhyve-machine/17426/5
-    function d4mexec() {
-        extraFlags=""
-        if [[ "$1" == "tty" ]]; then
-            extraFlags="-t"
-            shift
-        fi
-        docker run --rm  -i ${extraFlags} --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh "$@"
-    }
-    function d4mssh() {
-        d4mexec tty "$@"
-    }
-    export -f d4mexec
-    export -f d4mssh
 
 	togglewifi() {
 		echo -n "Wifi coming down ..."
@@ -136,13 +101,32 @@ elif [[ "$uname" == "Darwin" ]]; then
 
 	export -f togglewifi
 
-	. ~/.work_profile
 	export PATH="$PATH:${HOME}/bin"
 	alias l="ls -alF"
 	alias update="brew update && brew upgrade && brew cu"
-elif [[ "$uname" == "MINGW64_NT-6.1" ]]; then
+elif [[ "$uname" == "Msys" ]]; then
 	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
+	. ~/.work_profile
+fi
+
+# Mainly for docker for {mac,windows} hacks
+if [[ "$uname" != "Linux" ]]; then
+	# SSH into the xhyve / hyper-v vm
+	# https://forums.docker.com/t/is-it-possible-to-ssh-to-the-xhyve-machine/17426/5
+	function d4exec() {
+		extraFlags=""
+		if [[ "$1" == "tty" ]]; then
+			extraFlags="-t"
+			shift
+		fi
+		docker run --rm  -i ${extraFlags} --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh "$@"
+	}
+	function d4ssh() {
+		d4exec tty "$@"
+	}
+	export -f d4exec
+	export -f d4ssh
 fi
 
 alias grep="grep -n --color"
