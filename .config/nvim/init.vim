@@ -29,7 +29,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx'
 Plug 'ruanyl/vim-fixmyjs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'leafgarland/typescript-vim'

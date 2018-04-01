@@ -155,7 +155,6 @@ if [[ $? -eq 1 ]]; then
 fi
 
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
