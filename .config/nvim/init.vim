@@ -28,14 +28,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plug 'vim-syntastic/syntastic' too damn slow. find replacement
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx'
-Plug 'ruanyl/vim-fixmyjs'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
