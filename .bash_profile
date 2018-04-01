@@ -1,7 +1,7 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
-. ~/.homeenv
+[[ -f ~/.homeenv ]] && . ~/.homeenv
 
 export GPG_TTY=`tty`
 
@@ -28,13 +28,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # 2) cygwin / Windows
 
 uname=`uname -o`
-if [[ $HOSTNAME == "dolores" ]]; then
-	. ~/.work_profile
-	export TERMINAL="urxvtc"
-	export TMPDIR="/mnt/4tb/Scratch/tmp"
-fi
-
-
 if [[ "$uname" == "Linux" ]]; then
 	alias pbcopy="xclip -selection c"
 	# Save history immediately
@@ -107,7 +100,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 elif [[ "$uname" == "Msys" ]]; then
 	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
-	. ~/.work_profile
 fi
 
 # Mainly for docker for {mac,windows} hacks
