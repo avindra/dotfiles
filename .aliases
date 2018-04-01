@@ -114,3 +114,10 @@ function ssl_check() {
 }
 
 export -f ssl_check
+
+
+function d() {
+	curl -s dict.org/define:$1:english | less
+}
+
+export -f d
