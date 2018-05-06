@@ -61,7 +61,7 @@ alias commit="git commit -v"
 ## Favorites
 
 function weather() {
-	city=$1
+	city=${1:-Clifton}
 	curl -H 'User-Agent: curl' http://wttr.in/${city}
 }
 
@@ -121,3 +121,5 @@ function d() {
 }
 
 export -f d
+
+alias t="trans -shell"
