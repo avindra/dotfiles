@@ -349,7 +349,7 @@ gaps outer 10
 exec_always --no-startup-id feh --bg-tile ~/.config/wallpaper
 exec_always --no-startup-id ~/bin/restartpulse
 exec_always --no-startup-id setxkbmap -option caps:backspace
-exec_always --no-startup-id compton -f -b
+exec_always --no-startup-id allow_rgb10_configs=false compton -f -b
 exec --no-startup-id urxvtd-256color -f -q
 # luke smith bindings
 bindsym $mod+s		gaps inner current plus 5
