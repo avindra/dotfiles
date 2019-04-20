@@ -38,8 +38,8 @@ set $transparent #00000000
 
 set $term urxvtc-256color
 
-set $screenLeft HDMI-A-0
-set $screenRight DVI-I-0
+set $screenLeft HDMI-0
+set $screenRight DVI-D-0
 
 # Client colors
 #                       border    backgr     text     indicator
@@ -69,7 +69,9 @@ font pango:DejaVu Sans Mono 20px
 new_window pixel 2
 
 # Sound hotkeys for Daskeyboard
-set $sink alsa_output.pci-0000_00_14.2.analog-stereo
+# set $sink alsa_output.pci-0000_00_14.2.analog-stereo
+# set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo
+set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status
@@ -348,8 +350,7 @@ gaps outer 10
 
 exec_always --no-startup-id feh --bg-tile ~/.config/wallpaper
 exec_always --no-startup-id ~/bin/restartpulse
-exec_always --no-startup-id setxkbmap -option caps:backspace
-exec_always --no-startup-id allow_rgb10_configs=false compton -f -b
+exec_always --no-startup-id compton -f -b
 exec --no-startup-id urxvtd-256color -f -q
 # luke smith bindings
 bindsym $mod+s		gaps inner current plus 5

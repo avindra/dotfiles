@@ -1,0 +1,17 @@
+#!/bin/sh
+# Apply the desired background image, and theme
+# out the colors from it via pywal.
+#
+# if the wallpaper is not being set, then this
+# script will simply run the color effect again
+
+bgLink=~/.config/wallpaper
+bg=$1
+
+if [[ -z "$bg" ]]; then
+	bg=$bgLink
+else
+	ln -sf $bg $bgLink
+fi
+
+~/.local/bin/wal -a 100 -i $bg
