@@ -16,11 +16,22 @@ What's the downside of this approach? Mostly that I'm limited to `~` (i.e., no m
 
 There are a few assumptions about what software is installed on the system. If you are using openSUSE, you want something like:
 
-```
-zypper --no-ref in --no-recommends fzf ranger i3-gaps i3status i3lock i3bar rofi
+```bash
+zypper --no-ref in --no-recommends feh rofi \
+  i3-gaps i3status i3lock i3bar \
+# Here are some additional software I find myself
+# using regularly, for which you may have
+# a perfectly suitable alternative.
+  ranger fzf neovim
 
+
+# Software used to "auto-rice" colors
+# based on the current desktop background.
 pip install --user pywal
 ```
+
+
+[feh](https://github.com/derf/feh) is used as the primary background setter, as it is great at this and has more focus on multi-monitor handling. [pywal](https://github.com/dylanaraps/pywal) allows us to hook in (via the `-n` flag) and disable the actual background setting responsibility, so that we can just leverage the colors it generates. Nice.
 
 ## Installation
 

@@ -14,4 +14,7 @@ else
 	ln -sf $bg $bgLink
 fi
 
-~/.local/bin/wal -a 100 -i $bg
+# https://github.com/dylanaraps/pywal/wiki/Getting-Started#using-a-custom-wallpaper-setter
+~/.local/bin/wal -e -a 95 -i $bg -n
+
+feh --no-xinerama --bg-fill ~/.config/wallpaper

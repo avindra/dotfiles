@@ -24,8 +24,6 @@ autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
 " Vim plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-
-" Plug 'vim-syntastic/syntastic' too damn slow. find replacement
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx'
 Plug '/usr/bin/fzf'
@@ -33,30 +31,14 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim'
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
+colorscheme wal
 
 let g:jsx_ext_required = 0
 
-
-if 0
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_mode_map = {
-        \ "mode": "active",
-        \ "active_filetypes": ["javascript"],
-        \ "passive_filetypes": ["puppet"] }
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-endif
 
 nmap <C-T> :FZF<CR>
 

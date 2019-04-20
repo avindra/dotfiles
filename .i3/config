@@ -41,11 +41,27 @@ set $term urxvtc-256color
 set $screenLeft HDMI-0
 set $screenRight DVI-D-0
 
-# Client colors
-#                       border    backgr     text     indicator
-client.focused          $focused  $focused   #ffffff  $indicator
-client.focused_inactive $active   $active    #ffffff  $active
-client.unfocused        #846796   $unfocused #ffffff  $unfocused
+# Derive colors from XResources (integration with pywal)
+#
+# The example provided in docs (https://github.com/dylanaraps/pywal/wiki/Customization#i3)
+# is not as robust as this code.
+# 
+# Taken from: https://github.com/ecly/dotfiles/blob/2109aa1c7df724d5526fd29f2775786ea2e970cd/.config/i3/config.i3#L36-L50
+set_from_resource $bg           i3wm.color0 #ff0000
+set_from_resource $bg-alt       i3wm.color14 #ff0000
+set_from_resource $fg           i3wm.color15 #ff0000
+set_from_resource $fg-alt       i3wm.color2 #ff0000
+set_from_resource $hl           i3wm.color13 #ff0000
+
+# class                 border      backgr. text indicator      child_border
+client.focused          $fg-alt     $bg     $hl  $fg-alt        $hl
+client.focused_inactive $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.unfocused        $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+
+client.background       $bg
+
 
 # App-specific settings
 # App-specific color settings
@@ -62,8 +78,8 @@ focus_follows_mouse yes
 # mouse_warping none
 
 # Font for window titles. 
-font pango:FontAwesome, DejaVu Sans Mono 8
-font pango:DejaVu Sans Mono 20px
+font pango:FontAwesome, Inconsolata 8
+font pango:Inconsolata 20px
 
 # borders
 new_window pixel 2
@@ -360,4 +376,13 @@ bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
 bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
+
+
+# Disable focus change for clicks on titlebars
+# with the middle mouse button
+# 
+# Taken verbatim from user manual
+# 
+# https://i3wm.org/docs/userguide.html#_nop
+bindsym button2 nop
 
