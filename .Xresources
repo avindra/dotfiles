@@ -54,7 +54,7 @@ rofi.display-combi: $
 ! Urxvt
 
 URxvt.scrollBar: false
-URxvt.font: xft:inconsolata:medium:size=16
+URxvt.font: xft:inconsolata:medium:size=20
 URxvt.letterSpace: -1
 ! URxvt.blurRadius: 20
 
