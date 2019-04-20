@@ -10,7 +10,17 @@ The approach that most people take with `dotfiles` is to have a chunky install s
 
 I didn't like that approach. I thought, why not just have your `~` folder be a git repository that you can `push` and `pull` directly from? That's what I decided to do here.
 
-What's the downside of this approach? Mostly that I'm limited to `~` (i.e., no mucking around in `/etc`). However, given the trend towards immutable architectures and disposable systems, this is probably for the better.
+What's the downside of this approach? Mostly that I'm limited to `~` (i.e., no mucking around in `/etc`). However, one typically doesn't want to muck about much in the `/etc` folder. This is the design constraint of this approach.
+
+## Requirements
+
+There are a few assumptions about what software is installed on the system. If you are using openSUSE, you want something like:
+
+```
+zypper --no-ref in --no-recommends fzf ranger i3-gaps i3status i3lock i3bar rofi
+
+pip install --user pywal
+```
 
 ## Installation
 
@@ -61,3 +71,8 @@ Deleting the `.git` folder
 cd
 rm -fr .git
 ```
+
+## Credits
+
+ * Many thanks to [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) for [his dotfile setup](https://github.com/LukeSmithxyz/voidrice), from which this repo takes a LOT of inspiration (ranger, background setting patterns, i3 configuration, etc).
+ * Various colleagues / co-workers who have informed my understanding of how systems work, the 'unix' way.

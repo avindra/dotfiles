@@ -9,7 +9,7 @@
 # Apply colors via pywal
 ~/bin/setbg
 
-
+# Remap capslock to backspace
 setxkbmap -option caps:backspace
 
 if [ -e ~/.screenlayout/default.sh ]; then
