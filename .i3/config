@@ -30,12 +30,6 @@ set $esc Mod2
 set $ctrl Mod3
 set $mod Mod4
 
-set $active #00a9ff
-set $indicator #68ccff
-set $focused #00a9ff
-set $unfocused #553b66
-set $transparent #00000000
-
 set $term urxvtc-256color
 
 set $screenLeft HDMI-0
@@ -61,6 +55,61 @@ client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 
 client.background       $bg
+
+set $indicator $bg-alt
+set $focused $fg
+set $unfocused $bg
+set $transparent #00000000
+
+####################################
+# ██╗██████╗ ██████╗  █████╗ ██████╗ 
+#   ║╚════██╗██╔══██╗██╔══██╗██╔══██╗
+# ██║ █████╔╝██████╔╝███████║██████╔╝
+# ██║ ╚═══██╗██╔══██╗██╔══██║██╔══██╗
+# ██║██████╔╝██████╔╝██║  ██║██║  ██║
+# ╚═╝╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+#
+# config settings for i3bar
+###################################
+# primary bar
+bar {
+	mode hide
+	i3bar_command i3bar -t
+
+	tray_output $screenRight
+	output $screenLeft
+	colors {
+       		background $transparent
+	        separator #0000ff
+	        statusline #ff0000
+	        focused_workspace $fg-alt $hl $fg
+	        active_workspace $fg-alt $fg-alt #ffffff
+	        inactive_workspace #5f5f5f $unfocused #808080
+###	        urgent_workspace #2f343a #900000 #ffffff
+	}
+	position bottom
+}
+
+# secondary screen for primary bar
+# colors have to be duplicated, unfortunately
+bar {
+	mode hide
+	i3bar_command i3bar -t
+
+	status_command bumblebee-status -m disk:root memory date time pasink -p root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d" -t gruvbox-powerline
+	output $screenRight
+	colors {
+       		background $transparent
+	        separator #00ff00
+	        statusline #b3ffb3
+	        focused_workspace $fg-alt $hl $fg
+	        active_workspace $fg-alt $fg-alt #ffffff
+	        inactive_workspace #5f5f5f $unfocused #808080
+	}
+	position bottom
+
+}
+
 
 
 # App-specific settings
@@ -289,47 +338,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-
-# primary bar
-bar {
-	mode hide
-	i3bar_command i3bar -t
-
-	tray_output $screenRight
-	output $screenLeft
-	colors {
-       		background $transparent
-	        separator #0000ff
-	        statusline #ff0000
-	        focused_workspace $focused $focused #ffffff
-	        active_workspace $active $active #ffffff
-	        inactive_workspace #5f5f5f $unfocused #808080
-###	        urgent_workspace #2f343a #900000 #ffffff
-	}
-	position bottom
-}
-
-# secondary screen for primary bar
-# colors have to be duplicated, unfortunately
-bar {
-	mode hide
-	i3bar_command i3bar -t
-
-	status_command bumblebee-status -m disk:root memory date time pasink -p root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d" -t gruvbox-powerline
-	output $screenRight
-	colors {
-       		background $transparent
-	        separator #00ff00
-	        statusline #b3ffb3
-	        focused_workspace $focused $focused #ffffff
-	        active_workspace $active $active #ffffff
-	        inactive_workspace #5f5f5f $unfocused #808080
-	}
-	position bottom
-
-}
-
 assign [class="^Steam"] $ws5
 
 # All odd workspaces on left screen,
