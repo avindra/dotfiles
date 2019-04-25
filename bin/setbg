@@ -4,6 +4,10 @@
 #
 # if the wallpaper is not being set, then this
 # script will simply run the color effect again
+#
+#
+# background setting shifted to feh using:
+# https://github.com/dylanaraps/pywal/wiki/Getting-Started#using-a-custom-wallpaper-setter
 
 bgLink=~/.config/wallpaper
 bg=$1
@@ -14,7 +18,9 @@ else
 	ln -sf $bg $bgLink
 fi
 
-# https://github.com/dylanaraps/pywal/wiki/Getting-Started#using-a-custom-wallpaper-setter
-~/.local/bin/wal -e -a 95 -i $bg -n
+
+# remove cache to be sure
+rm -rf ~/.cache/wal
+~/.local/bin/wal -a 95 -i $bg -n
 
 feh --no-xinerama --bg-fill ~/.config/wallpaper

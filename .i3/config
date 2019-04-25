@@ -368,13 +368,10 @@ bindsym $mod+grave workspace back_and_forth
 bindsym $mod+F2 exec renameFocusedWindow.sh
 
 smart_gaps on
-smart_borders no_gaps
+smart_borders on
 gaps inner 10
 gaps outer 10
 
-exec_always --no-startup-id feh --bg-tile ~/.config/wallpaper
-exec_always --no-startup-id ~/bin/restartpulse
-exec_always --no-startup-id compton -f -b
 exec --no-startup-id urxvtd-256color -f -q
 # luke smith bindings
 bindsym $mod+s		gaps inner current plus 5

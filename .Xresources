@@ -36,10 +36,6 @@
 *.color15:      #f2f0ec
 
 ! Rofi
-rofi.color-window: argb:c82d303b, #7c8389, #1d1f21
-rofi.color-normal: argb:031d1f21, #c4cbd4, argb:031d1f21, #4084d6, #f9f9f9
-rofi.color-urgent: argb:2c1d1f21, #cc6666, argb:e54b5160, #a54242, #f9f9f9
-rofi.color-active: argb:2c1d1f21, #65acff, argb:e44b5160, #4491ed, #f9f9f9
 rofi.font: Inconsolata 16
 rofi.bw: 0
 rofi.padding: 300
@@ -56,7 +52,7 @@ rofi.display-combi: $
 URxvt.scrollBar: false
 URxvt.font: xft:inconsolata:medium:size=20
 URxvt.letterSpace: -1
-! URxvt.blurRadius: 20
+URxvt.blurRadius: 20
 
 ! Mocks Mod+K behavior in iTerm2 to clear scroll buffer
 ! Mod4 = Super
@@ -72,7 +68,5 @@ URxvt.depth: 32
 ! better
 
 ! URxvt.foreground: grey95
-URxvt.background: rgba:0000/0000/0000/aaaa
-!
 
 ! URxvt.background: black
