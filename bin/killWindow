@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# kills the next window you click on
+
+pid=$(xprop | \grep -i pid | cut -d= -f2)
+
+
+if [[ -n "$pid" ]]; then
+	kill -9 $pid
+fi
