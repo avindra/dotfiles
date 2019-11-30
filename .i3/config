@@ -30,10 +30,10 @@ set $esc Mod2
 set $ctrl Mod3
 set $mod Mod4
 
-set $term urxvtc-256color
+set $term spawnShell
 
 set $screenLeft HDMI-0
-set $screenRight DVI-D-0
+set $screenRight HDMI-0
 
 # Derive colors from XResources (integration with pywal)
 #
@@ -77,7 +77,7 @@ bar {
 	i3bar_command i3bar -t
 
 	tray_output $screenRight
-	output $screenLeft
+	output $screenRight
 	colors {
        		background $transparent
 	        separator #0000ff
@@ -110,8 +110,6 @@ bar {
 
 }
 
-
-
 # App-specific settings
 # App-specific color settings
 
@@ -133,10 +131,13 @@ font pango:Inconsolata 20px
 # borders
 new_window pixel 2
 
-# Sound hotkeys for Daskeyboard
+# Sound hotkeys for physical volume controls
 # set $sink alsa_output.pci-0000_00_14.2.analog-stereo
 # set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo
-set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
+# set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
+# set $sink alsa_output.pci-0000_0a_00.3.analog-stereo
+# set $sink alsa_output.pci-0000_41_00.1.hdmi-stereo-extra1
+set $sink bluez_sink.70_26_05_55_AD_B0.a2dp_sink
 
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status
@@ -200,6 +201,7 @@ bindsym $mod+Return   exec $term
 bindsym $mod+C        exec firefox
 bindsym $mod+alt+C    exec killall firefox && firefox
 bindsym $mod+M        exec firejail slack
+bindsym $mod+KP_Add   exec $term -e node
 
 bindsym Control+Shift+Escape  exec $term -e htop
 
@@ -289,7 +291,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # lock
-bindsym $mod+x exec i3lock -c 000000
+bindsym $mod+x exec xlock
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -372,7 +374,6 @@ smart_borders on
 gaps inner 10
 gaps outer 10
 
-exec --no-startup-id urxvtd-256color -f -q
 # luke smith bindings
 bindsym $mod+s		gaps inner current plus 5
 bindsym $mod+Shift+s	gaps inner current minus 5

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Enhanced Mod+Enter
+
+# it will spawn a shell starting in the current working 
+# directory of your focused window, otherwise
+# it will spawn a normal shell
+
+
+term=urxvtc-256color
+
+
+focusPid=$(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | \grep -oE '[[:digit:]]*$')
+
+echo "$focusPid"
+
+
+link="/proc/${focusPid}/cwd"
+
+wd=$( readlink -f "$link" )
+
+if [[ ( -z "$wd" ) || ("$wd" == "/") ]]; then
+	$term
+else
+	$term -cd "$wd"
+fi
