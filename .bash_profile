@@ -28,13 +28,13 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # 2) cygwin / Windows
 
 uname=`uname -o`
-if [[ "$uname" == "Linux" ]]; then
+if [[ "$uname" == "GNU/Linux" ]]; then
 	alias pbcopy="xclip -selection c"
 	# Save history immediately
 	shopt -s histappend
 	PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
-	export PS1='\w $(__git_ps1) > '
+	export PS1='\w$(__git_ps1) ⟩ '
 elif [[ "$uname" == "Darwin" ]]; then
 
 	# Local python bin
@@ -43,7 +43,7 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# fix broken crontab editing on macos
 	alias crontab="VIM_CRONTAB=true crontab"
 
-	PS1=' \w $(__git_ps1) > '
+	PS1=' $(__git_ps1) \w ⟩ '
 
 	# Disable annoying tilde expansion
 	_expand() { :; }
