@@ -1,0 +1,34 @@
+{
+    "rules": [
+        {
+            "pattern": {
+                "feature": "true",
+                "matches": ""
+            },
+            "profile": "optimizations_on"
+        }
+    ],
+    "profiles": [
+        {
+            "name": "optimizations_on",
+            "settings": [
+                {
+                    "key": "GLThreadedOptimizations",
+                    "value": true
+                },
+                {
+                    "key": "GLGSYNCAllowed",
+                    "value": true
+                },
+                {
+                    "key": "GLShaderDiskCache",
+                    "value": true
+                },
+                {
+                    "key": "GLShaderDiskCachePath",
+                    "value": "/dev/shm"
+                }
+            ]
+        }
+    ]
+}
