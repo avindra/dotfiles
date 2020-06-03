@@ -32,8 +32,8 @@ set $mod Mod4
 
 set $term spawnShell
 
-set $screenLeft HDMI-0
-set $screenRight HDMI-0
+set $screenLeft DP-2
+set $screenRight DP-2
 
 # Derive colors from XResources (integration with pywal)
 #
@@ -137,8 +137,7 @@ new_window pixel 2
 # set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 # set $sink alsa_output.pci-0000_0a_00.3.analog-stereo
 # set $sink alsa_output.pci-0000_41_00.1.hdmi-stereo-extra1
-set $sink bluez_sink.70_26_05_55_AD_B0.a2dp_sink
-
+set $sink alsa_output.pci-0000_0a_00.3.analog-stereo
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status
 bindsym $esc+XF86AudioRaiseVolume exec pactl set-sink-volume $sink +5% && killall -SIGUSR1 i3status

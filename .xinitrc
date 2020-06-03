@@ -26,5 +26,13 @@ compton -f -b
 # Apply colors via pywal
 ~/bin/setbg
 
-# MUST always be last
+# scale qt5+ apps
+export QT_SCALE_FACTOR=2.2
+
+urxvtd -q -o -f
+
+# start preferred wm
+#exec xmonad
+#exec spectrwm
 exec i3
+

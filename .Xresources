@@ -36,7 +36,7 @@
 *.color15:      #f2f0ec
 
 ! Rofi
-rofi.font: Inconsolata 16
+rofi.font: Inconsolata 32
 rofi.bw: 0
 rofi.padding: 300
 rofi.lines: 8
@@ -50,7 +50,7 @@ rofi.display-combi: $
 ! Urxvt
 
 URxvt.scrollBar: false
-URxvt.font: xft:inconsolata:medium:size=20
+URxvt.font: xft:inconsolata:medium:size=32
 URxvt.letterSpace: -1
 URxvt.blurRadius: 20
 
