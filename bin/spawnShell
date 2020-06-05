@@ -14,10 +14,14 @@ focusPid=$(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | \grep -oE '
 
 echo "$focusPid"
 
+if [[ -z "$focusPid" ]]; then
+	wd="/"
+else 
+	link="/proc/${focusPid}/cwd"
 
-link="/proc/${focusPid}/cwd"
+	wd=$( readlink -f "$link" )
+fi
 
-wd=$( readlink -f "$link" )
 
 if [[ ( -z "$wd" ) || ("$wd" == "/") ]]; then
 	$term
