@@ -24,7 +24,7 @@ fi
 
 
 if [[ ( -z "$wd" ) || ("$wd" == "/") ]]; then
-	$term
+	$term "$@"
 else
-	$term -cd "$wd"
+	$term -cd "$wd" "$@"
 fi
