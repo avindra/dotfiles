@@ -96,7 +96,7 @@ bar {
 	mode hide
 	i3bar_command i3bar -t
 
-	status_command bumblebee-status -m disk:root memory date time pasink -p root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d" -t gruvbox-powerline
+	status_command ~/.local/bin/bumblebee-status -m disk:root memory date time pasink -p root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d" -t gruvbox-powerline
 	output $screenRight
 	colors {
        		background $transparent
@@ -131,12 +131,15 @@ font pango:Inconsolata 20px
 # borders
 new_window pixel 2
 
+# To get names, run:
+#  pactl list sources | \grep -i Name: | cut -d: -f2
+#
 # Sound hotkeys for physical volume controls
 # set $sink alsa_output.pci-0000_00_14.2.analog-stereo
 # set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo
 # set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
-# set $sink alsa_output.pci-0000_0a_00.3.analog-stereo
 # set $sink alsa_output.pci-0000_41_00.1.hdmi-stereo-extra1
+# set $sink bluez_sink.F8_0F_F9_83_B7_E5.a2dp_sink
 set $sink alsa_output.pci-0000_0a_00.3.analog-stereo
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status

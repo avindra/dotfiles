@@ -22,6 +22,7 @@ autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
 autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
 
 " Vim plugins
+source ~/.local/share/nvim/site/autoload/plug.vim
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
@@ -32,6 +33,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'chrisbra/Colorizer.vim'
 
 call plug#end()
 

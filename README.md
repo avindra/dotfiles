@@ -1,37 +1,35 @@
 # Avindra's dotfiles
 
-This is a repository containing my dotfiles.
+My personal preferences made available on a number of personal computing devices. Primarily a Linux based environment, there is varied support for MacOS and Windows.
 
-I aim to make my personal preferences available on any device I use, regardless of what operating system that device is using. So far, this repo supports Linux, MacOS and Windows.
+## Put it in SCM
 
-## A new way to think about dotfiles
+Design goal is to avoid the usual: no placing `dotfiles` from a convenient (perhaps arcane) install script optionally bundled with a set of defined conventions required for use.
 
-The approach that most people take with `dotfiles` is to have a chunky install script that moves everything into place for them.
+The `~` folder is a git repository that you can `push` and `pull` directly from.
 
-I didn't like that approach. I thought, why not just have your `~` folder be a git repository that you can `push` and `pull` directly from? That's what I decided to do here.
+What's the limitation? That I cannot go beyond `~` (i.e., no mucking around in `/etc`). However, one typically doesn't want to muck about much in the `/etc` folder, as the defaults for a given operating system tend to be secure and well defined.
 
-What's the downside of this approach? Mostly that I'm limited to `~` (i.e., no mucking around in `/etc`). However, one typically doesn't want to muck about much in the `/etc` folder. This is the design constraint of this approach.
+One advantage to storing your work in SCM is that setting up your environment or keeping it in sync is that this is a matter of managing the source repository.
 
 ## Requirements
 
 There are a few assumptions about what software is installed on the system. If you are using openSUSE, you want something like:
 
 ```bash
-zypper --no-ref in --no-recommends feh rofi \
+zypper --no-refresh install --no-recommends feh rofi \
   i3-gaps i3status i3lock i3bar \
 # Here are some additional software I find myself
 # using regularly, for which you may have
 # a perfectly suitable alternative.
   ranger fzf neovim
 
-
-# Software used to "auto-rice" colors
-# based on the current desktop background.
-pip install --user pywal
+# pywal is an "auto-ricer" that creates the color scheme from the background image.
+# bumblebee-status is the statusbar for now
+pip install --user pywal bumblebee-status
 ```
 
-
-[feh](https://github.com/derf/feh) is used as the primary background setter, as it is great at this and has more focus on multi-monitor handling. [pywal](https://github.com/dylanaraps/pywal) allows us to hook in (via the `-n` flag) and disable the actual background setting responsibility, so that we can just leverage the colors it generates. Nice.
+[feh](https://github.com/derf/feh) is used to set the background, as it has added support for handling multiple monitors. [pywal](https://github.com/dylanaraps/pywal) has a `-n` flag, which disables the default behavior of changing the background image (thus, only the color scheme gets updated).
 
 ## Installation
 
@@ -85,5 +83,5 @@ rm -fr .git
 
 ## Credits
 
- * Many thanks to [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) for [his dotfile setup](https://github.com/LukeSmithxyz/voidrice), from which this repo takes a LOT of inspiration (ranger, background setting patterns, i3 configuration, etc).
- * Various colleagues / co-workers who have informed my understanding of how systems work, the 'unix' way.
+ * Colleagues who have shown many possiblities and solutions for their respective development environments.
+ * [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) for early [i3 settings and tips](https://github.com/LukeSmithxyz/voidrice)

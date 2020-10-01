@@ -2,7 +2,7 @@
 # /home/avindra/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Tue Jun  2 18:13:14 2020
+# Generated on Wed Sep 30 01:30:01 2020
 #
 
 # ConfigProperties:
@@ -13,9 +13,9 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = Yes
 UpdateRulesOnProfileNameChange = Yes
-Timer = Memory_Used_(GPU_0),Yes,3000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
 
 # Attributes:
 
@@ -29,10 +29,6 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 0/LogAnisoAppControlled=1
 0/OpenGLImageSettings=0
 0/FSAAAppEnhanced=0
-0/AllowGSYNC=1
-0/AllowVRR=1
-0/ShowGSYNCVisualIndicator=0
-0/ShowVRRVisualIndicator=0
 0/ShowGraphicsVisualIndicator=0
 [DPY:DVI-D-0]/Dithering=0
 [DPY:DVI-D-0]/DitheringMode=0
