@@ -37,8 +37,8 @@ set $screenRight DP-2
 
 # Derive colors from XResources (integration with pywal)
 #
-# The example provided in docs (https://github.com/dylanaraps/pywal/wiki/Customization#i3)
-# is not as robust as this code.
+# The example provided in docs has issue noted, may be resolved:
+# https://github.com/dylanaraps/pywal/wiki/Customization#i3
 # 
 # Taken from: https://github.com/ecly/dotfiles/blob/2109aa1c7df724d5526fd29f2775786ea2e970cd/.config/i3/config.i3#L36-L50
 set_from_resource $bg           i3wm.color0 #ff0000
@@ -372,3 +372,10 @@ bindsym button2 nop
 # bumblebee-status needs a kick in the face for some reason
 # here in order to load powerline / FA fonts correctly.
 exec_always --no-startup-id i3-msg 'reload'
+
+# Banish current window to scratchpad
+bindsym $mod+Shift+space move scratchpad
+
+# Show scratchpad
+bindsym $mod+space scratchpad show
+
