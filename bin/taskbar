@@ -6,4 +6,8 @@
 ~/.local/bin/bumblebee-status \
        -t wal \
        -m disk:root memory date time pasink \
-       -p root.path=/ time.format="%I:%M %p" date.format="%a, %b %d"
+       -p root.path=/ \
+       disk.format="{path} ({percent:02.01f}%)" \
+       memory.format="{used} ({percent:02.01f}%)" \
+       time.format="%I:%M %p" \
+       date.format="%a, %b %d"
