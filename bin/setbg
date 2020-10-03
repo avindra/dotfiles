@@ -23,4 +23,7 @@ fi
 rm -rf ~/.cache/wal
 ~/.local/bin/wal -a 95 -i $bg -n
 
+# post-wal: restart dunst to apply new color
+systemctl --user restart dunst
+
 feh --no-xinerama --bg-fill ~/.config/wallpaper

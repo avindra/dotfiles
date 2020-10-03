@@ -1,0 +1,45 @@
+# "Last Resort" option for pywal color integration:
+#
+# https://github.com/dylanaraps/pywal/wiki/User-Template-Files
+# The corresponding symlink to the pywal cache exists in this repo
+
+[global]
+    markup = full
+    format = "<b>%s</b>\n%b"
+
+    # Font
+    font = Inconsolata 18
+    alignment = right
+    vertical_alignment = center
+    word_wrap = yes
+
+    # this places it at the bottom right of the screen,
+    # just above the taskbar
+    geometry = "800x5-20-40"
+
+    separator_color = "{color2}"
+    separator_height = 3
+
+    frame_width = 3
+    frame_color = "{color1}"
+
+    padding = 24
+    horizontal_padding = 24
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+
+[urgency_normal]
+    background = "{color4}"
+    foreground = "{foreground}"
+
+[urgency_critical]
+    background = "{color6}"
+    foreground = "{background}"
+
+[urgency_low]
+    background = "{background}"
+    foreground = "{foreground}"
+
+# vim:ft=cfg
