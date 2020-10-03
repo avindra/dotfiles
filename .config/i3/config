@@ -67,7 +67,7 @@ set $transparent #00000000
 
 # colors have to be duplicated, unfortunately
 bar {
-	mode dock
+	mode hide
 	i3bar_command i3bar -t
 
 	status_command taskbar
@@ -81,8 +81,8 @@ bar {
 	        active_workspace $fg-alt $fg-alt #ffffff
 	        inactive_workspace #5f5f5f $unfocused #808080
 	}
-	position bottom
 
+	position bottom
 }
 
 # App-specific settings
@@ -101,7 +101,7 @@ focus_follows_mouse yes
 
 # Font for window titles. 
 font pango:FontAwesome, Inconsolata 8
-font pango:Inconsolata 20px
+font pango:Inconsolata 30px
 
 # borders
 new_window pixel 2
@@ -379,3 +379,5 @@ bindsym $mod+Shift+space move scratchpad
 # Show scratchpad
 bindsym $mod+space scratchpad show
 
+# Toggle taskbar visibility
+bindsym F12 bar hidden_state toggle
