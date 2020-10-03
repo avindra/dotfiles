@@ -2,9 +2,14 @@
 
 My personal preferences made available on a number of personal computing devices. Primarily a Linux based environment, there is varied support for MacOS and Windows.
 
-## Put it in SCM
+## Limits
 
-Design goal is to avoid the usual: no placing `dotfiles` from a convenient (perhaps arcane) install script optionally bundled with a set of defined conventions required for use.
+ * Avoid the usual: `dotfiles` sit in the home folder as a git repository (no install scripts allowed).
+ * Avoid manual color tweaking: prefer theme integrations to the generated color maps of [pywal](https://github.com/dylanaraps/pywal)
+
+Changing the background image occasionally is the way to "get" a new theme.
+
+## Put it in SCM
 
 The `~` folder is a git repository that you can `push` and `pull` directly from.
 
@@ -26,11 +31,11 @@ zypper --no-refresh install --no-recommends feh rofi \
   ranger fzf neovim
 
 # pywal is an "auto-ricer" that creates the color scheme from the background image.
-# bumblebee-status is the statusbar for now
+# bumblebee-status is used for a status bar
 pip install --user pywal bumblebee-status
 ```
 
-[feh](https://github.com/derf/feh) is used to set the background, as it has added support for handling multiple monitors. [pywal](https://github.com/dylanaraps/pywal) has a `-n` flag, which disables the default behavior of changing the background image (thus, only the color scheme gets updated).
+[feh](https://github.com/derf/feh) is used to set the background, as it has added support for handling multiple monitors. pywal has a `-n` flag, which disables the default behavior of changing the background image (thus, only the color scheme gets updated).
 
 ## Installation
 
@@ -85,4 +90,5 @@ rm -fr .git
 ## Credits
 
  * Colleagues who have shown many possiblities and solutions for their respective development environments.
+ * [/r/unixporn](https://www.reddit.com/r/unixporn/) for selection of several gadgets
  * [Luke Smith](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) for early [i3 settings and tips](https://github.com/LukeSmithxyz/voidrice)

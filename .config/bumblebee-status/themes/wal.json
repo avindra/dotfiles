@@ -1,0 +1,15 @@
+{
+    "icons": [ "awesome-fonts" ],
+    "colors": [ "wal" ],
+    "defaults": {
+            "separator-block-width": 0,
+            "fg": "background",
+            "bg": "foreground"
+    },
+    "cycle": [
+        { "fg": "foreground", "bg": "color1" },
+        { "fg": "foreground", "bg": "color2" },
+        { "fg": "foreground", "bg": "color3" },
+        { "fg": "foreground", "bg": "color4" }
+    ]
+}
