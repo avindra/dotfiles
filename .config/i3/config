@@ -70,7 +70,7 @@ bar {
 	mode dock
 	i3bar_command i3bar -t
 
-	status_command ~/bin/bumble 
+	status_command taskbar
 	
 	output $screenRight
 	colors {

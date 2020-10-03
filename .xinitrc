@@ -20,8 +20,8 @@ fi
 #
 # Compton has been carried throughout the ages, and
 # the latest community maintained version lives on
-# at https://github.com/yshui/compton
-compton -f -b
+# at https://github.com/yshui/picom
+picom -f -b
 
 # Apply colors via pywal
 ~/bin/setbg

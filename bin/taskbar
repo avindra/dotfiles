@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Usage:
+# https://github.com/tobi-wan-kenobi/bumblebee-status#normal-usage
+
+~/.local/bin/bumblebee-status \
+       -t iceberg-dark-powerline \
+       -m disk:root memory date time pasink \
+       -p root.path=/ time.format="%I:%M %p" date.format="%a, %b %d"

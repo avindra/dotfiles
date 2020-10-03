@@ -18,6 +18,7 @@ There are a few assumptions about what software is installed on the system. If y
 
 ```bash
 zypper --no-refresh install --no-recommends feh rofi \
+  picom \
   i3-gaps i3status i3lock i3bar \
 # Here are some additional software I find myself
 # using regularly, for which you may have
