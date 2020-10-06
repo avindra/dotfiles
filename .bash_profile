@@ -130,11 +130,6 @@ if [[ $? -eq 1 ]]; then
 	alias wget="curl -L -O --retry 999 --retry-max-time 0 -C -"
 fi
 
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[ -f /home/avindra/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash ] && . /home/avindra/.config/yarn/global/node_modules/tabtab/.completions/yarn.bash
-
-
 ## "bash-sensible" options
 shopt -s autocd 2> /dev/null
 PROMPT_DIRTRIM=4

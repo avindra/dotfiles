@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
-### .alaises
+### .aliases
 ###    A collection of favorite aliases, as well as useful functions.
 ###
 
 alias reload=". ~/.bash_profile"
-
-# Status hides untracked
-# items
-alias statusfull="git status"
-alias status="git status -uno"
 
 
 ###
@@ -49,8 +44,9 @@ function dotfile_update() {
 }
 export -f dotfile_update
 
+# Hide untracked items by default
+alias status="git status -uno"
 alias add="git add -u"
-alias addall="add ."
 alias unstage="git reset HEAD"
 alias pull="git pull --rebase"
 alias push="git push"
@@ -60,20 +56,9 @@ alias commit="git commit -v"
 
 ## Favorites
 
-function weather() {
-	city=${1:-Clifton}
-	curl -H 'User-Agent: curl' http://wttr.in/${city}
-}
-
 alias crypto="curl -H 'User-Agent: wget' rate.sx"
 
-export -f weather
-
 alias v="vi"
-
-
-# Go back to root shell
-alias dropback="fg"
 
 # remove DOS-like dir alias for "ls" if it exists
 alias dir &> /dev/null
@@ -106,15 +91,7 @@ export -f dir
 alias ccat="pygmentize"
 alias cats="highlight -O ansi"
 
-
 alias clock="tty-clock -c -s -t"
-
-function ssl_check() {
-  echo | openssl s_client -showcerts -servername $1 -connect $1:$2 2>/dev/null | openssl x509 -inform pem -noout -text
-}
-
-export -f ssl_check
-
 
 function d() {
 	curl -s dict.org/define:$1:english | less
