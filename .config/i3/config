@@ -83,7 +83,6 @@ for_window [class="Chromium-browser"] title_format "<span foreground='#ffc1df'>%
 for_window [class="Google-chrome"] title_format "<span foreground='#59dff7'>%title</span>"
 for_window [class="Xfce4-terminal"] title_format "<span foreground='#7fff83'>%title</span>"
 
-for_window [class="flameshot" title="Save As"] floating enable
 for_window [class="Google-chrome" title="^Google Hangouts - .+@gmail.com$"] floating disable
 
 focus_follows_mouse yes 
@@ -173,9 +172,7 @@ bindsym $mod+KP_Add   exec $term -e node
 
 bindsym Control+Shift+Escape  exec $term -e htop
 
-# screenshotting
-bindsym Print         exec flameshot full
-bindsym Shift+Print   exec flameshot gui
+bindsym Print         exec screenshot
 
 # kill focused window
 bindsym $mod+q kill
