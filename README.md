@@ -23,6 +23,7 @@ There are a few assumptions about what software is installed on the system. If y
 
 ```bash
 zypper --no-refresh install --no-recommends feh rofi \
+  lightdm \
   picom \
   i3-gaps i3status \
   xlockmore dunst \
@@ -53,7 +54,7 @@ git fetch
 
 # The -f flag will overwrite ALL files
 # this is good because it makes doing updates OR full resets very easy
-git checkout -f -t origin/master
+git checkout -f -t origin/src
 ```
 
 

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Source common scripts (per suse)
+. /etc/X11/xinit/xinitrc.common
+
 # Apply desired screen layout
 # this is managed via `arandr`.
 #

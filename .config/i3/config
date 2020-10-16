@@ -2,21 +2,12 @@
 # from the net (YouTube, forums, etc) and the main
 # docs (http://i3wm.org/docs/userguide.html).
 #
-# resize mode is completely unused here
+# Resize mode is not in use.
 #
-# $mod + R should be used for something else.
-#
-# It has a few dependencies:
-#  * picom     - Compositor to reduce tearing and
-#                enable fading effects
-#  * rofi       - Launcher
-#  * feh        - Setting the wallpaper, with solid
-#                 multi-monitor support
-#  * flameshot  - Taking screenshots
-#  * htop       - Process management
-#  * firejail   - For sandboxing untrusted binaries
+# $mod + R is instead used to toggle floating mode
 #
 # Assumptions:
+#  * Check README for required /dependent software
 #  * PulseAudio is being used instead of just ALSA for
 #    sound.
 #  * Some of my personal hardware settings are
