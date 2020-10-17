@@ -1,7 +1,9 @@
 ! Urxvt
 
 URxvt.scrollBar: false
-URxvt.font: xft:inconsolata:medium:size=30
+URxvt.font: xft:inconsolata:medium:size=30, \
+            xft:Noto Color Emoji, \
+	    12x8
 URxvt.letterSpace: -1
 URxvt.blurRadius: 20
 
