@@ -25,6 +25,7 @@ There are a few assumptions about what software is installed on the system. If y
 zypper --no-refresh install --no-recommends feh rofi \
   lightdm picom i3-gaps i3status \
   xlockmore scrot dunst \
+  playerctl \
 # Here are some additional software I find myself
 # using regularly, for which you may have
 # a perfectly suitable alternative.

@@ -118,7 +118,11 @@ bindsym XF86AudioMute exec pactl set-sink-mute $sink toggle && killall -SIGUSR1 
 bindsym XF86Calculator exec ~/bin/mouse/active.py
 
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
-bindsym $mod+XF86AudioPlay exec firejail google-play-music-desktop-player
+
+# Play and stop buttons
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+
 
 ###### SPECIAL SCRIPTS
 # Keypad area
