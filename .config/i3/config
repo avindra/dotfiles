@@ -235,16 +235,18 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # Workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "१"
+set $ws2 "२"
+set $ws3 "३"
+set $ws4 "४"
+set $ws5 "५"
+set $ws6 "६"
+set $ws7 "७"
+set $ws8 "८"
+set $ws9 "९"
+# ws10 corresponds to the 0 key
+set $ws10 "०"
+
 
 
 # switch to workspace
