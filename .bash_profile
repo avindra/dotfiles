@@ -27,8 +27,8 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # 2) macOS / iOS (aka. Apple)
 # 2) cygwin / Windows
 
-uname=`uname -o`
-if [[ "$uname" == "GNU/Linux" ]]; then
+uname=`uname -s`
+if [[ "$uname" == "Linux" ]]; then
 	alias pbcopy="xclip -selection c"
 	# Save history immediately
 	shopt -s histappend
@@ -36,6 +36,10 @@ if [[ "$uname" == "GNU/Linux" ]]; then
 
 	export PS1='\w$(__git_ps1) ⟩ '
 elif [[ "$uname" == "Darwin" ]]; then
+	# ZSH-era macos is evangelical
+	# about Bash users, but this
+	# flag will suppress the nag message.
+	export BASH_SILENCE_DEPRECATION_WARNING=1
 
 	# Local python bin
 	export PATH="~/Library/Python/2.7/bin:$PATH"
@@ -73,7 +77,7 @@ elif [[ "$uname" == "Darwin" ]]; then
 
  	source /usr/local/etc/bash_completion
 
-	# fix BSD nonsense
+	# Prefer GNU feature set to BSD ones
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -137,3 +141,5 @@ PROMPT_DIRTRIM=4
 # Disable Software Flow Control (C-s C-q)
 # https://unix.stackexchange.com/a/72092/63602
 stty -ixon
+
+
