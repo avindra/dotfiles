@@ -45,28 +45,30 @@ function dotfile_update() {
 export -f dotfile_update
 
 # Hide untracked items by default
-alias status="git status -uno"
-alias add="git add -u"
-alias unstage="git reset HEAD"
-alias pull="git pull --rebase"
-alias push="git push"
-alias dammit="git commit --amend --no-edit"
-alias fuckitall="git checkout -- ."
-alias commit="git commit -v"
+alias s="git status -uno"
+alias a="git add -u"
+alias r="git reset HEAD"
+alias p="git pull --rebase"
+alias P="git push"
+alias bam="git commit --amend --no-edit"
+alias nix="git checkout -- ."
+alias c="git commit -v"
 
 ## Favorites
-
 alias crypto="curl -H 'User-Agent: wget' rate.sx"
 
 alias v="vi"
 
-# remove DOS-like dir alias for "ls" if it exists
+# Remove DOS-like dir alias for "ls" if it exists
+# the definition for `dir` follows
+#
 alias dir &> /dev/null
 if [[ $? -eq 0 ]]; then
 	unalias dir
 fi
 
 # Dir switcher (favorites)
+#
 function dir() {
 	prog="$HOME/bin/lib/dir"
 	if [[ $# -ne 0 ]]; then
@@ -79,6 +81,7 @@ function dir() {
 		pushd "$dir"
 	fi
 }
+
 export -f dir
 
 # Syntax highlight the file, with the
