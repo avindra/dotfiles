@@ -17,26 +17,9 @@ What's the limitation? That I cannot go beyond `~` (i.e., no mucking around in `
 
 One advantage to storing your work in SCM is that setting up your environment or keeping it in sync is that this is a matter of managing the source repository.
 
-## Requirements
+## Documentation
 
-There are a few assumptions about what software is installed on the system. If you are using openSUSE, you want something like:
-
-```bash
-zypper --no-refresh install --no-recommends feh rofi \
-  lightdm picom i3-gaps i3status \
-  xlockmore scrot dunst \
-  playerctl \
-# Here are some additional software I find myself
-# using regularly, for which you may have
-# a perfectly suitable alternative.
-  ranger fzf neovim
-
-# pywal is an "auto-ricer" that creates the color scheme from the background image.
-# bumblebee-status is used for a status bar
-pip install --user pywal bumblebee-status
-```
-
-[feh](https://github.com/derf/feh) is used to set the background, as it has added support for handling multiple monitors. pywal has a `-n` flag, which disables the default behavior of changing the background image (thus, only the color scheme gets updated).
+Extensive documentation exists at the [avindra/dotfiles wiki](https://github.com/avindra/dotfiles/wiki).
 
 ## Installation
 
