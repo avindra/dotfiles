@@ -262,7 +262,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # lock
-bindsym $mod+x exec xlock
+bindsym $mod+x exec lockitup
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1

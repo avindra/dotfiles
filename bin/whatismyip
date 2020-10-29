@@ -4,9 +4,4 @@
 
 # AWS plz stay online
 
-# curl http://checkip.amazonaws.com
-
-exec 3<> /dev/tcp/checkip.amazonaws.com/80 && # open connection
-  echo 'GET /' >&3 &&                   # send http 0.9 request
-  read -u 3 && echo $REPLY &&           # read response
-  exec 3>&-                             # close fd
+curl http://checkip.amazonaws.com

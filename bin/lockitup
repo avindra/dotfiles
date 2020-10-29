@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#
+# Minimal xlock display
+#
+# Modifies labels into symbolic/terse
+# representation.
+
+xlock \
+	-validate "..." \
+	-info "$(uptime)" \
+	-invalid "X" \
+	-username "$ " \
+	-password ""
+
