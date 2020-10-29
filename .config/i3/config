@@ -90,8 +90,8 @@ focus_follows_mouse yes
 # mouse_warping none
 
 # Font for window titles. 
-font pango:FontAwesome, Inconsolata 8
-font pango:Inconsolata 30px
+font pango:FontAwesome, Victor Mono 8
+font pango:Victor Mono 30px
 
 # borders
 new_window pixel 2

@@ -8,7 +8,7 @@
     format = "<b>%s</b>\n%b"
 
     # Font
-    font = Inconsolata 18
+    font = Victor Mono 18
     alignment = right
     vertical_alignment = center
     word_wrap = yes

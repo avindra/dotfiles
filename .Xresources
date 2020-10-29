@@ -1,9 +1,15 @@
 ! Urxvt
 
+
 URxvt.scrollBar: false
-URxvt.font: xft:inconsolata:medium:size=30, \
+
+URxvt.font: xft:Source Code Pro:style=light:size=22, \
             xft:Noto Color Emoji, \
-	    12x8
+           12x8
+URxvt.boldFont: xft:Source Code Pro:style=bold:size=22
+URxvt.italicFont: xft:Source Code Pro:style=italic:size=22
+URxvt.boldItalicFont: xft:Source Code Pro:style=medium:size=22
+
 URxvt.letterSpace: -1
 URxvt.blurRadius: 20
 
@@ -25,7 +31,7 @@ URxvt.depth: 32
 ! URxvt.background: black
 
 ! Rofi
-rofi.font: Inconsolata 32
+rofi.font: Source Code Pro 32
 rofi.bw: 0
 rofi.padding: 300
 rofi.lines: 8
