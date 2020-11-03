@@ -345,15 +345,10 @@ smart_borders on
 gaps inner 10
 gaps outer 10
 
-# luke smith bindings
-bindsym $mod+s		gaps inner current plus 5
-bindsym $mod+Shift+s	gaps inner current minus 5
-
-bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
-bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
-
+bindsym $mod+s   	resize shrink width 5 px or 5ppt
+bindsym $mod+Shift+s	resize grow width 5 px or 5 ppt
+bindsym $mod+Shift+b  	resize shrink height 5 px or 5 ppt
+bindsym $mod+b  	resize grow height 5 px or 5 ppt
 
 # Disable focus change for clicks on titlebars
 # with the middle mouse button
