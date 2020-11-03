@@ -1,7 +1,10 @@
 
+" smartcase = use all lowercase for case-insensitive search
+set smartcase
 set number
 set relativenumber
 set backspace=indent,eol,start
+set nobackup
 
 " Disable help docs
 inoremap <F1>      <NOP>
@@ -65,7 +68,6 @@ nmap <silent> <A-l> :wincmd l<CR>
 noremap <buffer> <silent> <C-P>          :edit /home/avindra/.config/nvim/init.vim<CR>
 
 if $VIM_CRONTAB == "true"
-    set nobackup
     set nowritebackup
 endif
 

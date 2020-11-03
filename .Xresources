@@ -1,6 +1,8 @@
 ! Urxvt
 
 
+URxvt.internalBorder: 8
+URxvt.cursorBlink: true
 URxvt.scrollBar: false
 
 URxvt.font: xft:Source Code Pro:style=light:size=22, \

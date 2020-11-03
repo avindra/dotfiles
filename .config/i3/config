@@ -342,8 +342,8 @@ bindsym $mod+F2 exec renameFocusedWindow.sh
 
 smart_gaps on
 smart_borders on
-gaps inner 10
-gaps outer 10
+gaps inner 4
+gaps outer -4
 
 bindsym $mod+s   	resize shrink width 5 px or 5ppt
 bindsym $mod+Shift+s	resize grow width 5 px or 5 ppt
