@@ -16,6 +16,9 @@
 # Other dependencies:
 #  * FontAwesome font - for workspace icons
 
+# Split into top/bottom by default (instead of left/right)
+default_orientation vertical
+
 set $alt Mod1
 set $esc Mod2
 set $ctrl Mod3
@@ -370,3 +373,4 @@ bindsym $mod+space scratchpad show
 
 # Toggle taskbar visibility
 bindsym F12 bar hidden_state toggle
+
