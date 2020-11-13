@@ -169,8 +169,10 @@ bindsym $mod+$X4 exec $term -e htop
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# App launching hotkeys
-bindsym $mod+Return   exec $term
+# Mod+Enter: default to fish, fallback to Bash with shift
+bindsym $mod+Return        exec $term -e fish
+bindsym $mod+Shift+Return  exec $term
+
 # Freedom first
 bindsym $mod+C        exec firefox
 bindsym $mod+alt+C    exec killall firefox && firefox

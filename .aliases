@@ -44,7 +44,14 @@ function dotfile_update() {
 }
 export -f dotfile_update
 
-# Hide untracked items by default
+###
+## Git aliases
+## 
+## Brevity is preferred here, to enable
+## robust and expedited SCM management.
+###
+alias g="git"
+# Hides untracked items by default
 alias s="git status -uno"
 alias a="git add -u"
 alias r="git reset HEAD"

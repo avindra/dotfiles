@@ -1,0 +1,6 @@
+#!/usr/bin/fish
+
+# Install fisher (package manager for fish)
+curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
+
+fisher install jethrokuan/fzf
