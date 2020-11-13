@@ -1,0 +1,42 @@
+#!/usr/bin/fish
+#
+# This program constructs
+# a pipeline to mpv using
+# a basic video encoding
+# format so it can be
+# piped (perhaps in a
+# hamfisted manner) with
+# bits from the random
+# devices in Linux.
+
+function isNumeric
+	string match -qr '^[0-9]+$' $argv
+end
+
+set FPS 95
+
+set wantWidth $argv[1]
+set wantHeight $argv[2]
+
+if isNumeric $wantWidth
+	set width $wantWidth
+else
+	set width 512
+end
+
+set height $width
+
+if isNumeric $wantHeight
+	set height $wantHeight
+end
+
+
+set bits (math "$width * $height * 3")
+
+echo "w = $width, h = $height, bits = $bits"
+
+set sh "(echo \"YUV4MPEG2 W$width H$height F$FPS C444\";while :;do echo FRAME;head -c$bits /dev/urandom;done)|mpv -"
+
+echo "Executing $sh"
+
+sh -c "$sh"
