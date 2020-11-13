@@ -50,9 +50,9 @@ alias a="git add -u"
 alias r="git reset HEAD"
 alias p="git pull --rebase"
 alias P="git push"
-alias bam="git commit --amend --no-edit"
-alias nix="git checkout -- ."
+alias x="git checkout -- ."
 alias c="git commit -v"
+alias C="git commit --amend --no-edit"
 
 ## Favorites
 alias crypto="curl -H 'User-Agent: wget' rate.sx"
