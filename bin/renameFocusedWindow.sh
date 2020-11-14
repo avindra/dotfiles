@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/usr/bin/fish
 
+set oldName (xdotool getactivewindow getwindowname)
+set newName (zenity --entry --text="New name for  [ $oldName ]?" --title="Rename window")
 
-newName=$(zenity --entry --text="What do you want to rename this window to?" --title="Rename window")
-
-if [[ $? -ne 0 ]]; then
+if test $status -ne 0
 	exit 1
-fi
+end
 
-xdotool set_window --name "${newName}" $(xdotool getwindowfocus)
-
+xdotool set_window --name $newName (xdotool getwindowfocus)
