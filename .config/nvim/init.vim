@@ -30,13 +30,18 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx'
+
+Plug 'dag/vim-fish'
+
+" TODO: remove extraneous fzf pkgs
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
-Plug 'chrisbra/Colorizer.vim'
+" Plug 'chrisbra/Colorizer.vim'
 
 call plug#end()
 
