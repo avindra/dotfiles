@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Load my personal folder settings
+# Load dir configuration
 config="$HOME/.config/dir/list"
 
 # Arg parsing
@@ -9,7 +9,28 @@ if [[ $# -eq 1 ]] && [[ $1 == 'cfg' ]]; then
 	exit 0
 fi
 
-source $config
+declare -A folders
+while IFS= read -r line
+do
+  numChars=${#line}
+  if [[ $numChars -eq 0 ]]; then
+	  continue
+  else
+	  firstChar=${line::1}
+	  ## support comments
+	  if [[ "$firstChar" == "#" ]]; then
+		  continue
+	  fi
+
+	  # horrible solution, but bash affords me little
+	  # here. I may have constructed my IFS in a non
+	  # idiomatic way. Please send PR if you know the way.
+	  name=$(echo "$line" | cut -d'|' -f1)
+	  value=$(echo "$line" | cut -d'|' -f2)
+	  
+	  folders[$name]=$value
+  fi
+done < "$config"
 
 function getList() {
 	for name in "${!folders[@]}"
@@ -20,7 +41,10 @@ function getList() {
 list=`getList`
 
 choice=`echo "$list" | fzf --height 40%`
+result=$?
 
 if [[ -n $choice ]]; then
 	echo "${folders[$choice]}"
 fi
+
+exit $?
