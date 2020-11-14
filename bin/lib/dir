@@ -1,50 +1,40 @@
-#!/usr/bin/env bash
+#!/usr/bin/fish
 
-# Load dir configuration
-config="$HOME/.config/dir/list"
+set config "$HOME/.config/dir/list"
 
-# Arg parsing
-if [[ $# -eq 1 ]] && [[ $1 == 'cfg' ]]; then
-	$EDITOR $config
-	exit 0
-fi
+cat $config | while read -l line
+	if test -z $line
+		continue
+	end
 
-declare -A folders
-while IFS= read -r line
-do
-  numChars=${#line}
-  if [[ $numChars -eq 0 ]]; then
-	  continue
-  else
-	  firstChar=${line::1}
-	  ## support comments
-	  if [[ "$firstChar" == "#" ]]; then
-		  continue
-	  fi
+	set firstChar (string sub -l1 $line)
 
-	  # horrible solution, but bash affords me little
-	  # here. I may have constructed my IFS in a non
-	  # idiomatic way. Please send PR if you know the way.
-	  name=$(echo "$line" | cut -d'|' -f1)
-	  value=$(echo "$line" | cut -d'|' -f2)
-	  
-	  folders[$name]=$value
-  fi
-done < "$config"
+	## Skip if comment detected
+	if [ "$firstChar" = "#" ]
+		continue
+	end
 
-function getList() {
-	for name in "${!folders[@]}"
-		do echo "$name"
-	done
-}
+	echo $line | read -d '|' name value
 
-list=`getList`
+	set -a names $name
+	set -a values $value
+end
 
-choice=`echo "$list" | fzf --height 40%`
-result=$?
+set choice (printf %s\n $names | fzf --height 40%)
+set result $status
 
-if [[ -n $choice ]]; then
-	echo "${folders[$choice]}"
-fi
-
-exit $?
+if test -n $choice
+	# figure out which one they picked.
+	# dumb solution for fish not having
+	# native hash maps
+	set idx 0
+	for n in $names
+		set idx (math "$idx + 1")
+		if [ "$choice" = "$n" ]
+			## emit string containing full chosen path
+			echo $values[$idx]
+			## we are done here
+			exit $result
+		end
+	end
+end

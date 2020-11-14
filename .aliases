@@ -78,10 +78,6 @@ fi
 #
 function dir() {
 	prog="$HOME/bin/lib/dir"
-	if [[ $# -ne 0 ]]; then
-		$prog $@
-		return $?
-	fi
 	dir=`$prog`
 	if [[ -n $dir ]]; then
 		echo "Switching to $dir... "

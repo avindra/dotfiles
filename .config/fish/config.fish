@@ -51,7 +51,7 @@ function diff
 			else if test -d $argv[1] -a -d $argv[2]
 				/usr/bin/diff -ruN $argv[1] $argv[2]
 			else
-				echo  $argv[1] or $argv[2] dont seem to be file.
+				echo $argv[1] or $argv[2] dont seem to be file.
 			end
 
 			return $status
@@ -61,24 +61,16 @@ function diff
 end
 
 function dir
-  set prog "$HOME/bin/lib/dir"
-  set cfg "$HOME/.config/dir/list"
+	set prog "$HOME/bin/lib/dir"
+	set selection ($prog)
 
+	if [ "x$selection" = "x" ]
+		echo -n "How are we doing @ "
+		uptime
+		return $status
+	end
 
-  if count $argv > 0
-	  $prog $argv
-	  return $status
-  end
-
-  set selection ($prog)
-
-  if test -n $selection
-    echo "Switching to $selection"
-    pushd "$selection"
-    uptime
-  else
-    echo "Good day sir."
-    uptime
-  end
+	echo "Switching to $selection"
+	pushd "$selection"
 end
 
