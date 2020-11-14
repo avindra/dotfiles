@@ -7,22 +7,33 @@ export EDITOR='vi'
 
 export JAVA_HOME=/usr/java/latest
 
-# Node
+###
+# $PATH setup
+#
+# IMPORTANT: if you are making
+# changes, make sure to call
+# the `_setup_fish` function
+# from Bash. This will port the
+# settings over to the Fish
+# global config.
+###
 
-export PATH=./node_modules/.bin:$PATH
+BIN_PATH0="./bin"
+NPM_PATH1="./node_modules/.bin"
+RUST_PATH2="$HOME/.cargo/bin"
+PIP_PATH3="$HOME/.local/bin"
+RUBY_PATH4="$HOME/.gem/ruby/2.4.0/bin"
+GO_PATH5="$HOME/go/bin"
+DENO_PATH6="$HOME/.deno/bin"
 
-# Rust
+USER_PATHS="$BIN_PATH_0:$NPM_PATH1:$RUST_PATH2:$PIP_PATH3:$RUBY_PATH4:$GO_PATH5:$DENO_PATH6"
 
-export PATH="~/.cargo/bin:$PATH"
+## inject additional dirs
+export PATH="$USER_PATHS:$PATH"
 
-# pip install --user
+function _setup_fish() {
+	fish -c "set -U fish_user_paths; set -U fish_user_paths $USER_PATHS \$fish_user_paths"
+}
 
-export PATH="~/.local/bin:$PATH"
+export -f _setup_fish
 
-# ruby install --user
-
-export PATH="~/.gem/ruby/2.4.0/bin:$PATH"
-
-# Go
-
-export PATH="~/go/bin:$PATH"
