@@ -4,4 +4,4 @@
 
 # AWS plz stay online
 
-curl http://checkip.amazonaws.com
+curl -s http://checkip.amazonaws.com

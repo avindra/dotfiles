@@ -1,10 +1,17 @@
-#!/bin/sh
+#!/usr/bin/fish
 
-# kills the next window you click on
+# Kills (9) the underlying process
+# of the next window you click on
 
-pid=$(xprop | \grep -i pid | cut -d= -f2)
+set pid (xprop | grep -i pid | cut -d= -f2)
 
+if test -z "$pid"
+	echo "Nothing to do"
+	exit 1
+end
 
-if [[ -n "$pid" ]]; then
+zenity --question --text="Are you sure you want to kill pid $pid?"
+
+if [ $status = 0 ]
 	kill -9 $pid
-fi
+end

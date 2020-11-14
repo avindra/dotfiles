@@ -1,0 +1,23 @@
+#!/usr/bin/fish
+
+# Enhanced Mod+Enter
+
+# it will spawn a shell starting in the current working 
+# directory of your focused window, otherwise
+# it will spawn a normal shell
+
+set term urxvtc-256color
+
+set focusPid (xprop -id (xdotool getwindowfocus) | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
+
+if test -n "$focusPid"
+	set link "/proc/$focusPid/cwd"
+	set kamaDir (readlink -f "$link")
+end
+
+if test -n "$kamaDir"
+	$term -cd $kamaDir $argv
+	exit $status
+end
+
+$term $argv

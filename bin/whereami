@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/fish
 
-# Reality checker v0.0.1
+# Reality checker v0.0.2
 
-who=`whoami | xargs`
-where=`hostname`
+set who (whoami | xargs)
+set where (whatismyip)
+set host (hostname)
 
-echo "$who @ $where"
+echo "$who @ $where on $host"
 
