@@ -36,6 +36,14 @@ if [[ "$uname" == "Linux" ]]; then
 
 	export PS1='\w$(__git_ps1) ⟩ '
 elif [[ "$uname" == "Darwin" ]]; then
+	# I am cheating very badly because Apple
+	# is blocking chsh to "non-standard" shells, as
+	# they put it.
+	#
+	# I intend on fish as my primary interface,
+	# but falling back to Bash remains possible.
+	if [ -t 1 ] ; then fish; fi
+
 	# ZSH-era macos is evangelical
 	# about Bash users, but this
 	# flag will suppress the nag message.
