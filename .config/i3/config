@@ -175,7 +175,6 @@ bindsym $mod+Shift+Return  exec $term
 
 # Freedom first
 bindsym $mod+C        exec firefox
-bindsym $mod+alt+C    exec killall firefox && firefox
 bindsym $mod+M        exec firejail slack
 bindsym $mod+KP_Add   exec $term -e node
 
@@ -292,10 +291,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to logout
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # left: shrink width.
+        # right: grow width.
+        # up: shrink height
+        # down: grow height
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -304,13 +303,6 @@ mode "resize" {
 	# resize fast with page keys
 	bindsym Next resize shrink height 50px or 50 ppt
 	bindsym Prior resize grow height 50px or 50 ppt
-
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -352,8 +344,8 @@ gaps outer -4
 
 bindsym $mod+s   	resize shrink width 5 px or 5ppt
 bindsym $mod+Shift+s	resize grow width 5 px or 5 ppt
-bindsym $mod+Shift+b  	resize shrink height 5 px or 5 ppt
-bindsym $mod+b  	resize grow height 5 px or 5 ppt
+bindsym $mod+Shift+i  	resize shrink height 5 px or 5 ppt
+bindsym $mod+i  	resize grow height 5 px or 5 ppt
 
 # Disable focus change for clicks on titlebars
 # with the middle mouse button
