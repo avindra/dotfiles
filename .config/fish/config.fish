@@ -13,7 +13,7 @@ abbr -a -g reboot /sbin/reboot
 
 # sane command defaults
 abbr -a -g g git
-abbr -a -g l ls -ltrah
+abbr -a -g l ls -lrtah
 abbr -a -g v nvim
 abbr -a -g d diff
 abbr -a -g df df -khT
@@ -64,6 +64,11 @@ function diff
 end
 
 function dir
+	if [ "$argv[1]" = "cfg" ]
+		$EDITOR "$HOME/.config/dir/list"
+		return $status
+	end
+
 	set prog "$HOME/bin/lib/dir"
 	set selection ($prog)
 
