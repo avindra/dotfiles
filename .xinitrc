@@ -32,7 +32,8 @@ picom -f -b
 # scale qt5+ apps
 export QT_SCALE_FACTOR=2.2
 
-urxvtd -q -o -f
+# rxvt-unicode daemon startup
+# urxvtd -q -o -f
 
 # start preferred wm
 #exec xmonad

@@ -6,6 +6,9 @@ set relativenumber
 set backspace=indent,eol,start
 set nobackup
 
+" 4 is too big for terminal
+set tabstop=2
+
 " Disable help docs
 inoremap <F1>      <NOP>
 noremap <F1>      <NOP>
@@ -75,4 +78,3 @@ noremap <buffer> <silent> <C-P>          :edit /home/avindra/.config/nvim/init.v
 if $VIM_CRONTAB == "true"
     set nowritebackup
 endif
-

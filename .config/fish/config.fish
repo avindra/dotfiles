@@ -1,5 +1,6 @@
 set fish_greeting "The Quieter you Become, the More you are able to Hear."
 
+
 # direnv hook https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 eval (direnv hook fish)
 
@@ -20,8 +21,14 @@ abbr -a -g df df -khT
 abbr -a -g du du -h -d0
 abbr -a -g z zypper --no-refresh
 
+# js
+abbr -a -g y yarn install --ignore-engines --ignore-scripts
+
+
 # build/development
 abbr -a -g m make
+# invoke runtime linker https://twitter.com/AlanActual/status/1326639935902846977
+abbr -a -g linux LD_DEBUG=help /lib64/ld-linux-x86-64.so.2
 
 # git aliases
 abbr -a -g g git
