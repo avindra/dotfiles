@@ -29,6 +29,7 @@ abbr -a -g y yarn install --ignore-engines --ignore-scripts
 abbr -a -g m make
 # invoke runtime linker https://twitter.com/AlanActual/status/1326639935902846977
 abbr -a -g linux LD_DEBUG=help /lib64/ld-linux-x86-64.so.2
+abbr -a -g http python3 -m http.server 8000
 
 # git aliases
 abbr -a -g g git
