@@ -3,8 +3,10 @@
 # Support for resetting Alacritty terminals
 # see: https://github.com/alacritty/alacritty/wiki/Reset-Terminal
 
-focus_pid=$(xdotool getactivewindow getwindowpid)
+if [ -z "${ALACRITTY_LOG}" ]; then exit 1; fi
 
-tty_device=$(ps o tty= --ppid $focus_pid)
+alac_pid="${ALACRITTY_LOG//[^0-9]/}"
 
-echo -e "\ec" > /dev/$tty_device
+tty=$(ps o tty= --ppid $alac_pid)
+
+echo -e "\ec" > /dev/$tty
