@@ -132,6 +132,7 @@ background_opacity: 1.0
 # (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
 # then run `showkey -a` to get the sequence associated to a key combination.
 key_bindings:
+  - {{ key: K,        mods: Control,    command: "reset-alacritty"   }}
   - {{ key: V,        mods: Control|Shift,    action: Paste               }}
   - {{ key: C,        mods: Control|Shift,    action: Copy                }}
   - {{ key: Q,        mods: Command, action: Quit                         }}

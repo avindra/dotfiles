@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Support for resetting Alacritty terminals
+# see: https://github.com/alacritty/alacritty/wiki/Reset-Terminal
+
+focus_pid=$(xdotool getactivewindow getwindowpid)
+
+tty_device=$(ps o tty= --ppid $focus_pid)
+
+echo -e "\ec" > /dev/$tty_device
