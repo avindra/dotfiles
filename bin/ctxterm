@@ -13,10 +13,8 @@ set focusPid (xdotool getactivewindow getwindowpid)
 if test -n "$focusPid"
 	set link "/proc/$focusPid/cwd"
 	set focusDir (readlink -f "$link")
-end
 
-# for rxvt-unicode, use -wd
-if test -n "$focusDir"
+  # for rxvt-unicode, use -wd
 	exec $term --working-directory $focusDir $argv
 end
 
