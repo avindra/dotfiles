@@ -6,7 +6,7 @@
 # Modifies labels into symbolic/terse
 # representation.
 
-xlock \
+exec xlock \
 	-validate "..." \
 	-info "$(uptime)" \
 	-invalid "X" \

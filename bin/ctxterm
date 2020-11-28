@@ -8,7 +8,7 @@
 
 set term alacritty
 
-set focusPid (xprop -id (xdotool getwindowfocus) | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
+set focusPid (xdotool getactivewindow getwindowpid)
 
 if test -n "$focusPid"
 	set link "/proc/$focusPid/cwd"
@@ -17,8 +17,7 @@ end
 
 # for rxvt-unicode, use -wd
 if test -n "$focusDir"
-	$term --working-directory $focusDir $argv
-	exit $status
+	exec $term --working-directory $focusDir $argv
 end
 
-$term $argv
+exec $term $argv

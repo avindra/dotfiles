@@ -39,4 +39,4 @@ set sh "(echo \"YUV4MPEG2 W$width H$height F$FPS C444\";while :;do echo FRAME;he
 
 echo "Executing $sh"
 
-sh -c "$sh"
+exec sh -c "$sh"

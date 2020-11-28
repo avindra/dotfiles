@@ -2,7 +2,7 @@
 
 # Usage:
 # https://github.com/tobi-wan-kenobi/bumblebee-status#normal-usage
-~/.local/bin/bumblebee-status \
+exec ~/.local/bin/bumblebee-status \
        -t wal \
        -m disk:root cpu memory date time pasink nvidiagpu \
        -a disk cpu memory pasink nvidiagpu \
