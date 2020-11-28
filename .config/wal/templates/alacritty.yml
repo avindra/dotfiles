@@ -82,8 +82,6 @@ font:
   # false.
   use_thin_strokes: true
 
-# Should display the render timer
-debug.render_timer: false
 custom_cursor_colors: true
 
 # Bell 
@@ -96,45 +94,14 @@ bell:
 background_opacity: 1.0
 
 # Key bindings
-#
-# Each binding is defined as an object with some properties. Most of the
-# properties are optional. All of the alphabetical keys should have a letter for
-# the `key` value such as `V`. Function keys are probably what you would expect
-# as well (F1, F2, ..). The number keys above the main keyboard are encoded as
-# `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
-# etc.  These all match the glutin::VirtualKeyCode variants.
-#
-# Possible values for `mods`
-# `Command`, `Super` refer to the super/command/windows key
-# `Control` for the control key
-# `Shift` for the Shift key
-# `Alt` and `Option` refer to alt/option
-#
-# mods may be combined with a `|`. For example, requiring control and shift
-# looks like:
-#
-# mods: Control|Shift
-#
-# The parser is currently quite sensitive to whitespace and capitalization -
-# capitalization must match exactly, and piped items must not have whitespace
-# around them.
-#
-# Either an `action`, `chars`, or `command` field must be present.
-#   `action` must be one of `Paste`, `PasteSelection`, `Copy`, or `Quit`.
-#   `chars` writes the specified string every time that binding is activated.
-#     These should generally be escape sequences, but they can be configured to
-#     send arbitrary strings of bytes.
-#   `command` must be a map containing a `program` string, and `args` array of
-#     strings. For example:
-#     - {{ ... , command: {{ program: "alacritty", args: ["-e", "vttest"] }} }}
-#
-# Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
-# (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
-# then run `showkey -a` to get the sequence associated to a key combination.
+# @doc https://github.com/alacritty/alacritty/blob/de9ed259667588285891eda1665cd3edefcd3297/alacritty.yml#L479
 key_bindings:
   - {{ key: K,        mods: Control,    command: "reset-alacritty"   }}
   - {{ key: V,        mods: Control|Shift,    action: Paste               }}
   - {{ key: C,        mods: Control|Shift,    action: Copy                }}
+  - {{ key: Minus,    mods: Control,       action: IncreaseFontSize }}
+  - {{ key: Plus,     mods: Control,       action: DecreaseFontSize }}
+  - {{ key: Plus,     mods: Control|Shift, action: ResetFontSize }}
   - {{ key: Q,        mods: Command, action: Quit                         }}
   - {{ key: W,        mods: Command, action: Quit                         }}
   - {{ key: Insert,   mods: Shift,   action: PasteSelection               }}
@@ -197,10 +164,7 @@ key_bindings:
 # - Right
 # - Numeric identifier such as `5`
 #
-# Values for `action`:
-# - Paste
-# - PasteSelection
-# - Copy (TODO)
+# Values for `action` (see keybindings)
 mouse_bindings:
   - {{ mouse: Middle, action: PasteSelection }}
 
@@ -216,15 +180,7 @@ selection:
 # Live config reload (changes require restart)
 live_config_reload: true
 
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
-# BEGIN ACE
+# Pywal color theme
 colors:
   primary:
     background: '{background}'
@@ -250,5 +206,3 @@ colors:
     magenta:    '{color13}'
     cyan:       '{color14}'
     white:      '{color15}'
-
-# END ACE
