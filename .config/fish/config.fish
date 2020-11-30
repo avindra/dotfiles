@@ -26,14 +26,19 @@ abbr -a -g vim nvim
 # default to htop
 abbr -a -g top htop
 
-# js
-abbr -a -g y yarn install --ignore-engines --ignore-scripts
-
 
 # build/development
 abbr -a -g m make
 # invoke runtime linker https://twitter.com/AlanActual/status/1326639935902846977
 abbr -a -g linux LD_DEBUG=help /lib64/ld-linux-x86-64.so.2
+# js
+abbr -a -g js deno run
+abbr -a -g no node
+abbr -a -g de deno
+abbr -a -g y yarn install --ignore-engines --ignore-scripts
+abbr -a -g npm npm install --no-fund --ignore-scripts --no-audit
+# rust
+abbr -a -g car cargo run --release -j(nproc)
 # default to new py
 abbr -a -g py python3
 abbr -a -g python python3
