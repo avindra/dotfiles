@@ -3,6 +3,12 @@ export EDITOR='vi'
 
 . ~/.aliases
 
+# Detect and greet remote users
+if [[ -n $SSH_CONNECTION ]]; then
+	echo "You are now on `hostname`"
+	if [ -t 1 ]; then exec fish; fi
+fi
+
 # Java
 
 export JAVA_HOME=/usr/java/latest

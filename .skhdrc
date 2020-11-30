@@ -17,7 +17,8 @@ shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 # make floating window fill left-half of screen
 shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
-# create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
+# create desktop, move window and follow focus
+# useful for quickly enumerating spaces 1-9
 shift + cmd - n : yabai -m space --create && \
                    index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
                    yabai -m window --space "${index}" && \
@@ -88,7 +89,7 @@ cmd - e :  yabai -m window --toggle split
 cmd - return : open -na /Applications/iTerm.app
 cmd + shift - escape : /Users/agoolcharan/Dev/alacritty/target/release/alacritty -e htop
 cmd - b : open -na /Applications/Google\ Chrome.app
-cmd - d : open -na /Applications/Launchpad.app
+cmd - d : open -a Launchpad
 cmd - x : /Users/agoolcharan/bin/lock
 
 # Set Space Tiling Mode To BSP
