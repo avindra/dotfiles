@@ -1,5 +1,8 @@
-! Urxvt
+! xterm
+xterm*faceName: Source Code Pro
+xterm*faceSize: 22
 
+! Urxvt
 
 URxvt.internalBorder: 8
 URxvt.cursorBlink: true
