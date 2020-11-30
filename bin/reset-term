@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Send reset signal to tty of the focused terminal
+# see: https://gist.github.com/avindra/dd2c6f14ec6e03b05261d370ef60c9d8
+
+focus_pid=$(xdotool getactivewindow getwindowpid)
+
+tty=$(ps o tty= --ppid $focus_pid)
+
+echo -e "\ec" > /dev/$tty

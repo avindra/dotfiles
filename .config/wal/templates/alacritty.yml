@@ -96,7 +96,6 @@ background_opacity: 1.0
 # Key bindings
 # @doc https://github.com/alacritty/alacritty/blob/de9ed259667588285891eda1665cd3edefcd3297/alacritty.yml#L479
 key_bindings:
-  - {{ key: K,        mods: Control,    command: "reset-alacritty"   }}
   - {{ key: V,        mods: Control|Shift,    action: Paste               }}
   - {{ key: C,        mods: Control|Shift,    action: Copy                }}
   - {{ key: Minus,    mods: Control,       action: IncreaseFontSize }}
