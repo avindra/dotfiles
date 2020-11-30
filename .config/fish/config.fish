@@ -15,11 +15,14 @@ abbr -a -g reboot /sbin/reboot
 # sane command defaults
 abbr -a -g g git
 abbr -a -g l ls -lrtah
-abbr -a -g v nvim
 abbr -a -g d diff
 abbr -a -g df df -khT
 abbr -a -g du du -h -d0
 abbr -a -g z zypper --no-refresh
+# default to neo vi
+abbr -a -g v nvim
+abbr -a -g vi nvim
+abbr -a -g vim nvim
 
 # js
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
