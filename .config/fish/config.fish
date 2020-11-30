@@ -23,6 +23,8 @@ abbr -a -g z zypper --no-refresh
 abbr -a -g v nvim
 abbr -a -g vi nvim
 abbr -a -g vim nvim
+# default to htop
+abbr -a -g top htop
 
 # js
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
