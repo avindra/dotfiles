@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-export EDITOR='vi'
-
-. ~/.aliases
+export EDITOR='nvim'
 
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then
 	echo "You are now on `hostname`"
 	if [ -t 1 ]; then exec fish; fi
 fi
+
+. ~/.aliases
 
 # Java
 
