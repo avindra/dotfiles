@@ -1,6 +1,5 @@
 set fish_greeting "The Quieter you Become, the More you are able to Hear."
 
-
 # direnv hook https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 eval (direnv hook fish)
 
@@ -14,11 +13,9 @@ abbr -a -g cr    crontab -l
 abbr -a -g cro   crontab -e
 # force semantic preference
 abbr -a -g top htop
-abbr -a -g ip /sbin/ifconfig
 
 # sane command defaults
 abbr -a -g chm chmod 755
-abbr -a -g cal ncal -3
 abbr -a -g cur curl -sL
 abbr -a -g du du -h -d1
 abbr -a -g grep grep -n --color -i
@@ -49,7 +46,6 @@ abbr -a -g trace traceroute
 #easy vi access
 abbr -a -g v vim
 abbr -a -g vi vim
-abbr -a -g vim vim
 
 # build/development
 abbr -a -g m make
@@ -148,6 +144,8 @@ switch $os
 	case Darwin
 		# core settings
 		abbr -a -g df df -bkPH
+		abbr -a -g ip /sbin/ifconfig
+		abbr -a -g cal ncal -3
 
 		# packages
 		abbr -a -g b   brew
@@ -166,6 +164,8 @@ switch $os
 	case Linux
 		# core settings
 		abbr -a -g df df -khT
+		abbr -a -g ip ifconfig
+		abbr -a -g cal cal -3
 
 		# debugging
 		abbr -a -g st    strace -ff -p
