@@ -43,9 +43,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# Local python bin
 	export PATH="~/Library/Python/2.7/bin:$PATH"
 
-	# fix broken crontab editing on macos
-	alias crontab="VIM_CRONTAB=true crontab"
-
 	PS1=' $(__git_ps1) \w ⟩ '
 
 	# Disable annoying tilde expansion
