@@ -3,7 +3,7 @@ export EDITOR='nvim'
 
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then
-	echo "You are now on `hostname`"
+	>&2 echo "You are now on `hostname`"
 	if [ -t 1 ]; then exec fish; fi
 fi
 

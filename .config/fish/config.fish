@@ -46,10 +46,10 @@ abbr -a -g sha1 sha1sum
 abbr -a -g sha2 sha256sum
 abbr -a -g tel telnet
 abbr -a -g trace traceroute
-#redirect vim to neovim
-abbr -a -g v nvim
-abbr -a -g vi nvim
-abbr -a -g vim nvim
+#easy vi access
+abbr -a -g v vim
+abbr -a -g vi vim
+abbr -a -g vim vim
 
 # build/development
 abbr -a -g m make
