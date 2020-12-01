@@ -78,8 +78,7 @@ nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
 
 " CTRL+P to open vim settings
-noremap <buffer> <silent> <C-P>          :edit /home/avindra/.config/nvim/init.vim<CR>
+noremap <buffer> <silent> <C-P>          :edit ~/.vimrc<CR>
 
-if $VIM_CRONTAB == "true"
-    set nowritebackup
-endif
+" https://vim.fandom.com/wiki/Change_vimrc_with_auto_reload
+autocmd! BufWritePost .vimrc source %
