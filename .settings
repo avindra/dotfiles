@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then
