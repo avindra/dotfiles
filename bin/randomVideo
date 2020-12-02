@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 #
 # This program constructs
 # a pipeline to mpv using
@@ -31,11 +31,20 @@ if isNumeric $wantHeight
 end
 
 
+set player "mpv"
+
+# check for vlc users
+hash vlc 2> /dev/null
+if test $status -eq 0
+	set player "vlc"
+end
+
+
 set bits (math "$width * $height * 3")
 
 echo "w = $width, h = $height, bits = $bits"
 
-set sh "(echo \"YUV4MPEG2 W$width H$height F$FPS C444\";while :;do echo FRAME;head -c$bits /dev/urandom;done)|mpv -"
+set sh "(echo \"YUV4MPEG2 W$width H$height F$FPS C444\";while :;do echo FRAME;head -c$bits /dev/urandom;done)|$player -"
 
 echo "Executing $sh"
 

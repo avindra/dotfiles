@@ -24,15 +24,21 @@ export JAVA_HOME=/usr/java/latest
 # global config.
 ###
 
-BIN_PATH0="./bin"
-NPM_PATH1="./node_modules/.bin"
-RUST_PATH2="$HOME/.cargo/bin"
-PIP_PATH3="$HOME/.local/bin"
-RUBY_PATH4="$HOME/.gem/ruby/2.4.0/bin"
-GO_PATH5="$HOME/go/bin"
-DENO_PATH6="$HOME/.deno/bin"
+P0="./bin"
+P1="./node_modules/.bin"
+P2="$HOME/.cargo/bin"
+P3="$HOME/.local/bin"
+P4="$HOME/.gem/ruby/2.4.0/bin"
+P5="$HOME/go/bin"
+P6="$HOME/.deno/bin"
 
-USER_PATHS="$BIN_PATH_0:$NPM_PATH1:$RUST_PATH2:$PIP_PATH3:$RUBY_PATH4:$GO_PATH5:$DENO_PATH6"
+USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6"
+
+# Teach MacOS about the home bin folder
+os=`uname -s`
+if [[ "$os" == "Darwin" ]]; then
+	USER_PATHS="$USER_PATHS:$HOME/bin"
+fi
 
 ## inject additional dirs
 export PATH="$USER_PATHS:$PATH"

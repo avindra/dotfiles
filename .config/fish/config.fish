@@ -145,7 +145,7 @@ switch $os
 	case Darwin
 		# core settings
 		abbr -a -g df df -bkPH
-		abbr -a -g ip /sbin/ifconfig
+		abbr -a -g ip ifconfig
 		abbr -a -g cal ncal -3
 
 		# packages
@@ -165,7 +165,7 @@ switch $os
 	case Linux
 		# core settings
 		abbr -a -g df df -khT
-		abbr -a -g ip ifconfig
+		abbr -a -g ip ip address
 		abbr -a -g cal cal -3
 
 		# debugging
