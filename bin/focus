@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+set offset (math "17 + $argv[1]")
+
+printf "\
+ tell application \"System Events\" to key code $offset using {control down}
+" | osascript
