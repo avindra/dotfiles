@@ -1,13 +1,16 @@
-" show invisible characters
-set list
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
-
 " smartcase = use all lowercase for case-insensitive search
 set smartcase
 set number
 set relativenumber
 set backspace=indent,eol,start
 set nobackup
+
+" f2: visual space indicators
+set list
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+
+" f3: search highlighting
+set hlsearch
 
 " 4 is too big for terminal
 set tabstop=2
@@ -19,7 +22,7 @@ noremap <F1>      <NOP>
 " F-row toggle controls
 nnoremap <F2>      :set list!<CR>
 nnoremap <F3>      :set hlsearch!<CR>
-nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR> 
+nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR>
 
 filetype plugin on
 
