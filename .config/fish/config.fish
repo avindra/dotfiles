@@ -1,5 +1,6 @@
 set fish_greeting "The Quieter you Become, the More you are able to Hear."
 
+
 # direnv hook https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 eval (direnv hook fish)
 
@@ -13,6 +14,7 @@ abbr -a -g cr    crontab -l
 abbr -a -g cro   crontab -e
 # force semantic preference
 abbr -a -g top htop
+abbr -a -g su sudo su - --shell (which fish)
 
 # sane command defaults
 abbr -a -g chm chmod 755
