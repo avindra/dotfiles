@@ -1,18 +1,42 @@
-#!/bin/sh
+#!/usr/bin/env fish
 
 # For openSUSE Tumblewed: check if there is an update
 
-link="https://download.opensuse.org/tumbleweed/iso/?C=M;O=D"
+set link "https://download.opensuse.org/tumbleweed/iso/?C=M;O=D"
 
+# Todo: fix: uses "hgrep" internally which is only in npm
+set latest (curl -s "$link" | grep -Ei 'Changes\.[0-9]+\.txt' | hgrep 'a' -t | head -2 | tail -1 | cut -d. -f2)
 
-latest=$(curl -s "$link" | grep -Ei 'Changes\.[0-9]+\.txt' | hgrep 'a' -t | head -2 | tail -1 | cut -d. -f2)
+set current (sh -c ". /etc/os-release && echo \$VERSION_ID")
 
-. /etc/os-release
-current=$VERSION_ID
+set today (date +"%Y%m%d")
 
+function delta
+	set d1 (date -d "$argv[1]" +%s)
+	set d2 (date -d "$argv[2]" +%s)
+	echo (math "($d1 - $d2) / 86400")
+end
 
-if [[ $current == $latest ]]; then
+# grammar
+function nDays
+	echo -n "$argv[1] "
+	if test "$argv[1]" -eq 1
+		echo "day"
+	else
+		echo "days"
+	end
+end
+
+if test $current -eq $latest
 	echo "You are up to date ($current)"
 else
-	echo "$latest is available. You are on $current."
-fi
+	set a (delta "$today" "$latest")
+	set b (delta "$latest" "$current")
+
+	set ahead (nDays $a)
+	set behind (nDays $b)
+
+	echo "$latest is available ($ahead ahead)"
+	echo "$today is today's date"
+	echo "$current is your patchset ($behind behind)"
+end
