@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# For openSUSE Tumblewed: check if there is an update
+
+link="https://download.opensuse.org/tumbleweed/iso/?C=M;O=D"
+
+
+latest=$(curl -s "$link" | grep -Ei 'Changes\.[0-9]+\.txt' | hgrep 'a' -t | head -2 | tail -1 | cut -d. -f2)
+
+. /etc/os-release
+current=$VERSION_ID
+
+
+if [[ $current == $latest ]]; then
+	echo "You are up to date ($current)"
+else
+	echo "$latest is available. You are on $current."
+fi

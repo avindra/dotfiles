@@ -184,13 +184,13 @@ switch $os
 		abbr -a -g win  WINE_PREFIX=~/.wine32 wine
 		abbr -a -g dxvk WINE_PREFIX=~/.wine32 DXVK_HUD=full wine
 
+		#suse
+		abbr -a -g snap snapper ls
 		# packages
 		abbr -a -g rp  rpm -qa
 		abbr -a -g rpm rpm -qf
 		abbr -a -g z zypper --no-refresh
-
-		#suse
-		abbr -a -g snap snapper ls
+		abbr -a -g why zypper --no-refresh se -i --requires
 
 		# check entropy
 		abbr -a -g S cat /proc/sys/kernel/random/entropy_avail
