@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Packaging script for Rust:
+# create vendor tarball
+# for the related source.
+
+rm vendor*gz
+file=`ls *gz`
+foldername=$(tar --exclude="*/*" -tf $file)
+
+cp $file /dev/shm
+
+pushd /dev/shm
+
+tar xf $file
+pushd $foldername
+
+cargo vendor
+
+target="/dev/shm/vendor.tar.xz"
+
+time tar -cf - vendor/ |  xz -9 -c - > "$target"
+
+popd
+popd
+
+ls -lh $target
+
+echo "copying now!"
+cp $target .
+
+

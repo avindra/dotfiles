@@ -187,8 +187,10 @@ switch $os
 		#suse
 		abbr -a -g snap snapper ls
 		# packages
+		abbr -a -g os  osc
 		abbr -a -g rp  rpm -qa
 		abbr -a -g rpm rpm -qf
+		abbr -a -g rpml rpm -ql
 		abbr -a -g z zypper --no-refresh
 		abbr -a -g why zypper --no-refresh se -i --requires
 
