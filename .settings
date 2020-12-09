@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 export EDITOR='vim'
 
+# GDB debug support
+# https://debuginfod.opensuse.org/
+export DEBUGINFOD_URLS="https://debuginfod.opensuse.org/"
+
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then
 	>&2 echo "You are now on `hostname`"
 	if [ -t 1 ]; then exec fish; fi
 fi
 
+# Legacy bash setup
 . ~/.aliases
-
-# Java
-
-export JAVA_HOME=/usr/java/latest
 
 ###
 # $PATH setup
@@ -31,8 +32,11 @@ P3="$HOME/.local/bin"
 P4="$HOME/.gem/ruby/2.4.0/bin"
 P5="$HOME/go/bin"
 P6="$HOME/.deno/bin"
+# todo: move wasm projects out of Dev
+P7="$HOME/Dev/emsdk/upstream/emscripten"
+P8="$HOME/Dev/wasm-qt/src/bin"
 
-USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6"
+USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6:$P7:$P8"
 
 # Teach MacOS about the home bin folder
 os=`uname -s`
