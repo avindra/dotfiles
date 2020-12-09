@@ -62,12 +62,15 @@ abbr -a -g npmi npm install --no-fund --no-audit --ignore-scripts
 abbr -a -g clj planck
 # rust
 abbr -a -g car cargo run --release -j(nproc)
+# php
+abbr -a -g ph php
+abbr -a -g phpu phpunit --bootstrap vendor/autoload.php .
+abbr -a -g com composer install --ignore-platform-reqs
+abbr -a -g comp composer dump-autoload
 # default to new py
 abbr -a -g py python3
 abbr -a -g python python3
 abbr -a -g http python3 -m http.server 8000
-# misc
-abbr -a -g ph php
 abbr -a -g rb ruby
 abbr -a -g xa xargs
 
