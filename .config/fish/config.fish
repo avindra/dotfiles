@@ -87,6 +87,20 @@ abbr -a -g x git checkout --
 abbr -a -g c git commit -v
 abbr -a -g C git commit --amend --no-edit
 
+# reseed git repo
+# (use before going public)
+function seed
+	if test -d .git
+		echo "Removing old git repo... "
+		rm -fr .git
+		echo "done"
+	end
+
+	git init
+	git add .
+	git commit -m 'seed'
+end
+
 #applications
 abbr -a -g code code .
 abbr -a -g dz dezoomify-rs
