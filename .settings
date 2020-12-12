@@ -38,17 +38,29 @@ P8="$HOME/Dev/wasm-qt/src/bin"
 
 USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6:$P7:$P8"
 
-# Teach MacOS about the home bin folder
+# Change MacOS env to resemble a more
+# traditional developer environment
 os=`uname -s`
 if [[ "$os" == "Darwin" ]]; then
 	USER_PATHS="$USER_PATHS:$HOME/bin"
+
+	# Prefer brew python over system python
+	#USER_PATHS="/usr/local/opt/python/libexec/bin:$USER_PATHS"
+
+	# Xcode make never works and is not available in 11.1 beta
+	USER_PATHS="/usr/local/opt/make/libexec/gnubin:$USER_PATHS"
+	# Prefer GNU feature set to BSD ones
+	USER_PATHS="/usr/local/opt/coreutils/libexec/gnubin:$USER_PATHS"
+	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 ## inject additional dirs
 export PATH="$USER_PATHS:$PATH"
 
 function _setup_fish() {
+	echo -n "Declaring fish_user_paths to be $USER_PATHS... "
 	fish -c "set -U fish_user_paths; set -U fish_user_paths $USER_PATHS \$fish_user_paths"
+	echo "done"
 }
 
 export -f _setup_fish

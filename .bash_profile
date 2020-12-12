@@ -73,13 +73,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 
  	source /usr/local/etc/bash_completion
 
-	# Prefer GNU feature set to BSD ones
-	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-	# Prefer brew python over system python
-	export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
 	alias ldd='otool -L'
 
 	togglewifi() {
@@ -94,7 +87,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 
 	export -f togglewifi
 
-	export PATH="$PATH:${HOME}/bin"
 	alias l="ls -alF"
 	alias update="brew update && brew upgrade && brew cu"
 elif [[ "$uname" == "Msys" ]]; then
