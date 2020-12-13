@@ -46,9 +46,6 @@ abbr -a -g sha1 sha1sum
 abbr -a -g sha2 sha256sum
 abbr -a -g tel telnet
 abbr -a -g trace traceroute
-#easy vi access
-abbr -a -g v vim
-abbr -a -g vi vim
 
 # build/development
 abbr -a -g m make
@@ -156,6 +153,16 @@ end
 
 
 set os (uname -s)
+
+# use nvim where vim doesn't run well
+if [ "$os" = "Linux" ]
+	# easy vi access
+	abbr -a -g v vim
+	abbr -a -g vi vim
+else
+	abbr -a -g v nvim
+	abbr -a -g vi nvim
+end
 
 # Several of the mappings below
 # serve only as emulatory pipes
