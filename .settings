@@ -11,6 +11,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 	if [ -t 1 ]; then exec fish; fi
 fi
 
+# hook starship
+eval "$(starship init bash)"
+
 # Legacy bash setup
 . ~/.aliases
 
@@ -37,6 +40,7 @@ P7="$HOME/Dev/emsdk/upstream/emscripten"
 P8="$HOME/Dev/wasm-qt/src/bin"
 
 USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6:$P7:$P8"
+
 
 # Change MacOS env to resemble a more
 # traditional developer environment

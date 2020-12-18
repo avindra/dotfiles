@@ -234,3 +234,6 @@ switch $os
 		abbr -a -g xr   xrandr
 		abbr -a -g xe   xev
 end
+
+# hook starship
+starship init fish | source
