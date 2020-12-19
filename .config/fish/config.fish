@@ -225,6 +225,10 @@ switch $os
 		abbr -a -g pb     pbcopy
 		abbr -a -g pbcopy xclip -selection c
 
+		# emulate windows
+		abbr -a -g ms    remmina
+		abbr -a -g mstsc remmina
+
 		#hardware/misc
 		abbr -a -g fuse fuseiso
 		abbr -a -g nv   nvidia-smi
