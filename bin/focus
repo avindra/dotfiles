@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 
+# Can be used as a workaround
+# for switching spaces
+# if Apple breaks Yabai again
 set offset (math "17 + $argv[1]")
 
 printf "\
