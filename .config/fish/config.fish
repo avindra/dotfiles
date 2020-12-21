@@ -132,6 +132,8 @@ function diff
 	git diff $argv
 end
 
+# Todo: add option to switch to dir in current folder
+# Todo: add ability to dump current dir to the config
 function dir
 	if [ "$argv[1]" = "cfg" ]
 		$EDITOR "$HOME/.config/dir/list"
@@ -241,3 +243,6 @@ end
 
 # hook starship
 starship init fish | source
+
+# hook deno compl
+deno completions fish | source

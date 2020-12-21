@@ -27,7 +27,7 @@ nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syn
 filetype plugin on
 
 " Paste from and to system clipboard
-set clipboard+=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 " luke guides
 autocmd FileType tex inoremap <Space><Space> <Esc>/<++><Enter>"_c4l

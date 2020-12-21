@@ -4,29 +4,40 @@
 # create vendor tarball
 # for the related source.
 
-rm vendor*gz
-file=`ls *gz`
+# remove previous artifact, if any
+destdir="/dev/shm"
+target="vendor.tar.xz"
+if [[ -f "$target" ]]; then
+	rm $target
+fi
+
+# determine project name
+# and source tar location
+project=$(basename "$PWD")
+file=`ls *${project}*tar*`
 foldername=$(tar --exclude="*/*" -tf $file)
 
-cp $file /dev/shm
+cp $file $destdir
 
-pushd /dev/shm
+# traverse into source dir
+pushd $destdir
 
 tar xf $file
 pushd $foldername
 
 cargo vendor
 
-target="/dev/shm/vendor.tar.xz"
-
 time tar -cf - vendor/ |  xz -9 -c - > "$target"
 
+# get back to project dir
 popd
 popd
 
-ls -lh $target
+tarball="$destdir/$foldername/$target"
 
-echo "copying now!"
-cp $target .
+ls -lh $tarball
 
+echo -n "Copying ..."
+cp $tarball .
+echo -n "done"
 

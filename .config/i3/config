@@ -26,8 +26,8 @@ set $mod Mod4
 
 set $term ctxterm
 
-set $screenLeft DP-2
-set $screenRight DP-2
+set $screenLeft HDMI-0
+set $screenRight HDMI-0
 
 # Derive colors from XResources (integration with pywal)
 #
@@ -178,7 +178,7 @@ bindsym Control+k            exec reset-term
 
 # Quick launch applications
 bindsym $mod+C        exec firefox
-bindsym $mod+KP_Add   exec $term -e node
+bindsym $mod+KP_Add   exec $term -e qjscalc
 bindsym Control+Shift+Escape  exec $term -e htop
 
 
