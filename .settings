@@ -5,6 +5,9 @@ export EDITOR='vim'
 # https://debuginfod.opensuse.org/
 export DEBUGINFOD_URLS="https://debuginfod.opensuse.org/"
 
+# Set StandardML install directory (todo: push upstream)
+export SMLNJ_HOME=/usr/lib64/smlnj
+
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then
 	>&2 echo "You are now on `hostname`"
@@ -62,7 +65,7 @@ export PATH="$USER_PATHS:$PATH"
 
 function _setup_fish() {
 	echo -n "Declaring fish_user_paths to be $USER_PATHS... "
-	fish -c "set -U fish_user_paths; set -U fish_user_paths $USER_PATHS \$fish_user_paths"
+	fish -c "set -e -U fish_user_paths; set -U fish_user_paths $USER_PATHS \$fish_user_paths"
 	echo "done"
 }
 
