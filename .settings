@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
-export EDITOR='vim'
-
-# GDB debug support
-# https://debuginfod.opensuse.org/
-export DEBUGINFOD_URLS="https://debuginfod.opensuse.org/"
-
-# Set StandardML install directory (todo: push upstream)
-export SMLNJ_HOME=/usr/lib64/smlnj
+source $HOME/.exports
 
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then

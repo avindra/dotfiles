@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# this file is a cross-compatibale list of
+# exports for fish and bash. since most
+# shells need to be supported, a very limited
+# set of shell language is possible in this file.
+
+export EDITOR='vim'
+
+# GDB debug support
+# https://debuginfod.opensuse.org/
+export DEBUGINFOD_URLS="https://debuginfod.opensuse.org/"
+
+# Set StandardML install directory (todo: push upstream)
+export SMLNJ_HOME=/usr/lib64/smlnj
+
+# Fuzzy finder uses git ls-tree by default (fast)
+export FZF_DEFAULT_COMMAND='
+  (git ls-tree -r --name-only HEAD ||
+   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+      sed s/^..//) 2> /dev/null'
+
+# Duplicate in CTRL + T
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Less defaults
+export LESS="-RFX"

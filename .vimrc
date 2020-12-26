@@ -1,7 +1,5 @@
 " smartcase = use all lowercase for case-insensitive search
 set smartcase
-set number
-set relativenumber
 set backspace=indent,eol,start
 set nobackup
 
@@ -12,7 +10,11 @@ set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:�
 " f3: search highlighting
 set hlsearch
 
-" 4 is too big for terminal
+" f4: cycle various line number settings
+set number
+set relativenumber
+
+" default of 4 is too big for terminal
 set tabstop=2
 
 " Disable help docs
@@ -22,12 +24,14 @@ noremap <F1>      <NOP>
 " F-row toggle controls
 nnoremap <F2>      :set list!<CR>
 nnoremap <F3>      :set hlsearch!<CR>
+" f4 impl from: https://superuser.com/a/604626/59068
+nnoremap <F4>      :exe 'set nu!' &nu ? 'rnu!' : ''<CR>
 nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR>
 
 filetype plugin on
 
 " Paste from and to system clipboard
-set clipboard^=unnamed,unnamedplus
+set clipboard=unnamed
 
 " luke guides
 autocmd FileType tex inoremap <Space><Space> <Esc>/<++><Enter>"_c4l

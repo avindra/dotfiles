@@ -8,18 +8,6 @@ export GPG_TTY=`tty`
 # dedupe bash history
 export HISTCONTROL=ignoreboth:erasedups
 
-# Fuzzy finder uses git ls-tree by default (fast)
-export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only HEAD ||
-   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//) 2> /dev/null'
-
-# Duplicate in CTRL + T
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-# Less options
-export LESS="-RFX"
-
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # Platform-specific configurations.

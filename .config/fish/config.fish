@@ -67,7 +67,7 @@ abbr -a -g comp composer dump-autoload
 # default to new py
 abbr -a -g py python3
 abbr -a -g python python3
-abbr -a -g http python3 -m http.server 8000
+abbr -a -g http python3 -m http.server 8000 --directory .
 abbr -a -g rb ruby
 abbr -a -g xa xargs
 
@@ -246,3 +246,6 @@ starship init fish | source
 
 # hook deno compl
 deno completions fish | source
+
+# general shell exports
+~/.exports | source
