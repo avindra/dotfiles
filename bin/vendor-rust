@@ -5,16 +5,24 @@
 # for the related source.
 
 # remove previous artifact, if any
-destdir="/dev/shm"
+destdir="/tmp"
 target="vendor.tar.xz"
 if [[ -f "$target" ]]; then
 	rm $target
 fi
 
-# determine project name
-# and source tar location
-project=$(basename "$PWD")
-file=`ls *${project}*tar*`
+# target specific archive
+file="$1"
+
+if [[ -z "$file" ]]; then
+	project=$(basename "$PWD")
+	file=`ls *${project}*tar*`
+	echo "Inferred $file as target"
+fi
+
+# apply patches (if any)
+rpmdir="$PWD"
+patches=$(ls *.patch)
 foldername=$(tar --exclude="*/*" -tf $file)
 
 cp $file $destdir
@@ -24,6 +32,11 @@ pushd $destdir
 
 tar xf $file
 pushd $foldername
+
+# apply patches
+for p in $patches; do
+	patch -p1 < $rpmdir/$p
+done
 
 cargo vendor
 
