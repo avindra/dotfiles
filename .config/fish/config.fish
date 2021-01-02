@@ -83,6 +83,8 @@ abbr -a -g H git show HEAD
 abbr -a -g x git checkout --
 abbr -a -g c git commit -v
 abbr -a -g C git commit --amend --no-edit
+# list files in commit https://stackoverflow.com/a/424142/270302
+abbr -a -g lsc git diff-tree --no-commit-id --name-only -r
 
 # reseed git repo
 # (use before going public)
@@ -132,16 +134,20 @@ function diff
 	git diff $argv
 end
 
-# Todo: add option to switch to dir in current folder
-# Todo: add ability to dump current dir to the config
+# Todo: add ability to bookmark current dir to config
 function dir
+	set prog "$HOME/bin/lib/dir"
+
 	if [ "$argv[1]" = "cfg" ]
 		$EDITOR "$HOME/.config/dir/list"
 		return $status
+	else if test -d "$argv[1]"
+		# driller feature
+		set selection (find "$argv[1]" -maxdepth 1 -type d | $prog)
+	else
+		# default
+		set selection ($prog)
 	end
-
-	set prog "$HOME/bin/lib/dir"
-	set selection ($prog)
 
 	if [ "x$selection" = "x" ]
 		echo -n "How are we doing @ "

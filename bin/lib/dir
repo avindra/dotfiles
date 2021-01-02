@@ -2,6 +2,11 @@
 
 set config "$HOME/.config/dir/list"
 
+# accept other lists via stdin
+if test -p /dev/stdin
+	set config "/dev/stdin"
+end
+
 cat $config | while read -l line
 	if test -z $line
 		continue
@@ -32,7 +37,12 @@ if test -n $choice
 		set idx (math "$idx + 1")
 		if [ "$choice" = "$n" ]
 			## emit string containing full chosen path
-			echo $values[$idx]
+			if test -n "$values[$idx]"
+				echo $values[$idx]
+			else
+				# support basic lists (no delimiters)
+				echo $names[$idx]
+			end
 			## we are done here
 			exit $result
 		end
