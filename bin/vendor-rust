@@ -38,7 +38,7 @@ for p in $patches; do
 	patch -p1 < $rpmdir/$p
 done
 
-cargo vendor
+CARGO_NET_GIT_FETCH_WITH_CLI=true cargo vendor
 
 time tar -cf - vendor/ |  xz -9 -c - > "$target"
 

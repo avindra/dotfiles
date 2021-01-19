@@ -1,6 +1,5 @@
 set fish_greeting "The Quieter you Become, the More you are able to Hear."
 
-
 # direnv hook https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 eval (direnv hook fish)
 
@@ -55,7 +54,7 @@ abbr -a -g no node
 abbr -a -g de deno
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
 abbr -a -g npm npm run
-abbr -a -g npmi npm install --no-fund --no-audit --ignore-scripts
+abbr -a -g npmi npm install --no-fund --no-audit --ignore-engines --ignore-scripts
 abbr -a -g clj planck
 # rust
 abbr -a -g car cargo run --release -j(nproc)
@@ -133,32 +132,6 @@ function diff
 
 	git diff $argv
 end
-
-# Todo: add ability to bookmark current dir to config
-function dir
-	set prog "$HOME/bin/lib/dir"
-
-	if [ "$argv[1]" = "cfg" ]
-		$EDITOR "$HOME/.config/dir/list"
-		return $status
-	else if test -d "$argv[1]"
-		# driller feature
-		set selection (find "$argv[1]" -maxdepth 1 -type d | $prog)
-	else
-		# default
-		set selection ($prog)
-	end
-
-	if [ "x$selection" = "x" ]
-		echo -n "How are we doing @ "
-		uptime
-		return $status
-	end
-
-	echo "Switching to $selection"
-	pushd "$selection"
-end
-
 
 set os (uname -s)
 
@@ -252,6 +225,9 @@ starship init fish | source
 
 # hook deno compl
 deno completions fish | source
+
+# hook dirp compl
+dirp hook | source
 
 # general shell exports
 ~/.exports | source

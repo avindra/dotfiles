@@ -36,7 +36,7 @@ else
 	set ahead (nDays $a)
 	set behind (nDays $b)
 
-	echo "$latest is available ($ahead ahead)"
+	echo "$latest is available (since $ahead)"
 	echo "$today is today's date"
 	echo "$current is your patchset ($behind behind)"
 end

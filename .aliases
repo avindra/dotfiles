@@ -66,26 +66,7 @@ alias crypto="curl -H 'User-Agent: wget' rate.sx"
 
 alias v="vi"
 
-# Remove DOS-like dir alias for "ls" if it exists
-# the definition for `dir` follows
-#
-alias dir &> /dev/null
-if [[ $? -eq 0 ]]; then
-	unalias dir
-fi
-
-# Dir switcher (favorites)
-#
-function dir() {
-	prog="$HOME/bin/lib/dir"
-	dir=`$prog`
-	if [[ -n $dir ]]; then
-		echo "Switching to $dir... "
-		pushd "$dir"
-	fi
-}
-
-export -f dir
+eval "$(dirp hook bash)"
 
 # Syntax highlight the file, with the
 # familiarity of "cat"
