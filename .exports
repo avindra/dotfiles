@@ -11,9 +11,6 @@ export EDITOR='vim'
 # https://debuginfod.opensuse.org/
 export DEBUGINFOD_URLS="https://debuginfod.opensuse.org/"
 
-# Set StandardML install directory (todo: push upstream)
-export SMLNJ_HOME=/usr/lib64/smlnj
-
 # Fuzzy finder uses git ls-tree by default (fast)
 export FZF_DEFAULT_COMMAND='
   (git ls-tree -r --name-only HEAD ||
