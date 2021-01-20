@@ -58,6 +58,10 @@ abbr -a -g npmi npm install --no-fund --no-audit --ignore-engines --ignore-scrip
 abbr -a -g clj planck
 # rust
 abbr -a -g car cargo run --release -j(nproc)
+# go
+abbr -a -g go go run .
+abbr -a -g gob go build .
+abbr -a -g got go test ./...
 # php
 abbr -a -g ph php
 abbr -a -g phpu phpunit --bootstrap vendor/autoload.php .
