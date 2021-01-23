@@ -27,6 +27,7 @@ nnoremap <F3>      :set hlsearch!<CR>
 " f4 impl from: https://superuser.com/a/604626/59068
 nnoremap <F4>      :exe 'set nu!' &nu ? 'rnu!' : ''<CR>
 nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR>
+nnoremap <F6>      :set spell!<CR>
 
 filetype plugin on
 
@@ -89,3 +90,7 @@ noremap <buffer> <silent> <C-P>          :edit ~/.vimrc<CR>
 
 " https://vim.fandom.com/wiki/Change_vimrc_with_auto_reload
 autocmd! BufWritePost .vimrc source %
+
+
+autocmd FileType markdown  set spell
+
