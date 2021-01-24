@@ -7,8 +7,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 	if [ -t 1 ]; then exec fish; fi
 fi
 
-# hook starship
+# hook shell hooks
 eval "$(starship init bash)"
+eval "$(dirp hook)"
 
 # Legacy bash setup
 . ~/.aliases

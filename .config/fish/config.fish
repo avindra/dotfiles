@@ -230,8 +230,8 @@ starship init fish | source
 # hook deno compl
 deno completions fish | source
 
-# hook dirp compl
-dirp hook | source
+# hook dirp
+dirp hook fish | source
 
 # general shell exports
 ~/.exports | source

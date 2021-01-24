@@ -66,8 +66,6 @@ alias crypto="curl -H 'User-Agent: wget' rate.sx"
 
 alias v="vi"
 
-eval "$(dirp hook bash)"
-
 # Syntax highlight the file, with the
 # familiarity of "cat"
 # 
