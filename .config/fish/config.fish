@@ -113,30 +113,6 @@ abbr -a -g steam launchsteam
 abbr -a -g t  trans -shell
 abbr -a -g yt youtube-dl
 
-# super diff
-# ported from ~/.aliases from Bash
-function diff
-	switch (count $argv)
-		case 0
-			git diff --cached
-			return $status
-		case 2
-			# diff 2 files
-			if test -f $argv[1] -a -f $argv[2]
-				git diff --no-index $argv[1] $argv[2]
-			# diff 2 folders
-			else if test -d $argv[1] -a -d $argv[2]
-				/usr/bin/diff -ruN $argv[1] $argv[2]
-			else
-				echo $argv[1] or $argv[2] dont seem to be file.
-			end
-
-			return $status
-	end
-
-	git diff $argv
-end
-
 set os (uname -s)
 
 # use nvim where vim doesn't run well

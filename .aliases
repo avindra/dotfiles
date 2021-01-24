@@ -6,37 +6,6 @@
 
 alias reload=". ~/.bash_profile"
 
-
-###
-## Super diff
-## 1. `diff` by itself shows a diff of cached
-## 2. `diff` with two file-like arguments uses git's differ to compare them
-## 3. everything else passes through to `git diff`
-###
-function diff() {
-	if [[ "$#" -eq 0 ]]; then
-		git diff --cached
-		return $?
-	fi
-	if [[ "$#" -eq 2 ]]; then
-		# Diff two files
-		if [[ -f "$1" && -f "$2" ]]; then
-			git diff --no-index $1 $2
-			return $?
-		fi
-
-		# Diff two folders
-		if [[ -d "$1" && -d "$2" ]]; then
-			/usr/bin/diff -ruN "$1" "$2"
-		fi
-	fi
-
-	git diff "$@"
-
-}
-
-export -f diff
-
 function dotfile_update() {
 	git stash
 	git pull --rebase
