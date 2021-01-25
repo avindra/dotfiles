@@ -22,10 +22,10 @@ fi
 
 # apply patches (if any)
 rpmdir="$PWD"
-patches=$(ls *.patch)
-foldername=$(tar --exclude="*/*" -tf $file)
+patches=$(ls ./*.patch)
+foldername=$(tar --exclude="*/*" -tf "$file")
 
-cp $file $destdir
+cp "$file" "$destdir"
 
 # traverse into source dir
 pushd "$destdir"
