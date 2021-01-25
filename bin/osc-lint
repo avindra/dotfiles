@@ -35,7 +35,7 @@ sum_orig=($(md5sum $file))
 sum_lint=($(md5sum $output))
 
 
-if [[ $sum_orig == $sum_lint ]]; then
+if [[ $sum_orig == "$sum_lint" ]]; then
 	echo -n "No changes needed. Cleaning up ..."
 	rm $output
 	echo "done"

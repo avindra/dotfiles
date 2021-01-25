@@ -5,6 +5,6 @@
 
 focus_pid=$(xdotool getactivewindow getwindowpid)
 
-tty=$(ps o tty= --ppid $focus_pid)
+tty=$(ps o tty= --ppid "$focus_pid")
 
-echo -e "\ec" > /dev/$tty
+echo -e "\ec" > "/dev/$tty"
