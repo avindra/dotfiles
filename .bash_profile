@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
@@ -8,8 +10,6 @@ export GPG_TTY
 
 # dedupe bash history
 export HISTCONTROL=ignoreboth:erasedups
-
-GIT_PS1_SHOWDIRTYSTATE=true
 
 # Platform-specific configurations.
 # 1) Linux

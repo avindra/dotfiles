@@ -31,8 +31,8 @@ echo -n "Checking $file..."
 spec-cleaner "$file" > "$output"
 echo "done"
 
-sum_orig=($(md5sum $file))
-sum_lint=($(md5sum $output))
+sum_orig=( "$(md5sum $file)" )
+sum_lint=( "$(md5sum $output)" )
 
 
 if [[ $sum_orig == "$sum_lint" ]]; then
