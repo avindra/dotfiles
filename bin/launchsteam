@@ -2,4 +2,4 @@
 
 export STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0
 
-`nohup steam 2> /dev/null`
+nohup steam 2> /dev/null

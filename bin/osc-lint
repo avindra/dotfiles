@@ -28,7 +28,7 @@ fi
 
 echo -n "Checking $file..."
 
-spec-cleaner $file > $output
+spec-cleaner "$file" > "$output"
 echo "done"
 
 sum_orig=($(md5sum $file))
@@ -44,4 +44,4 @@ fi
 
 echo "Clean version available at $output"
 
-diff $file $output
+diff "$file" "$output"

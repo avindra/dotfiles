@@ -3,7 +3,8 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 . ~/.settings
 [[ -f ~/.homeenv ]] && . ~/.homeenv
 
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # dedupe bash history
 export HISTCONTROL=ignoreboth:erasedups
@@ -28,9 +29,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# annoy Bash users. This removes that noise.
 	export BASH_SILENCE_DEPRECATION_WARNING=1
 
-	# Local python bin
-	export PATH="~/Library/Python/2.7/bin:$PATH"
-
 	PS1=' $(__git_ps1) \w ⟩ '
 
 	# Disable annoying tilde expansion
@@ -48,7 +46,7 @@ elif [[ "$uname" == "Darwin" ]]; then
 	_ls ()
 	{
 	    local IFS=' ';
-	    command ls $LS_OPTIONS ${1+"$@"}
+	    command ls "$LS_OPTIONS" ${1+"$@"}
 	}
 	export -f _ls
 
@@ -56,7 +54,7 @@ elif [[ "$uname" == "Darwin" ]]; then
         source ~/.gnupg/.gpg-agent-info
         export GPG_AGENT_INFO
     else
-        eval $(gpg-agent --daemon)
+        eval "$(gpg-agent --daemon)"
     fi
 
  	source /usr/local/etc/bash_completion
