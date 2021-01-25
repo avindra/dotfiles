@@ -1,6 +1,6 @@
 #!/bin/bash
 
-theFoldersRaw=`find . -maxdepth 1  -mindepth 1 -type d`
+theFoldersRaw=$(find . -maxdepth 1  -mindepth 1 -type d)
 set -f
 theFolders=(${theFoldersRaw//\n/ })
 

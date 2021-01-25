@@ -5,18 +5,18 @@ rm -fr tmp
 mkdir tmp
 mainPkg="*.tar.gz"
 
-cp $mainPkg tmp
+cp "$mainPkg" tmp
 
 cd tmp
 
 echo -n "Extracting package... "
-tar xf $mainPkg
+tar xf "$mainPkg"
 echo "done"
 
-extractedDir=`find . -maxdepth 1 -type d -iname '*[a-z]*' | xargs`
+extractedDir=$(find . -maxdepth 1 -type d -iname '*[a-z]*' | xargs)
 
 cp -r $extractedDir "$extractedDir-orig"
 
-rm $mainPkg
+rm "$mainPkg"
 
 echo "tmp/ ready for work"
