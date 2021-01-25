@@ -337,7 +337,7 @@ bindsym Ctrl+Shift+Tab focus left
 
 bindsym $mod+grave workspace back_and_forth
 
-bindsym $mod+F2 exec renameFocusedWindow.sh
+bindsym $mod+F2 exec rename-focused-window
 
 smart_gaps on
 smart_borders on

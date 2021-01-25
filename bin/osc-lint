@@ -18,7 +18,7 @@ output="clean.spec"
 if [[ -n "$1" ]]; then
 	file="$1"
 else
-	file=`find . -maxdepth 1 -regex '.*\.spec' -not -name $output`
+	file=$(find . -maxdepth 1 -regex '.*\.spec' -not -name $output)
 fi
 
 if [[ -z $file ]]; then

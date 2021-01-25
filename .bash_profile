@@ -3,7 +3,7 @@ export LS_OPTIONS="$LS_OPTIONS --color=always"
 . ~/.settings
 [[ -f ~/.homeenv ]] && . ~/.homeenv
 
-export GPG_TTY=`tty`
+export GPG_TTY=$(tty)
 
 # dedupe bash history
 export HISTCONTROL=ignoreboth:erasedups
@@ -15,7 +15,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # 2) macOS / iOS (aka. Apple)
 # 2) cygwin / Windows
 
-uname=`uname -s`
+uname=$(uname -s)
 if [[ "$uname" == "Linux" ]]; then
 	alias pbcopy="xclip -selection c"
 	# Save history immediately
@@ -78,7 +78,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 	alias l="ls -alF"
 	alias update="brew update && brew upgrade && brew cu"
 elif [[ "$uname" == "Msys" ]]; then
-	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
 fi
 
