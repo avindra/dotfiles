@@ -4,7 +4,6 @@
 # MacOS uses this shell by default,
 # so this file concerns only Apple.
 
-# shellcheck source=.setttings
 . ~/.settings
 
 # Random cruft that might serve use later
