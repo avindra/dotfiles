@@ -1,3 +1,5 @@
+# shellcheck shell=sh
+
 # I am not a ZSH user.
 # MacOS uses this shell by default,
 # so this file concerns only Apple.

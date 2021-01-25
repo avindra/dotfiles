@@ -22,3 +22,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Less defaults
 export LESS="-RFX"
+
+export GIT_PS1_SHOWDIRTYSTATE=true

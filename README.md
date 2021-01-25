@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles  [![CI Status](https://github.com/avindra/dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/avindra/dotfiles/actions)
 
 My shell environment:  preferences made available on a number of personal computing devices. Primarily a Linux based environment, there is varied support for MacOS and Windows. Caveats are documented.
 

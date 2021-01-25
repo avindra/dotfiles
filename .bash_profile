@@ -1,21 +1,22 @@
+# shellcheck shell=bash
+
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
 [[ -f ~/.homeenv ]] && . ~/.homeenv
 
-export GPG_TTY=`tty`
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # dedupe bash history
 export HISTCONTROL=ignoreboth:erasedups
-
-GIT_PS1_SHOWDIRTYSTATE=true
 
 # Platform-specific configurations.
 # 1) Linux
 # 2) macOS / iOS (aka. Apple)
 # 2) cygwin / Windows
 
-uname=`uname -s`
+uname=$(uname -s)
 if [[ "$uname" == "Linux" ]]; then
 	alias pbcopy="xclip -selection c"
 	# Save history immediately
@@ -27,9 +28,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 	# ZSH-era macos decides to
 	# annoy Bash users. This removes that noise.
 	export BASH_SILENCE_DEPRECATION_WARNING=1
-
-	# Local python bin
-	export PATH="~/Library/Python/2.7/bin:$PATH"
 
 	PS1=' $(__git_ps1) \w ⟩ '
 
@@ -48,7 +46,7 @@ elif [[ "$uname" == "Darwin" ]]; then
 	_ls ()
 	{
 	    local IFS=' ';
-	    command ls $LS_OPTIONS ${1+"$@"}
+	    command ls "$LS_OPTIONS" ${1+"$@"}
 	}
 	export -f _ls
 
@@ -56,7 +54,7 @@ elif [[ "$uname" == "Darwin" ]]; then
         source ~/.gnupg/.gpg-agent-info
         export GPG_AGENT_INFO
     else
-        eval $(gpg-agent --daemon)
+        eval "$(gpg-agent --daemon)"
     fi
 
  	source /usr/local/etc/bash_completion
@@ -78,7 +76,6 @@ elif [[ "$uname" == "Darwin" ]]; then
 	alias l="ls -alF"
 	alias update="brew update && brew upgrade && brew cu"
 elif [[ "$uname" == "Msys" ]]; then
-	cd ~/Dev 2> /dev/null
 	alias l='ls -alF'
 fi
 

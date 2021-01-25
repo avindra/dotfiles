@@ -16,26 +16,26 @@ file="$1"
 
 if [[ -z "$file" ]]; then
 	project=$(basename "$PWD")
-	file=`ls *${project}*tar*`
+	file=$(ls ./*"${project}"*tar*)
 	echo "Inferred $file as target"
 fi
 
 # apply patches (if any)
 rpmdir="$PWD"
-patches=$(ls *.patch)
-foldername=$(tar --exclude="*/*" -tf $file)
+patches=$(ls ./*.patch)
+foldername=$(tar --exclude="*/*" -tf "$file")
 
-cp $file $destdir
+cp "$file" "$destdir"
 
 # traverse into source dir
-pushd $destdir
+pushd "$destdir"
 
-tar xf $file
-pushd $foldername
+tar xf "$file"
+pushd "$foldername"
 
 # apply patches
 for p in $patches; do
-	patch -p1 < $rpmdir/$p
+	patch -p1 < "$rpmdir/$p"
 done
 
 CARGO_NET_GIT_FETCH_WITH_CLI=true cargo vendor
@@ -48,9 +48,9 @@ popd
 
 tarball="$destdir/$foldername/$target"
 
-ls -lh $tarball
+ls -lh "$tarball"
 
 echo -n "Copying ..."
-cp $tarball .
+cp "$tarball" .
 echo -n "done"
 
