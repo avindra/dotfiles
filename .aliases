@@ -1,24 +1,15 @@
 #!/usr/bin/env bash
 
-### .aliases
-###    A collection of favorite aliases, as well as useful functions.
-###
+# .aliases: bash aliases
 
 alias reload=". ~/.bash_profile"
 
-function dotfile_update() {
-	git stash
-	git pull --rebase
-	git stash apply
-}
-export -f dotfile_update
+alias grep="grep -n --color"
 
-###
-## Git aliases
-## 
-## Brevity is preferred here, to enable
-## robust and expedited SCM management.
-###
+##
+# One-char Git aliases optimized
+# for speed and versatility
+##
 alias g="git"
 # Hides untracked items by default
 alias s="git status -uno"
@@ -30,8 +21,6 @@ alias x="git checkout -- ."
 alias c="git commit -v"
 alias C="git commit --amend --no-edit"
 
-## Favorites
-alias crypto="curl -H 'User-Agent: wget' rate.sx"
 
 alias v="vi"
 
@@ -47,10 +36,14 @@ alias cats="highlight -O ansi"
 
 alias clock="tty-clock -c -s -t"
 
+###
+## Remote utils
+###
+alias crypto="curl -H 'User-Agent: wget' rate.sx"
+
 function d() {
 	curl -s dict.org/define:$1:english | less
 }
-
 export -f d
 
 alias t="trans -shell"

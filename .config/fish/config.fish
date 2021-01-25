@@ -1,7 +1,5 @@
 set fish_greeting "The Quieter you Become, the More you are able to Hear."
 
-# direnv hook https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
-eval (direnv hook fish)
 
 # sys management
 abbr -a -g poweroff /sbin/poweroff
@@ -209,5 +207,9 @@ deno completions fish | source
 # hook dirp
 dirp hook fish | source
 
+# hook direnv https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
+direnv hook fish | source
+
 # general shell exports
 ~/.exports | source
+

@@ -98,8 +98,6 @@ if [[ "$uname" != "Linux" ]]; then
 	export -f d4ssh
 fi
 
-alias grep="grep -n --color"
-
 # Alias wget to curl if not available
 
 hash wget &> /dev/null
