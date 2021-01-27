@@ -31,15 +31,10 @@ echo -n "Checking $file..."
 spec-cleaner "$file" > "$output"
 echo "done"
 
-# the wrapping ( ) is a shell-native way
-# to trim the output
-sum_orig=( "$(md5sum "$file")" )
-sum_lint=( "$(md5sum "$output")" )
+sum_orig=$(cat "$file" | md5sum)
+sum_lint=$(cat "$output" | md5sum)
 
-
-# sc: false positive due to array-looking syntax
-# shellcheck disable=SC2128
-if [[ $sum_orig == "$sum_lint" ]]; then
+if [[ "$sum_orig" == "$sum_lint" ]]; then
 	echo -n "No changes needed. Cleaning up ..."
 	rm $output
 	echo "done"
