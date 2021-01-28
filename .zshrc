@@ -4,6 +4,7 @@
 # MacOS uses this shell by default,
 # so this file concerns only Apple.
 
+unalias dir &>/dev/null
 . ~/.settings
 
 eval "$(starship init zsh)"

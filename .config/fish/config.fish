@@ -58,8 +58,8 @@ abbr -a -g clj planck
 abbr -a -g car cargo run --release -j(nproc)
 # go
 abbr -a -g go go run .
-abbr -a -g gob go build .
-abbr -a -g got go test ./...
+abbr -a -g gob go build -ldflags \"-s -w\" .
+abbr -a -g got go test -v ./...
 # php
 abbr -a -g ph php
 abbr -a -g phpu phpunit --bootstrap vendor/autoload.php .
