@@ -6,6 +6,8 @@
 
 . ~/.settings
 
+eval "$(starship init zsh)"
+
 # Random cruft that might serve use later
 # export ARCHFLAGS="-arch x86_64"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"

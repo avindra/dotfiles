@@ -153,6 +153,10 @@ switch $os
 		abbr -a -g ip ip address
 		abbr -a -g cal cal -3
 
+		# 9p shells
+		abbr -a -g es es -l
+		abbr -a -g rc rc -l
+
 		# debugging
 		abbr -a -g st    strace -ff -p
 		# invoke runtime linker https://twitter.com/AlanActual/status/1326639935902846977
