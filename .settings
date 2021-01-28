@@ -8,7 +8,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 fi
 
 # hook shell hooks
-eval "$(starship init bash)"
 eval "$(dirp hook)"
 
 # Legacy bash setup

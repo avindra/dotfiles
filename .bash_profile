@@ -113,4 +113,4 @@ PROMPT_DIRTRIM=4
 # https://unix.stackexchange.com/a/72092/63602
 stty -ixon
 
-
+eval "$(starship init bash)"
