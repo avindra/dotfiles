@@ -30,9 +30,10 @@ P2="$HOME/.cargo/bin"
 P3="$HOME/.local/bin"
 P4="$HOME/.gem/ruby/2.4.0/bin"
 P5="$HOME/go/bin"
-# todo: move wasm projects out of Dev
+# todo: move projects out of Dev
 P6="$HOME/Dev/emsdk/upstream/emscripten"
 P7="$HOME/Dev/wasm-qt/src/bin"
+P6="$HOME/Dev/suserpmutil/bin"
 
 USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6:$P7"
 
