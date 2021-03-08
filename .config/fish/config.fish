@@ -25,7 +25,8 @@ abbr -a -g tar tar xvf
 
 #lazy
 abbr -a -g g git
-abbr -a -g d diff
+abbr -a -g d dir
+abbr -a -g di diff
 abbr -a -g cho chown
 abbr -a -g gun gunzip
 abbr -a -g hi history
@@ -66,6 +67,7 @@ abbr -a -g phpu phpunit --bootstrap vendor/autoload.php .
 abbr -a -g com composer install --ignore-platform-reqs
 abbr -a -g comp composer dump-autoload
 # default to new py
+abbr -a -g ju jupyter notebook
 abbr -a -g py python3
 abbr -a -g python python3
 abbr -a -g http python3 -m http.server 8000 --directory .
@@ -86,6 +88,9 @@ abbr -a -g c git commit -v
 abbr -a -g C git commit --amend --no-edit
 # list files in commit https://stackoverflow.com/a/424142/270302
 abbr -a -g lsc git diff-tree --no-commit-id --name-only -r
+
+# fish 3.2.0 includes a built-in diff. erase it to prefer ours
+functions -e diff
 
 # reseed git repo
 # (use before going public)

@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-# For openSUSE Tumblewed: check if there is an update
+# For openSUSE Tumbleweed: check if there is an update
 
 set link "https://download.opensuse.org/tumbleweed/iso/?C=M;O=D"
 

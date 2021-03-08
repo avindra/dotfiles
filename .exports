@@ -24,3 +24,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export LESS="-RFX"
 
 export GIT_PS1_SHOWDIRTYSTATE=true
+
+# multi-threaded xz. see: https://stackoverflow.com/a/33441796/270302
+export XZ_OPT="-T0"
