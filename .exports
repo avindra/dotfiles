@@ -7,10 +7,6 @@
 
 export EDITOR='vim'
 
-# GDB debug support
-# https://debuginfod.opensuse.org/
-export DEBUGINFOD_URLS="https://debuginfod.opensuse.org/"
-
 # Fuzzy finder uses git ls-tree by default (fast)
 export FZF_DEFAULT_COMMAND='
   (git ls-tree -r --name-only HEAD ||
