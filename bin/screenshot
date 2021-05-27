@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # Copy the entire screen to the clipboard,
 # and dump a file in shm
 #
 XCLIP="xclip -selection c -t image/png < \$f && mv \$f /dev/shm"
 
-scrot -q 100 -z -e "$XCLIP"
+flameshot gui
 
 notify-send -t 300 "😋 Screen captured" "Screenshot taken at $(date)"

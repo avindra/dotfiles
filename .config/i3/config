@@ -27,7 +27,7 @@ set $mod Mod4
 set $term ctxterm
 
 set $screenLeft HDMI-0
-set $screenRight HDMI-0
+set $screenRight DP-0
 
 # Derive colors from XResources (integration with pywal)
 #
@@ -64,8 +64,7 @@ bar {
 	mode hide
 	i3bar_command i3bar -t
 
-	status_command taskbar
-	
+	output $screenLeft
 	output $screenRight
 	colors {
        		background $transparent
@@ -77,6 +76,11 @@ bar {
 	}
 
 	position bottom
+}
+
+bar {
+	output $screenRight
+	status_command taskbar
 }
 
 # App-specific settings
