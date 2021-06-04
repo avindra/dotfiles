@@ -24,6 +24,7 @@ abbr -a -g pin ping -c 5
 abbr -a -g tar tar xvf
 
 #lazy
+abbr -a -g o open
 abbr -a -g g git
 abbr -a -g d dir
 abbr -a -g di diff

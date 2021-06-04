@@ -79,6 +79,7 @@ bar {
 }
 
 bar {
+	mode hide
 	output $screenRight
 	status_command taskbar
 }
