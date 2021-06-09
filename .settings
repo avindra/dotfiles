@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-source $HOME/.exports
+source "$HOME/.exports"
 
 # Detect and greet remote users
 if [[ -n $SSH_CONNECTION ]]; then
-	>&2 echo "You are now on `hostname`"
+	>&2 echo "You are now on $(hostname)"
 	if [ -t 1 ]; then exec fish; fi
 fi
 
@@ -40,7 +40,7 @@ USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6:$P7"
 
 # Change MacOS env to resemble a more
 # traditional developer environment
-os=`uname -s`
+os=$(uname -s)
 if [[ "$os" == "Darwin" ]]; then
 	USER_PATHS="$USER_PATHS:$HOME/bin"
 

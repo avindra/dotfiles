@@ -7,4 +7,6 @@ focus_pid=$(xdotool getactivewindow getwindowpid)
 
 tty=$(ps o tty= --ppid "$focus_pid")
 
+# todo: do not use echo flags, not posix compliant
+# shellcheck disable=SC3037
 echo -e "\ec" > "/dev/$tty"
