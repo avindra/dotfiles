@@ -8,7 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run ShellCheck
-      env:
-        SHELLCHECK_OPTS: -e SC2164 -e SC2039 -e SC1091 -e SC1090 -e SC2002
       uses: bewuethr/shellcheck-action@v2
 
