@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/sh
 
-if [[ $EUID -ne 0 ]] ; then
+if [ "$EUID" != "0" ] ; then
 	echo "Needs root"
 	exit 1
 fi
