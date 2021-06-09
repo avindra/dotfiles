@@ -1,10 +1,6 @@
 #!/bin/sh -e
 
-# Copy the entire screen to the clipboard,
-# and dump a file in shm
+# Make a screenshot
 #
-XCLIP="xclip -selection c -t image/png < \$f && mv \$f /dev/shm"
 
-flameshot gui
-
-notify-send -t 300 "😋 Screen captured" "Screenshot taken at $(date)"
+exec flameshot gui

@@ -12,7 +12,7 @@ fi
 
 if [ "$#" = 2 ]; then
 	# Diff two files
-	if [[ -f "$1" && -f "$2" ]]; then
+	if [ -f "$1" ] && [ -f "$2" ]; then
 		git diff --no-index "$1" "$2"
 		exit $?
 	fi
