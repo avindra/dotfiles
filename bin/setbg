@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 # Apply the desired background image, and theme
 # out the colors from it via pywal.
 #

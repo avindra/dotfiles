@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 
 # Source common scripts (per suse)
 . /etc/X11/xinit/xinitrc.common
