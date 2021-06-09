@@ -10,8 +10,5 @@ jobs:
     - name: Run ShellCheck
       env:
         SHELLCHECK_OPTS: -e SC2164 -e SC2039 -e SC1091 -e SC1090 -e SC2002
-      uses: reviewdog/action-shellcheck@v1
-      with:
-        github_token: ${{ secrets.github_token }}
-        reporter: github-pr-review # Change reporter.
+      uses: bewuethr/shellcheck-action@v2
 
