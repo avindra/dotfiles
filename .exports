@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/usr/bin/sh
 
-# this file is a cross-compatibale list of
+# this file is a cross-compatible list of
 # exports for fish and bash. since most
 # shells need to be supported, a very limited
 # set of shell language is possible in this file.
+# todo: needs review
 
 export EDITOR='vim'
 
