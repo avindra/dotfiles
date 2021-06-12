@@ -9,6 +9,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run ShellCheck
       env:
-        SHELLCHECK_OPTS: -e SC1090
+        SHELLCHECK_OPTS: -e SC1090 -e SC1091
       uses: bewuethr/shellcheck-action@v2
 
