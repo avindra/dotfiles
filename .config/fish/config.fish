@@ -18,14 +18,15 @@ abbr -a -g chm chmod 755
 abbr -a -g cur curl -sL
 abbr -a -g du du -h -d1
 abbr -a -g grep grep -n --color -i
-abbr -a -g find find . -name
 abbr -a -g l ls -lrtah
 abbr -a -g pin ping -c 5
 abbr -a -g tar tar xvf
 
 #lazy
 abbr -a -g o open
+abbr -a -g f find
 abbr -a -g g git
+abbr -a -g gr grep
 abbr -a -g d dir
 abbr -a -g di diff
 abbr -a -g cho chown
@@ -113,7 +114,6 @@ abbr -a -g dz dezoomify-rs
 abbr -a -g ff firefox
 abbr -a -g ffm ffmpeg -i
 abbr -a -g ra ranger
-abbr -a -g steam launchsteam
 abbr -a -g t  trans -shell
 abbr -a -g yt youtube-dl
 

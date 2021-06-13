@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-
-export STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0
-exec steam
