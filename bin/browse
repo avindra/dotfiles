@@ -1,0 +1,56 @@
+#!/usr/bin/env -S deno run --allow-run
+import { exec } from "https://deno.land/x/exec/mod.ts";
+
+/**
+ * A port of "powersearch" 0.2 to Deno.
+ *
+ * Version History:
+ * -----------------------------------------------
+ * | 0.1.0 |  6/26/2021 | * Initial import based on
+ * |       |            |   powersearch 0.2 rework
+ * |       |            | * change to unsafe by default
+ *
+ * @see https://dra.vin/#/bookmarklets
+ */
+
+const t = prompt("Where you off to?");
+let unsafe = true;
+const tri = function(o) {
+	return new RegExp("^" + o, "i").test(t)
+}
+
+let trim = t.replace(/--\S+/g, "").replace(/^\s*\S+\s*/, "");
+
+const  gs = "http://google.com/search?q=";
+const get = function(t) {
+	const i = ["images", "news", "maps"][t];
+	let e = "http://" + i + ".google.com/" + i;
+	const isBing = 3 == t;
+	isBing && (e = "https://images.bing.com/");
+	let g = "?q=";
+	if (unsafe) {
+		g = g.replace(/q=/, (isBing ? "safesearch=off" : "safe=images") + "&q=");
+	}
+	goto(e, g + trim);
+};
+
+const goto = async function(e = "http://www.", t = trim) {
+	const executor = unsafe ? `firefox -private-window` : "xdg-open";
+	const line = `${executor} "${e + t}"`;
+	console.log("running", line);
+	await exec(line);
+};
+
+const e = t.match(/--\S+/g) || [];
+for (let i = 0; i < e.length; i++) switch (e[i]) {
+	// TBD: plumb context from the page
+	case "--this":
+		trim += " site:" + document.domain;
+		continue;
+	case "--safe":
+		unsafe = false;
+		continue
+}
+
+tri("gi") ? get(0) : tri("gn") ? get(1) : tri("gm") ? get(2) : tri("bi") ? get(3) : tri("gs") ? goto("google.com/search?q=") : tri("slang") ? goto("urbandictionary.com/define.php?term=") : tri("yt") ? goto("youtube.com/results?search_query=") : tri("wiki") ? goto("google.com/search?btnI&q=site:wikipedia.org ") : tri("imdb") ? goto("google.com/search?btnI&q=imdb ") : tri("(first|lucky)") ? goto("google.com/search?btnI&q=") : tri("ebook") ? location.href = gs + '-inurl:htm -inurl:html intitle:index of("/ebooks"|"/book") (chm|pdf|zip) ' + trim + " Last Modified" : tri("music") ? location.href = gs + "intitle:index.of last modified  parent directory (mp4|m4a|mp3|wma|ogg)" + trim + " -htm -html -php -asp" : tri("torrents?") && goto("http://www.thepiratebay.org/search/", trim + "/0/7/0");
+

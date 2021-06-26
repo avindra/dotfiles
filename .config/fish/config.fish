@@ -36,6 +36,7 @@ abbr -a -g cl  clear
 abbr -a -g res reset
 abbr -a -g md5 md5sum
 abbr -a -g mo  sudo mount
+abbr -a -g u   units
 abbr -a -g um  sudo umount
 abbr -a -g unm sudo umount
 abbr -a -g rl rlwrap

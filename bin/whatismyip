@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # curl http://whatismyip.akamai.com;echo
+# curl -s http://checkip.amazonaws.com
 
-# AWS plz stay online
-
-curl -s http://checkip.amazonaws.com
+# ref: https://leahneukirchen.org/dotfiles/bin/myip
+dig -4 +short whoami.akamai.net @ns1-1.akamaitech.net a

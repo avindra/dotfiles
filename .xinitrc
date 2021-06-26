@@ -17,15 +17,6 @@ if [ -e ~/.screenlayout/default.sh ]; then
 	~/.screenlayout/default.sh
 fi
 
-# Compositor that handles transparency and other
-# effects you may expect from a modern graphical
-# interface.
-#
-# Compton has been carried throughout the ages, and
-# the latest community maintained version lives on
-# at https://github.com/yshui/picom
-picom -f -b
-
 # Apply colors via pywal
 ~/bin/setbg
 
