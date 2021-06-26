@@ -6,6 +6,8 @@ import { exec } from "https://deno.land/x/exec/mod.ts";
  *
  * Version History:
  * -----------------------------------------------
+ * | 0.2.1 |  6/26/2021 | * use URLSearchParams to serialize URL
+ * -----------------------------------------------
  * | 0.2.0 |  6/26/2021 | * --big to look for big images
  * |       |            | * initial DuckDuckGo support
  * |       |            | * use DDG for "lucky" feat
@@ -35,20 +37,31 @@ const get = function(t) {
 	const isDDG = 4 == t;
 	isBing && (e = "https://images.bing.com/");
 	isDDG && (e = "https://duckduckgo.com/");
-	let g = "?q=";
+	let params = new URLSearchParams();
 	if (unsafe) {
-		g = g.replace(/q=/, (isDDG ? "kp=-2" : isBing ? "safesearch=off" : "safe=images") + "&q=");
+		if (isDDG) {
+			params.set("kp", "-2");
+		} else if(isBing) {
+			params.set("safesearch", "off");
+		} else { // assume google
+			params.set("safe", "images");
+		}
 	}
 	if (isDDG) {
-		g = g.replace(/q=/, "&iax=images&ia=images&q=");
+		params.set("iax", "images");
+		params.set("ia", "images");
 	}
 	if (isBig) {
-		let bigParam =  "&tbs=isz:lt,islt:2mp";
-		if (isBing) bigParam = "&qft=+filterui:imagesize-custom_1920_1080";
-		else if(isDDG) bigParam = "&iaf=size%3ALarge";
-		g = g.replace(/&q=/, bigParam + "&q=");
+		if (isBing) {
+			params.set("qft", "+filterui:imagesize-custom_1920_1080");
+		} else if(isDDG) {
+			params.set("iaf", "size:Large");
+		} else { // assume google
+			params.set("tbs", "isz:lt,islt:2mp");
+		}
 	}
-	goto(e, g + trim);
+	params.set("q", trim);
+	goto(e, "?" + params.toString());
 };
 
 const goto = async function(e = "http://www.", t = trim) {
