@@ -52,5 +52,31 @@ for (let i = 0; i < e.length; i++) switch (e[i]) {
 		continue
 }
 
-tri("gi") ? get(0) : tri("gn") ? get(1) : tri("gm") ? get(2) : tri("bi") ? get(3) : tri("gs") ? goto("google.com/search?q=") : tri("slang") ? goto("urbandictionary.com/define.php?term=") : tri("yt") ? goto("youtube.com/results?search_query=") : tri("wiki") ? goto("google.com/search?btnI&q=site:wikipedia.org ") : tri("imdb") ? goto("google.com/search?btnI&q=imdb ") : tri("(first|lucky)") ? goto("google.com/search?btnI&q=") : tri("ebook") ? location.href = gs + '-inurl:htm -inurl:html intitle:index of("/ebooks"|"/book") (chm|pdf|zip) ' + trim + " Last Modified" : tri("music") ? location.href = gs + "intitle:index.of last modified  parent directory (mp4|m4a|mp3|wma|ogg)" + trim + " -htm -html -php -asp" : tri("torrents?") && goto("http://www.thepiratebay.org/search/", trim + "/0/7/0");
+if (tri("gi")) {
+	get(0);
+} else if(tri("gn")) {
+	get(1);
+} else if (tri("gm")) {
+	get(2);
+} else if(tri("bi")) {
+	get(3);
+} else if(tri("gs")) {
+	goto("https://google.com/search?q=");
+} else if( tri("slang")) {
+	goto("https://urbandictionary.com/define.php?term=")
+} else if(tri("yt")) {
+	goto("https://youtube.com/results?search_query=")
+} else if(tri("wiki")) {
+	goto("https://google.com/search?btnI&q=site:wikipedia.org ");
+} else if(tri("imdb")) {
+	goto("https://google.com/search?btnI&q=imdb ")
+} else if(tri("(first|lucky)")) {
+	goto("https://google.com/search?btnI&q=");
+} else if( tri("ebook")) {
+	goto(gs + encodeURIComponent('-inurl:htm -inurl:html intitle:index of("/ebooks"|"/book") (chm|pdf|zip) Last Modified '));
+} else if(tri("music")) {
+	goto(gs + encodeURIComponent("intitle:index.of last modified  parent directory (mp4|m4a|mp3|wma|ogg) -htm -html -php -asp "));
+} else if(tri("torrents?")) {
+	goto("https://www.thepiratebay.org/search/", trim + "/0/7/0");
+}
 
