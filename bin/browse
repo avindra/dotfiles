@@ -6,15 +6,21 @@ import { exec } from "https://deno.land/x/exec/mod.ts";
  *
  * Version History:
  * -----------------------------------------------
- * | 0.1.0 |  6/26/2021 | * Initial import based on
+ * | 0.2.0 |  6/26/2021 | * --big to look for big images
+ * |       |            | * initial DuckDuckGo support
+ * |       |            | * use DDG for "lucky" feat
+ * -----------------------------------------------
+ * | 0.1.0 |  6/25/2021 | * Initial import based on
  * |       |            |   powersearch 0.2 rework
  * |       |            | * change to unsafe by default
  *
- * @see https://dra.vin/#/bookmarklets
+ * @see why use DuckDuckGo https://stackoverflow.com/a/64861546/270302
+ * @see original work      https://dra.vin/#/bookmarklets
  */
 
 const t = prompt("Where you off to?");
 let unsafe = true;
+let isBig = false;
 const tri = function(o) {
 	return new RegExp("^" + o, "i").test(t)
 }
@@ -26,10 +32,21 @@ const get = function(t) {
 	const i = ["images", "news", "maps"][t];
 	let e = "http://" + i + ".google.com/" + i;
 	const isBing = 3 == t;
+	const isDDG = 4 == t;
 	isBing && (e = "https://images.bing.com/");
+	isDDG && (e = "https://duckduckgo.com/");
 	let g = "?q=";
 	if (unsafe) {
-		g = g.replace(/q=/, (isBing ? "safesearch=off" : "safe=images") + "&q=");
+		g = g.replace(/q=/, (isDDG ? "kp=-2" : isBing ? "safesearch=off" : "safe=images") + "&q=");
+	}
+	if (isDDG) {
+		g = g.replace(/q=/, "&iax=images&ia=images&q=");
+	}
+	if (isBig) {
+		let bigParam =  "&tbs=isz:lt,islt:2mp";
+		if (isBing) bigParam = "&qft=+filterui:imagesize-custom_1920_1080";
+		else if(isDDG) bigParam = "&iaf=size%3ALarge";
+		g = g.replace(/&q=/, bigParam + "&q=");
 	}
 	goto(e, g + trim);
 };
@@ -50,6 +67,9 @@ for (let i = 0; i < e.length; i++) switch (e[i]) {
 	case "--safe":
 		unsafe = false;
 		continue
+	case "--big":
+		isBig = true;
+		continue
 }
 
 if (tri("gi")) {
@@ -60,6 +80,8 @@ if (tri("gi")) {
 	get(2);
 } else if(tri("bi")) {
 	get(3);
+} else if(tri("di")) {
+	get(4);
 } else if(tri("gs")) {
 	goto("https://google.com/search?q=");
 } else if( tri("slang")) {
@@ -69,9 +91,11 @@ if (tri("gi")) {
 } else if(tri("wiki")) {
 	goto("https://google.com/search?btnI&q=site:wikipedia.org ");
 } else if(tri("imdb")) {
-	goto("https://google.com/search?btnI&q=imdb ")
+	//goto("https://google.com/search?btnI&q=imdb ")
+	goto("https://duckduckgo.com/?q=%5Cimdb ");
 } else if(tri("(first|lucky)")) {
-	goto("https://google.com/search?btnI&q=");
+	//goto("https://google.com/search?btnI&q=");
+	goto("https://duckduckgo.com/?q=%5C");
 } else if( tri("ebook")) {
 	goto(gs + encodeURIComponent('-inurl:htm -inurl:html intitle:index of("/ebooks"|"/book") (chm|pdf|zip) Last Modified '));
 } else if(tri("music")) {
