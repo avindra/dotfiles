@@ -108,12 +108,9 @@ new_window pixel 2
 #  pactl list sources | \grep -i Name: | cut -d: -f2
 #
 # Sound hotkeys for physical volume controls
-# set $sink alsa_output.pci-0000_00_14.2.analog-stereo
-# set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo
-# set $sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
-# set $sink alsa_output.pci-0000_41_00.1.hdmi-stereo-extra1
-# set $sink bluez_sink.F8_0F_F9_83_B7_E5.a2dp_sink
-set $sink alsa_output.pci-0000_0a_00.3.analog-stereo
+# Default sink tip from:
+# https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/issues/445#note_824104
+set $sink @DEFAULT_SINK@
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $sink +1% && killall -SIGUSR1 i3status
 bindsym $esc+XF86AudioRaiseVolume exec pactl set-sink-volume $sink +5% && killall -SIGUSR1 i3status

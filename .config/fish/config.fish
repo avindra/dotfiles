@@ -24,6 +24,7 @@ abbr -a -g tar tar xvf
 
 #lazy
 abbr -a -g o open
+abbr -a -g b browse
 abbr -a -g f find
 abbr -a -g g git
 abbr -a -g gr grep
