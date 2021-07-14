@@ -1,0 +1,32 @@
+#!/usr/bin/sh
+
+# This script 1) sets a new default sound device.
+#
+# It also 2) moves all sources to new default sink.
+#
+# Uses: coreutils and fzf
+
+default=$(pactl info | sed -En 's/Default Sink: (.*)/\1/p')
+sinks=$(pactl list short sinks | grep -v "$default")
+
+echo "Please choose a new sink. (Current: $default)"
+
+choice=$(echo "$sinks" | fzf --height 20%)
+if [ -z "$choice" ]; then
+	exit 0
+fi
+
+newsid=$(echo "$choice" | cut -d"	" -f1)
+echo "Changing to $newsid"
+pactl set-default-sink $newsid
+
+
+# example line: 64	79	58 PipeWirefloat32le 2ch 48000Hz
+#        where: id_stream id_sink
+
+for line in "$(pactl list short sink-inputs)"
+do
+	id_stream=$(echo "$line" | cut -d'	' -f1)
+	pactl move-sink-input "$id_stream" "$newsid"
+done
+
