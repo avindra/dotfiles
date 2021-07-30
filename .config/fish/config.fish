@@ -74,7 +74,6 @@ abbr -a -g comp composer dump-autoload
 abbr -a -g ju jupyter notebook
 abbr -a -g py python3
 abbr -a -g python python3
-abbr -a -g http python3 -m http.server 8000 --directory .
 abbr -a -g rb ruby
 abbr -a -g xa xargs
 
