@@ -111,7 +111,7 @@ end
 
 #applications
 abbr -a -g code code .
-abbr -a -g dz dezoomify-rs
+abbr -a -g dz dezoomify-rs --accept-invalid-certs --compression 10
 abbr -a -g ff firefox
 abbr -a -g ffm ffmpeg -i
 abbr -a -g ra ranger
