@@ -26,6 +26,7 @@ abbr -a -g tar tar xvf
 abbr -a -g o open
 abbr -a -g b browse
 abbr -a -g f find
+abbr -a -g fi file
 abbr -a -g g git
 abbr -a -g gr grep
 abbr -a -g d dir
@@ -53,7 +54,7 @@ abbr -a -g trace traceroute
 abbr -a -g m make
 # js
 abbr -a -g js deno run
-abbr -a -g no node
+abbr -a -g n node
 abbr -a -g de deno
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
 abbr -a -g npm npm run
