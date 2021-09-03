@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+# set background image
+~/bin/setbg
+
+
+if [ -f ~/bin/localstartup ]; then
+	~/bin/localstartup
+fi
+
+

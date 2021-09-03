@@ -1,1 +1,0 @@
-hansolo.sh
