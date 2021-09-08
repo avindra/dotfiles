@@ -3,8 +3,8 @@
 # Source common scripts (per suse)
 . /etc/X11/xinit/xinitrc.common
 
-# Remap capslock to backspace
-setxkbmap -option caps:backspace
+# Make capslock another Windows key
+setxkbmap -option caps:super
 
 # Restore desired screen layout
 if [ -e ~/.screenlayout/default.sh ]; then

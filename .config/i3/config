@@ -314,20 +314,17 @@ mode "resize" {
 }
 assign [class="^Steam"] $ws5
 
-# All odd workspaces on left screen,
-#    even workspaces on right screen.
+# Group of 2 and 2 and 1 and 1
 
 workspace $ws1 output $screenLeft
-workspace $ws3 output $screenLeft
-workspace $ws5 output $screenLeft
-workspace $ws7 output $screenLeft
-workspace $ws9 output $screenLeft
+workspace $ws2 output $screenLeft
 
-workspace $ws2 output $screenRight
+workspace $ws3 output $screenRight
 workspace $ws4 output $screenRight
+
+# Extra space, if needed
+workspace $ws5 output $screenLeft
 workspace $ws6 output $screenRight
-workspace $ws8 output $screenRight
-workspace $ws10 output $screenRight
 
 workspace_auto_back_and_forth yes
 
