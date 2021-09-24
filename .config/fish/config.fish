@@ -26,7 +26,7 @@ abbr -a -g tar tar xvf
 abbr -a -g o open
 abbr -a -g b browse
 abbr -a -g f find
-abbr -a -g fi file
+abbr -a -g fil file
 abbr -a -g g git
 abbr -a -g gr grep
 abbr -a -g d dir
@@ -114,7 +114,8 @@ end
 abbr -a -g code code .
 abbr -a -g dz dezoomify-rs --accept-invalid-certs --compression 10
 abbr -a -g ff firefox
-abbr -a -g ffm ffmpeg -i
+# https://superuser.com/a/726379/59068
+abbr -a -g ffm ffmpeg -threads 0 -i
 abbr -a -g ra ranger
 abbr -a -g t  trans -shell
 abbr -a -g yt youtube-dl
@@ -181,6 +182,9 @@ switch $os
 
 		#suse
 		abbr -a -g snap snapper ls
+		# btrfs
+		abbr -a -g fi sudo btrfs fi show /
+
 		# packages
 		abbr -a -g os  osc
 		abbr -a -g rp  rpm -qa

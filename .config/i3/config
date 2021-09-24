@@ -75,13 +75,15 @@ bar {
 	        inactive_workspace #5f5f5f $unfocused #808080
 	}
 
-	position bottom
+	position top
 }
 
 bar {
 	mode hide
 	output $screenRight
 	status_command taskbar
+
+	position top
 }
 
 # App-specific settings
