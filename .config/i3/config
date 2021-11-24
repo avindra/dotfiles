@@ -64,6 +64,8 @@ bar {
 	mode hide
 	i3bar_command i3bar -t
 
+	status_command taskbar
+
 	output $screenLeft
 	output $screenRight
 	colors {
@@ -75,16 +77,9 @@ bar {
 	        inactive_workspace #5f5f5f $unfocused #808080
 	}
 
-	position top
+	position bottom
 }
 
-bar {
-	mode hide
-	output $screenRight
-	status_command taskbar
-
-	position top
-}
 
 # App-specific settings
 # App-specific color settings
@@ -369,5 +364,6 @@ bindsym $mod+Shift+space move scratchpad
 bindsym $mod+space scratchpad show
 
 # Toggle taskbar visibility
-bindsym F12 bar hidden_state toggle
+# bindsym F12 bar hidden_state toggle
+bindsym F12 exec --no-startup-id dock
 
