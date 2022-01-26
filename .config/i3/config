@@ -26,7 +26,7 @@ set $mod Mod4
 
 set $term ctxterm
 
-set $screenLeft HDMI-0
+set $screenLeft DP-4
 set $screenRight DP-0
 
 # Derive colors from XResources (integration with pywal)
@@ -344,6 +344,8 @@ bindsym $mod+s   	resize shrink width 5 px or 5ppt
 bindsym $mod+Shift+s	resize grow width 5 px or 5 ppt
 bindsym $mod+Shift+i  	resize shrink height 5 px or 5 ppt
 bindsym $mod+i  	resize grow height 5 px or 5 ppt
+
+for_window [all] title_window_icon on padding 10px
 
 # Disable focus change for clicks on titlebars
 # with the middle mouse button

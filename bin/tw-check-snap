@@ -5,8 +5,8 @@
 
 set link "https://download.opensuse.org/tumbleweed/iso/?C=M;O=D"
 
-# Todo: fix: uses "hgrep" internally which is only in npm
-set latest (curl -s "$link" | grep -Ei 'Changes\.[0-9]+\.txt' | hgrep 'a' -t | head -2 | tail -1 | cut -d. -f2)
+set latest (curl -s "$link" | grep -Eio 'Changes\.[0-9]+\.txt')
+set latest (echo "$latest" |  cut -d' ' -f1| grep -o '[0-9]*')
 
 set current (sh -c ". /etc/os-release && echo \$VERSION_ID")
 
