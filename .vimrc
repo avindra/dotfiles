@@ -34,12 +34,6 @@ filetype plugin on
 " Paste from and to system clipboard
 set clipboard=unnamed
 
-" luke guides
-autocmd FileType tex inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
-" luke tex
-autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
-autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
-
 " Vim plugins
 source ~/.local/share/nvim/site/autoload/plug.vim
 call plug#begin('~/.local/share/nvim/plugged')
