@@ -32,6 +32,8 @@ window:
 
   decorations: none
 
+  opacity: 1.0
+
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
@@ -89,9 +91,6 @@ custom_cursor_colors: true
 bell:
   animation: EaseOutExpo
   duration: 1
-
-# Background opacity
-background_opacity: 1.0
 
 # Key bindings
 # @doc https://github.com/alacritty/alacritty/blob/de9ed259667588285891eda1665cd3edefcd3297/alacritty.yml#L479
