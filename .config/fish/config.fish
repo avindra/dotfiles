@@ -11,6 +11,7 @@ abbr -a -g cr    crontab -l
 abbr -a -g cro   crontab -e
 # force semantic preference
 abbr -a -g top htop
+abbr -a -g pc pcmanfm
 abbr -a -g su sudo su - --shell (which fish)
 
 # sane command defaults
@@ -118,7 +119,7 @@ abbr -a -g ff firefox
 abbr -a -g ffm ffmpeg -threads 0 -i
 abbr -a -g ra ranger
 abbr -a -g t  trans -shell
-abbr -a -g yt youtube-dl
+abbr -a -g yt yt-dlp
 
 set os (uname -s)
 

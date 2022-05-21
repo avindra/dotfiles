@@ -6,7 +6,7 @@
 # directory of your focused window, otherwise
 # it will spawn a normal shell
 
-set term alacritty
+set term kitty
 
 set focusPid (xdotool getactivewindow getwindowpid)
 
@@ -15,7 +15,9 @@ if test -n "$focusPid"
 	set focusDir (readlink -f "$link")
 
   # for rxvt-unicode, use -wd
-	exec $term --working-directory $focusDir $argv
+	# for alacritty and kitty
+	# use --working-directory
+	exec $term -1  --working-directory=$focusDir $argv
 end
 
-exec $term $argv
+exec $term -1  $argv
