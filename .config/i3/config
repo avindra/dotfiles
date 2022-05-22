@@ -328,10 +328,6 @@ workspace $ws6 output $screenRight
 workspace_auto_back_and_forth yes
 
 # pageup/pagedown for workspace cycle
-bindsym $mod+Shift+Tab workspace prev_on_output
-bindsym $mod+Tab workspace next_on_output
-bindsym Ctrl+Tab focus right
-bindsym Ctrl+Shift+Tab focus left
 
 bindsym $mod+grave workspace back_and_forth
 
