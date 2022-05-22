@@ -3,7 +3,7 @@
 # requires jq
 # @https://i3wm.org/docs/user-contributed/swapping-workspaces.html
 
-DISPLAY_CONFIG=($(i3-msg -t get_outputs | jq -r '.[]|"\(.name):\(.current_workspace)"'))
+mapfile -t DISPLAY_CONFIG < <(i3-msg -t get_outputs | jq -r '.[]|"\(.name):\(.current_workspace)"')
 
 for ROW in "${DISPLAY_CONFIG[@]}"
 do
