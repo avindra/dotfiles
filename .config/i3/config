@@ -26,7 +26,7 @@ set $mod Mod4
 
 set $term ctxterm
 
-set $screenLeft DP-4
+set $screenLeft DP-2
 #set $screenRight DP-0
 set $screenRight HDMI-0
 

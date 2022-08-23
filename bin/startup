@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # set background image
-~/bin/setbg
+~/bin/setbg > /dev/null &
 
 
 if [ -f ~/bin/localstartup ]; then
