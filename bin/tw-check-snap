@@ -1,43 +1,52 @@
-#!/usr/bin/env fish
-#
+#!/usr/bin/env -S deno run -A
 
-# For openSUSE Tumbleweed: check if there is an update
+const link = "https://download.opensuse.org/download/tumbleweed/iso/?jsontable";
 
-set link "https://download.opensuse.org/tumbleweed/iso/?C=M;O=D"
 
-set latest (curl -s "$link" | grep -Eio 'Changes\.[0-9]+\.txt')
-set latest (echo "$latest" |  cut -d' ' -f1| grep -o '[0-9]*')
+const decoder = new TextDecoder('utf-8');
+const txt = decoder.decode(await Deno.readFile('/etc/os-release'));
 
-set current (sh -c ". /etc/os-release && echo \$VERSION_ID")
+const current = txt
+	.match(/VERSION_ID=(.+)\n/)[1]
+	.replace(/"/g, '');
 
-set today (date +"%Y%m%d")
 
-function delta
-	set d1 (date -d "$argv[1]" +%s)
-	set d2 (date -d "$argv[2]" +%s)
-	echo (math "($d1 - $d2) / 86400")
-end
+const r = await fetch(link);
+const records = (await r.json()).data;
 
-# grammar
-function nDays
-	echo -n "$argv[1] "
-	if test "$argv[1]" -eq 1
-		echo "day"
-	else
-		echo "days"
-	end
-end
 
-if test $current -eq $latest
-	echo "You are up to date ($current)"
-else
-	set a (delta "$today" "$latest")
-	set b (delta "$latest" "$current")
+// https://stackoverflow.com/a/16714931/270302
+const now = parseInt(new Date().toISOString().slice(0,10).replace(/-/g,""));
 
-	set ahead (nDays $a)
-	set behind (nDays $b)
+const record = records[records.length - 2];
+const available = parseInt(record.name.match(/Snapshot(.+)-/)[1]);
 
-	echo "$latest is available (since $ahead)"
-	echo "$today is today's date"
-	echo "$current is your patchset ($behind behind)"
-end
+function delta(date1, date2) {
+  const d1 = Math.floor(new Date(date1).getTime() / 1000);
+  const d2 = Math.floor(new Date(date2).getTime() / 1000);
+  return (d1 - d2) / 86400;
+}
+
+function nDays(numDays) {
+  if (numDays == 1) {
+    return "day";
+  } else {
+		return "days";
+  }
+}
+
+const a = delta(now, available);
+const b = delta(available, current);
+
+
+const ahead = nDays(a);
+const behind = nDays(b);
+
+console.log(`${available} is available (since ${ahead})`);
+console.log(`${current} is your patchset (${behind} behind)`);
+console.log(`${now} is today's date`);
+
+
+if (available === current) {
+	console.log(`You are up to date (${now})`);
+}

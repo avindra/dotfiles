@@ -3,6 +3,7 @@
 # set background image
 ~/bin/setbg > /dev/null &
 
+picom -f -b
 
 if [ -f ~/bin/localstartup ]; then
 	~/bin/localstartup
