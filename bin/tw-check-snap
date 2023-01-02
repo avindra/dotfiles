@@ -28,16 +28,14 @@ function delta(date1, date2) {
 }
 
 function nDays(numDays) {
-  if (numDays == 1) {
-    return "day";
-  } else {
-		return "days";
-  }
+  if (numDays == 1)
+    return "1 day";
+
+  return `${ numDays } days`;
 }
 
 const a = delta(now, available);
 const b = delta(available, current);
-
 
 const ahead = nDays(a);
 const behind = nDays(b);
@@ -47,6 +45,9 @@ console.log(`${current} is your patchset (${behind} behind)`);
 console.log(`${now} is today's date`);
 
 
-if (available === current) {
-	console.log(`You are up to date (${now})`);
+if (available == current) {
+	console.log(`You are up to date (${available})`);
+} else {
+	console.log(`You are behind, update to ${available}`);
 }
+
