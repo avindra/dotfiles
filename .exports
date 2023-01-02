@@ -24,3 +24,5 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 
 # multi-threaded xz. see: https://stackoverflow.com/a/33441796/270302
 export XZ_OPT="-T0"
+
+export PATH="${PATH}:/home/avindra/App/miniconda3/bin"
