@@ -2,7 +2,7 @@
 # /home/avindra/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Tue Aug  9 14:18:57 2022
+# Generated on Sat Dec  3 22:23:19 2022
 #
 
 # ConfigProperties:
@@ -36,19 +36,9 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 [DPY:DVI-D-0]/ColorSpace=0
 [DPY:DVI-D-0]/ColorRange=0
 [DPY:DVI-D-0]/SynchronousPaletteUpdates=0
-[DPY:HDMI-0]/RedBrightness=0.000000
-[DPY:HDMI-0]/GreenBrightness=0.000000
-[DPY:HDMI-0]/BlueBrightness=0.000000
-[DPY:HDMI-0]/RedContrast=0.000000
-[DPY:HDMI-0]/GreenContrast=0.000000
-[DPY:HDMI-0]/BlueContrast=0.000000
-[DPY:HDMI-0]/RedGamma=1.000000
-[DPY:HDMI-0]/GreenGamma=1.000000
-[DPY:HDMI-0]/BlueGamma=1.000000
 [DPY:HDMI-0]/Dithering=0
 [DPY:HDMI-0]/DitheringMode=0
 [DPY:HDMI-0]/DitheringDepth=0
-[DPY:HDMI-0]/DigitalVibrance=0
 [DPY:HDMI-0]/ColorSpace=0
 [DPY:HDMI-0]/ColorRange=0
 [DPY:HDMI-0]/SynchronousPaletteUpdates=0
@@ -73,7 +63,7 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 [DPY:DP-2]/RedGamma=1.000000
 [DPY:DP-2]/GreenGamma=1.000000
 [DPY:DP-2]/BlueGamma=1.000000
-[DPY:DP-2]/Dithering=0
+[DPY:DP-2]/Dithering=1
 [DPY:DP-2]/DitheringMode=0
 [DPY:DP-2]/DitheringDepth=0
 [DPY:DP-2]/DigitalVibrance=0
@@ -98,3 +88,5 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 [DPY:DP-5]/ColorSpace=0
 [DPY:DP-5]/ColorRange=0
 [DPY:DP-5]/SynchronousPaletteUpdates=0
+[GPU:0]/GPUPowerMizerMode=2
+[GPU:0]/GPULogoBrightness=100
