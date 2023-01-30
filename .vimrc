@@ -1,3 +1,5 @@
+set modeline
+
 " smartcase = use all lowercase for case-insensitive search
 set smartcase
 set backspace=indent,eol,start

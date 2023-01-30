@@ -1,5 +1,7 @@
 #!/usr/bin/env -S deno run -A
 
+/* vim: set syntax=javascript: */
+
 const link = "https://download.opensuse.org/download/tumbleweed/iso/?jsontable";
 
 

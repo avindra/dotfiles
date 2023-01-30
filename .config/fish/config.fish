@@ -57,6 +57,7 @@ abbr -a -g m make
 abbr -a -g js deno run
 abbr -a -g n node
 abbr -a -g de deno
+abbr -a -g no node
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
 abbr -a -g npm npm run
 abbr -a -g npmi npm install --no-fund --no-audit --ignore-engines --ignore-scripts
