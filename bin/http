@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# exact copy of: https://stackoverflow.com/a/21957017/270302
+# based on: https://stackoverflow.com/a/21957017/270302
 from http.server import HTTPServer, SimpleHTTPRequestHandler, test
 import sys
 

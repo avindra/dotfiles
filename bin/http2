@@ -1,0 +1,65 @@
+#!/usr/bin/env -S deno --unstable run --allow-read --allow-net
+/* vim: set syntax=javascript: */
+import * as path from "https://deno.land/std@0.176.0/path/mod.ts";
+
+/**
+ * HTTP2 support is experimental and requires HTTTS
+ * @see https://deno.land/manual@v1.30.2/runtime/http_server_apis#http2-support-1
+ */
+const port = Deno.args[0] || 8000;
+
+const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
+
+console.log(__dirname);
+
+const server = Deno.listenTls({
+	port,
+	certFile: `${__dirname}/localhost.crt`,
+	keyFile: `${__dirname}/localhost.key`,
+	alpnProtocols: ["h2", "http/1.1"],
+});
+
+console.log(`File server running on http://localhost:${port}/`);
+
+for await (const conn of server) {
+	handleHttp(conn).catch(console.error);
+}
+
+async function handleHttp(conn) {
+	const httpConn = Deno.serveHttp(conn);
+	for await (const requestEvent of httpConn) {
+		// Use the request pathname as filepath
+		const url = new URL(requestEvent.request.url);
+		const filepath = decodeURIComponent(url.pathname);
+
+		console.log("fp", filepath);
+
+		// Try opening the file
+		let file;
+		try {
+			file = await Deno.open("." + filepath, { read: true });
+		} catch {
+			console.log("file miss");
+			// If the file cannot be opened, return a "404 Not Found" response
+			const notFoundResponse = new Response("404 Not Found", { status: 404 });
+			await requestEvent.respondWith(notFoundResponse);
+			continue;
+		}
+
+		// Build a readable stream so the file doesn't have to be fully loaded into
+		// memory while we send it
+		const readableStream = file.readable;
+
+		// Build and send the response
+		const response = new Response(readableStream, {
+			headers: {
+				// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store
+				"Access-Control-Allow-Origin": "*",
+				"Cache-Control": "no-store, max-age=0",
+			},
+		});
+		try {
+			await requestEvent.respondWith(response);
+		} catch (e) {}
+	}
+}
