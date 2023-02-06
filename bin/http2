@@ -2,6 +2,9 @@
 /* vim: set syntax=javascript: */
 import * as path from "https://deno.land/std@0.176.0/path/mod.ts";
 
+import { extname } from "https://deno.land/std@0.127.0/path/posix.ts";
+import { contentType } from "https://deno.land/std@0.176.0/media_types/mod.ts";
+
 /**
  * HTTP2 support is experimental and requires HTTTS
  * @see https://deno.land/manual@v1.30.2/runtime/http_server_apis#http2-support-1
@@ -50,13 +53,21 @@ async function handleHttp(conn) {
 		// memory while we send it
 		const readableStream = file.readable;
 
+		const headers =  {
+			// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store
+			"access-control-allow-origin": "*",
+			"access-control-allow-headers": "*",
+			"Cache-Control": "no-store, max-age=0",
+		};
+
+		const contentTypeValue = contentType(extname(filepath));
+		if (contentTypeValue) {
+			headers["content-type"] = contentTypeValue;
+		}
+
 		// Build and send the response
 		const response = new Response(readableStream, {
-			headers: {
-				// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#no-store
-				"Access-Control-Allow-Origin": "*",
-				"Cache-Control": "no-store, max-age=0",
-			},
+			headers,
 		});
 		try {
 			await requestEvent.respondWith(response);
