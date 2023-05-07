@@ -59,7 +59,6 @@ abbr -a -g n node
 abbr -a -g de deno
 abbr -a -g no node
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
-abbr -a -g npm npm run
 abbr -a -g npmi npm install --no-fund --no-audit --ignore-engines --ignore-scripts
 abbr -a -g clj planck
 # rust
@@ -120,7 +119,8 @@ abbr -a -g ff firefox
 abbr -a -g ffm ffmpeg -threads 0 -i
 abbr -a -g ra ranger
 abbr -a -g t  trans -shell
-abbr -a -g yt yt-dlp
+# https://github.com/yt-dlp/yt-dlp/issues/3398#issuecomment-1095658515
+abbr -a -g yt yt-dlp -S ext:mp4:m4a
 
 set os (uname -s)
 
@@ -230,10 +230,4 @@ direnv hook fish | source
 
 # general shell exports
 ~/.exports | source
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/avindra/App/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 
