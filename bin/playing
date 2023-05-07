@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# wait for media to load
+sleep 1
+
+icon=$(playerctl metadata mpris:artUrl)
+title=$(playerctl metadata xesam:title)
+
+notify-send "$title" -i "$icon"
