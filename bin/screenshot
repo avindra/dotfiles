@@ -3,4 +3,10 @@
 # Make a screenshot
 #
 
-exec flameshot gui
+cd /tmp
+
+file=$(mktemp scrot-XXXX.png)
+
+scrot - > $file
+
+gimp $file
