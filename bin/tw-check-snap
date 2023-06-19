@@ -2,7 +2,9 @@
 
 /* vim: set syntax=javascript: */
 
-const link = "https://download.opensuse.org/download/tumbleweed/iso/?jsontable";
+//const mirror = "provo-mirror.opensuse.org";
+const mirror = "download.opensuse.org";
+const link = `https://${mirror}/download/tumbleweed/iso/?jsontable`;
 
 
 const decoder = new TextDecoder('utf-8');
