@@ -27,8 +27,8 @@ set $mod Mod4
 set $term ctxterm
 
 set $screenLeft DP-2
-set $screenRight DP-0
-#set $screenRight HDMI-0
+#set $screenRight DP-0
+set $screenRight HDMI-0
 
 # Derive colors from XResources (integration with pywal)
 #

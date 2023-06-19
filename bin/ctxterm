@@ -17,7 +17,7 @@ if test -n "$focusPid"
   # for rxvt-unicode, use -wd
 	# for alacritty and kitty
 	# use --working-directory
-	exec $term -1  --working-directory=$focusDir $argv
+	exec $term -1 --working-directory=$focusDir $argv
 end
 
-exec $term -1  $argv
+exec $term -1 $argv
