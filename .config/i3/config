@@ -191,7 +191,8 @@ bindsym Print         exec screenshot
 bindsym $mod+q kill
 
 # start app launcher
-bindsym $mod+d exec "i3-dmenu-desktop --dmenu='rofi -show combi 'run, window''"
+bindsym $mod+Shift+d exec "i3-dmenu-desktop --dmenu='rofi -show 'filebrowser''"
+bindsym $mod+d exec "i3-dmenu-desktop --dmenu='rofi -show combi 'run,window''"
 
 # vim bindings for basic window management
 bindsym $mod+h		focus left

@@ -1,11 +1,18 @@
 [Default Applications]
-video/x-msvideo=svp-manager4.desktop
-video/x-matroska=svp-manager4.desktop
-video/webm=svp-manager4.desktop
-video/mpeg=svp-manager4.desktop
-video/mp4=svp-manager4.desktop
+video/x-msvideo=mpv.desktop
+video/x-matroska=mpv.desktop
+audio/x-matroska=mpv.desktop
+application/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+video/mpeg=mpv.desktop
+video/mp4=mpv.desktop
 image/png=feh.desktop
 image/jpeg=feh.desktop
 x-scheme-handler/steamvr=valve-URI-steamvr.desktop
 application/x-vrmonitor=valve-vrmonitor.desktop
 x-scheme-handler/vrmonitor=valve-URI-vrmonitor.desktop
+
+[Added associations]
+video/x-matroska=mpv.desktop
+audio/x-matroska=mpv.desktop
+application/x-matroska=mpv.desktop
