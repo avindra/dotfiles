@@ -12,7 +12,7 @@ if [ -e ~/.screenlayout/default.sh ]; then
 fi
 
 # do startup routine
-~/bin/startup
+startup
 
 # scale qt5+ apps
 export QT_SCALE_FACTOR=2.2

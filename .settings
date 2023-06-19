@@ -27,8 +27,6 @@ eval "$(dirp hook)"
 P0="./bin"
 P1="./node_modules/.bin"
 P2="$HOME/.cargo/bin"
-P3="$HOME/.local/bin"
-P4="$HOME/.gem/ruby/2.4.0/bin"
 P5="$HOME/go/bin"
 # todo: move projects out of Dev
 P6="$HOME/Dev/emsdk/upstream/emscripten"
@@ -36,15 +34,13 @@ P7="$HOME/Dev/wasm-qt/src/bin"
 P6="$HOME/Dev/suserpmutil/bin"
 P8="$HOME/Dev/fndr"
 
-USER_PATHS="$P0:$P1:$P2:$P3:$P4:$P5:$P6:$P7:$P8"
+USER_PATHS="$P0:$P1:$P2:$P5:$P6:$P7:$P8"
 
 
 # Change MacOS env to resemble a more
 # traditional developer environment
 os=$(uname -s)
 if [[ "$os" == "Darwin" ]]; then
-	USER_PATHS="$USER_PATHS:$HOME/bin"
-
 	# Prefer brew python over system python
 	#USER_PATHS="/usr/local/opt/python/libexec/bin:$USER_PATHS"
 

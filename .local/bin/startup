@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+setbg > /dev/null &
+
+picom -f -b
+
+if [ -f ~/.local/bin/localstartup ]; then
+	~/.local/bin/localstartup
+fi
+
+

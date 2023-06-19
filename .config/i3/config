@@ -118,7 +118,7 @@ bindsym $esc+XF86AudioLowerVolume exec pactl set-sink-volume $sink -5% && killal
 
 bindsym XF86AudioMute exec pactl set-sink-mute $sink toggle && killall -SIGUSR1 i3status
 
-bindsym XF86Calculator exec ~/bin/mouse/active.py
+# bindsym XF86Calculator exec ~/mouse/active.py
 
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
 
