@@ -1,0 +1,18 @@
+// Dark theme.
+// @import "~/.cache/wal/colors-rofi-dark"
+
+// Light theme
+@import "~/.cache/wal/colors-rofi-light"
+
+configuration {
+ font: "mono 20";
+ location: 0;
+ yoffset: 300;
+ show-icons: true;
+}
+
+window {
+  width: 70%;
+  border-color: black;
+  border: 2px;
+}

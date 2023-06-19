@@ -47,3 +47,5 @@ rofi.separator-style: solid
 rofi.matching: fuzzy
 rofi.terminal: urxvtc-256color
 rofi.display-combi: $
+rofi.color-enabled: true
+
