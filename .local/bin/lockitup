@@ -1,5 +1,12 @@
 #!/usr/bin/sh
 
+
+i3lock
+
+blank &
+
+exit 0
+
 #
 # Minimal xlock display
 #
