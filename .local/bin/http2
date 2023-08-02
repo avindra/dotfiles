@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno --unstable run --allow-read --allow-net
+#!/usr/bin/env -S deno run --allow-read --allow-net
 /* vim: set syntax=javascript: */
 import * as path from "https://deno.land/std@0.176.0/path/mod.ts";
 
@@ -9,7 +9,7 @@ import { contentType } from "https://deno.land/std@0.176.0/media_types/mod.ts";
  * HTTP2 support is experimental and requires HTTTS
  * @see https://deno.land/manual@v1.30.2/runtime/http_server_apis#http2-support-1
  */
-const port = Deno.args[0] || 8000;
+const port = Number(Deno.args[0]) || 8000;
 
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 
