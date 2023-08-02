@@ -13,6 +13,7 @@ application/x-vrmonitor=valve-vrmonitor.desktop
 x-scheme-handler/vrmonitor=valve-URI-vrmonitor.desktop
 
 [Added associations]
+inode/directory=pcmanfm-qt.desktop
 video/x-matroska=mpv.desktop
 audio/x-matroska=mpv.desktop
 application/x-matroska=mpv.desktop
