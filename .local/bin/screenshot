@@ -3,10 +3,8 @@
 # Make a screenshot
 #
 
-cd /tmp
+# https://github.com/flameshot-org/flameshot/issues/7#issuecomment-1988948398
+export QT_SCALE_FACTOR=1
 
-file=$(mktemp scrot-XXXX.png)
+exec flameshot gui
 
-scrot - > $file
-
-gimp $file
