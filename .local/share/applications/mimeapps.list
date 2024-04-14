@@ -1,4 +1,5 @@
 [Default Applications]
+inode/directory=pcmanfm-qt.desktop
 image/png=viewnior.desktop
 text/html=firefox.desktop
 x-scheme-handler/http=firefox.desktop
@@ -20,7 +21,6 @@ application/x-extension-xht=firefox.desktop
 x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
-inode/directory=pcmanfm-qt.desktop
 text/plain=vim.desktop;
 image/png=viewnior.desktop;
 application/octet-stream=evince.desktop;viewnior.desktop;atril.desktop;

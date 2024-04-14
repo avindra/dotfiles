@@ -31,6 +31,8 @@ abbr -a -g fil file
 abbr -a -g g git
 abbr -a -g gr grep
 abbr -a -g d dir
+abbr -a -g d. dir .
+abbr -a -g d.. dir ..
 abbr -a -g di diff
 abbr -a -g cho chown
 abbr -a -g gun gunzip
@@ -76,6 +78,7 @@ abbr -a -g comp composer dump-autoload
 abbr -a -g ju jupyter notebook
 abbr -a -g py python3
 abbr -a -g python python3
+abbr -a -g pipi pip install --user --break-system-packages --upgrade
 abbr -a -g rb ruby
 abbr -a -g xa xargs
 

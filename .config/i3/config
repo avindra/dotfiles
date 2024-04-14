@@ -26,9 +26,9 @@ set $mod Mod4
 
 set $term ctxterm
 
-set $screenLeft DP-2
-#set $screenRight DP-0
-set $screenRight HDMI-0
+set $screenLeft DP-4
+set $screenRight DP-2
+#set $screenRight HDMI-0
 
 # Derive colors from XResources (integration with pywal)
 #
@@ -66,6 +66,8 @@ bar {
 	i3bar_command i3bar -t
 
 	status_command taskbar
+
+	tray_output primary
 
 	output $screenLeft
 	output $screenRight

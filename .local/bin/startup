@@ -2,7 +2,10 @@
 
 setbg > /dev/null &
 
-picom -f -b
+# no picom, see
+# https://github.com/yshui/picom/issues/1168
+# https://github.com/yshui/picom/pull/1172
+# $ picom -f -b
 
 if [ -f ~/.local/bin/localstartup ]; then
 	~/.local/bin/localstartup
