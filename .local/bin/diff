@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 ###
 ## Super diff
 ## 1. `diff` by itself shows a diff of cached

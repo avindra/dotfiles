@@ -1,5 +1,3 @@
-#!/usr/bin/sh
-
 # this file is a cross-compatible list of
 # exports for fish and bash. since most
 # shells need to be supported, a very limited
