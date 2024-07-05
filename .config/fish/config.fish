@@ -30,9 +30,6 @@ abbr -a -g f find
 abbr -a -g fil file
 abbr -a -g g git
 abbr -a -g gr grep
-abbr -a -g d dir
-abbr -a -g d. dir .
-abbr -a -g d.. dir ..
 abbr -a -g di diff
 abbr -a -g cho chown
 abbr -a -g gun gunzip
