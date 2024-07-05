@@ -2,6 +2,14 @@
 
 /* vim: set syntax=javascript: */
 
+/**
+ * this script pokes openSUSE servers to
+ * find the latest snapshot release.
+ *
+ * or we can check openqa:
+ *   https://openqa.opensuse.org/snapshot-changes/opensuse/Tumbleweed/
+*/
+
 //const mirror = "provo-mirror.opensuse.org";
 //const mirror = "download.opensuse.org";
 const mirror = "cdn.opensuse.org";
