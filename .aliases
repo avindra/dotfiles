@@ -23,17 +23,4 @@ alias C="git commit --amend --no-edit"
 
 
 alias v="vi"
-
-# Syntax highlight the file, with the
-# familiarity of "cat"
-# 
-# "cat" with "ccat"
-# sudo zypper i \
-# 	python3-pygmentize \   # For ccat
-# 	highlight              # For cats
-alias ccat="pygmentize"
-alias cats="highlight -O ansi"
-
-alias clock="tty-clock -c -s -t"
-
 alias t="trans -shell"
