@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+exec curl -H 'User-Agent: wget' https://rate.sx

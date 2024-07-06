@@ -36,14 +36,4 @@ alias cats="highlight -O ansi"
 
 alias clock="tty-clock -c -s -t"
 
-###
-## Remote utils
-###
-alias crypto="curl -H 'User-Agent: wget' rate.sx"
-
-function d() {
-	curl -s "dict.org/define:$1:english" | less
-}
-export -f d
-
 alias t="trans -shell"

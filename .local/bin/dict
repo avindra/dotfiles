@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+curl -s "dict.org/define:$1:english" | bat --language=javascript
