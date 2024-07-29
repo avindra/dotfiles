@@ -228,6 +228,9 @@ dirp hook fish | source
 # hook direnv https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 direnv hook fish | source
 
+# hook fzf
+fzf --fish | source
+
 # general shell exports
 ~/.exports | source
 
