@@ -114,3 +114,4 @@ PROMPT_DIRTRIM=4
 stty -ixon
 
 eval "$(starship init bash)"
+eval "$(fzf --bash)"
