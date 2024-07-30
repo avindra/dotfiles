@@ -1,0 +1,10 @@
+{
+  "vim_mode": true,
+  "ui_font_size": 30,
+  "buffer_font_size": 24,
+  "theme": {
+    "mode": "system",
+    "light": "Andromeda",
+    "dark": "Rosé Pine Moon"
+  }
+}
