@@ -1,0 +1,348 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 1
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#958f8c"
+blue = "#8F744C"
+cyan = "#7E8355"
+green = "#C63939"
+magenta = "#EC4848"
+red = "#B33535"
+white = "#d5cdc9"
+yellow = "#E4393A"
+
+[colors.cursor]
+cursor = "#d5cdc9"
+text = "#d5cdc9"
+
+[colors.normal]
+black = "#0a0f0f"
+blue = "#8F744C"
+cyan = "#7E8355"
+green = "#C63939"
+magenta = "#EC4848"
+red = "#B33535"
+white = "#d5cdc9"
+yellow = "#E4393A"
+
+[colors.primary]
+background = "#0a0f0f"
+foreground = "#d5cdc9"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 22.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Plus"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Home"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[H"
+key = "Home"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "End"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[F"
+key = "End"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[5;2~"
+key = "PageUp"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[5;5~"
+key = "PageUp"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[5~"
+key = "PageUp"
+
+[[keyboard.bindings]]
+chars = "\u001B[6;2~"
+key = "PageDown"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[6;5~"
+key = "PageDown"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[6~"
+key = "PageDown"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2D"
+key = "Left"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5D"
+key = "Left"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3D"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[D"
+key = "Left"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOD"
+key = "Left"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2C"
+key = "Right"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5C"
+key = "Right"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3C"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[C"
+key = "Right"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOC"
+key = "Right"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2A"
+key = "Up"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5A"
+key = "Up"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3A"
+key = "Up"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[A"
+key = "Up"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOA"
+key = "Up"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2B"
+key = "Down"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5B"
+key = "Down"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3B"
+key = "Down"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[B"
+key = "Down"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOB"
+key = "Down"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[Z"
+key = "Tab"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001BOP"
+key = "F1"
+
+[[keyboard.bindings]]
+chars = "\u001BOQ"
+key = "F2"
+
+[[keyboard.bindings]]
+chars = "\u001BOR"
+key = "F3"
+
+[[keyboard.bindings]]
+chars = "\u001BOS"
+key = "F4"
+
+[[keyboard.bindings]]
+chars = "\u001B[15~"
+key = "F5"
+
+[[keyboard.bindings]]
+chars = "\u001B[17~"
+key = "F6"
+
+[[keyboard.bindings]]
+chars = "\u001B[18~"
+key = "F7"
+
+[[keyboard.bindings]]
+chars = "\u001B[19~"
+key = "F8"
+
+[[keyboard.bindings]]
+chars = "\u001B[20~"
+key = "F9"
+
+[[keyboard.bindings]]
+chars = "\u001B[21~"
+key = "F10"
+
+[[keyboard.bindings]]
+chars = "\u001B[23~"
+key = "F11"
+
+[[keyboard.bindings]]
+chars = "\u001B[24~"
+key = "F12"
+
+[[keyboard.bindings]]
+chars = "\u007F"
+key = "Back"
+
+[[keyboard.bindings]]
+chars = "\u001B\u007F"
+key = "Back"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[2~"
+key = "Insert"
+
+[[keyboard.bindings]]
+chars = "\u001B[3~"
+key = "Delete"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.triple_click]
+# threshold = 300
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+decorations = "none"
+opacity = 1.0
+
+[window.dimensions]
+columns = 80
+lines = 24
+
+[window.padding]
+x = 2
+y = 2

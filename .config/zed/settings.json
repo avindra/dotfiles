@@ -1,4 +1,7 @@
 {
+  "features": {
+    "inline_completion_provider": "none"
+  },
   "vim_mode": true,
   "ui_font_size": 30,
   "buffer_font_size": 24,
