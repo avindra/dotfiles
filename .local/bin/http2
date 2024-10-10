@@ -17,8 +17,8 @@ console.log(__dirname);
 
 const server = Deno.listenTls({
 	port,
-	certFile: `${__dirname}/localhost.crt`,
-	keyFile: `${__dirname}/localhost.key`,
+	cert: Deno.readTextFileSync(`${__dirname}/localhost.crt`),
+	key: Deno.readTextFileSync(`${__dirname}/localhost.key`),
 	alpnProtocols: ["h2", "http/1.1"],
 });
 
