@@ -26,9 +26,9 @@ set $mod Mod4
 
 set $term ctxterm
 
-set $screenLeft DP-4
-set $screenRight DP-2
-#set $screenRight HDMI-0
+set $screenLeft DP-2
+set $screenRight HDMI-0
+set $screenRight2 DP-0
 
 # Derive colors from XResources (integration with pywal)
 #
@@ -71,6 +71,7 @@ bar {
 
 	output $screenLeft
 	output $screenRight
+	output $screenRight2
 	colors {
        		background $transparent
 	        separator #00ff00
@@ -319,17 +320,17 @@ mode "resize" {
 }
 assign [class="^Steam"] $ws5
 
-# Group of 2 and 2 and 1 and 1
-
 workspace $ws1 output $screenLeft
 workspace $ws2 output $screenLeft
+workspace $ws3 output $screenLeft
 
-workspace $ws3 output $screenRight
 workspace $ws4 output $screenRight
-
-# Extra space, if needed
-workspace $ws5 output $screenLeft
+workspace $ws5 output $screenRight
 workspace $ws6 output $screenRight
+
+workspace $ws7 output $screenRight2
+workspace $ws8 output $screenRight2
+workspace $ws9 output $screenRight2
 
 workspace_auto_back_and_forth yes
 
