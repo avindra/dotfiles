@@ -1,0 +1,10 @@
+font-size = 22
+
+gtk-single-instance = true
+
+####################
+# unlimited scrollback not available yet,
+# so limit to a very large number (100MB)
+####################
+
+scrollback-limit = 100000000
