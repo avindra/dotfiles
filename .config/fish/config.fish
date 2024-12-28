@@ -59,6 +59,7 @@ abbr -a -g de deno
 abbr -a -g no node
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
 abbr -a -g npmi npm install --no-fund --no-audit --ignore-engines --ignore-scripts
+abbr -a -g pn pnpm
 abbr -a -g clj planck
 # rust
 abbr -a -g car cargo run --release -j(nproc)
@@ -178,6 +179,8 @@ switch $os
 		abbr -a -g ev  evince
 		abbr -a -g gim gimp
 		abbr -a -g mp  mpv
+		abbr -a -g po  podman
+		abbr -a -g pod podman
 		abbr -a -g qdir qdirstat
 		abbr -a -g win  WINE_PREFIX=~/.wine32 wine
 		abbr -a -g dxvk WINE_PREFIX=~/.wine32 DXVK_HUD=full wine
@@ -219,14 +222,8 @@ end
 # hook starship
 starship init fish | source
 
-# hook deno compl
-deno completions fish | source
-
 # hook dirp
 dirp hook fish | source
-
-# hook direnv https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
-direnv hook fish | source
 
 # hook fzf
 fzf --fish | source
@@ -234,3 +231,7 @@ fzf --fish | source
 # general shell exports
 ~/.exports | source
 
+
+# todo: enable upon release
+# https://github.com/fish-shell/fish-shell/issues/751#issuecomment-2282787121
+# bind ctrl-alt-e 'commandline -rt -- (commandline -xt | string escape | string join " ")'
