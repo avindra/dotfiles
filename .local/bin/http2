@@ -6,7 +6,7 @@ import { extname } from "https://deno.land/std@0.127.0/path/posix.ts";
 import { contentType } from "https://deno.land/std@0.176.0/media_types/mod.ts";
 
 /**
- * HTTP2 support is experimental and requires HTTTS
+ * HTTP2 support is experimental and requires HTTPS
  * @see https://deno.land/manual@v1.30.2/runtime/http_server_apis#http2-support-1
  */
 const port = Number(Deno.args[0]) || 8000;
@@ -14,6 +14,12 @@ const port = Number(Deno.args[0]) || 8000;
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 
 console.log(__dirname);
+
+/**
+ * Based on the "file server" example from the old manual.
+ *
+ * @see https://github.com/denoland/manual/blob/main/examples/file_server.md?#example
+ */
 
 const server = Deno.listenTls({
 	port,
