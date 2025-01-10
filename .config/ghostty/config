@@ -8,3 +8,5 @@ gtk-single-instance = true
 ####################
 
 scrollback-limit = 100000000
+
+window-decoration = false
