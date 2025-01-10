@@ -59,11 +59,13 @@ fi
 ## inject additional dirs
 export PATH="$USER_PATHS:$PATH"
 
-function _setup_fish() {
-	echo -n "Declaring fish_user_paths to be $USER_PATHS... "
-	fish -c "set -e -U fish_user_paths; set -U fish_user_paths $USER_PATHS \$fish_user_paths"
-	echo "done"
-}
+if [ -n "$BASHPID" ]; then
+	function _setup_fish() {
+		echo -n "Declaring fish_user_paths to be $USER_PATHS... "
+		fish -c "set -e -U fish_user_paths; set -U fish_user_paths $USER_PATHS \$fish_user_paths"
+		echo "done"
+	}
 
-export -f _setup_fish
+	export -f _setup_fish
+fi
 
