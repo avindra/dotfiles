@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# tar a folder (default = cwd)
+
+folder="${1:-$PWD}"
+name="$(basename "$folder")"
+
+target="${name}.tar.gz"
+
+printf "Creating %s from %s... " "$target" "$folder"
+
+cd .. || { echo "Could not get parent dir"; exit 1; }
+
+#--exclude-from=.gitignore \
+tar \
+	--exclude=.git \
+	--exclude=.github \
+	--exclude=.gitignore \
+	--exclude=*.gz \
+	-zcvf \
+	"$target" \
+	"$name"
+
+cd - || { echo "Could not switch back"; exit 1; }
+mv "../$target" .
+
+echo "done"
+
+ls -lh "$target"
