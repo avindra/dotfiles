@@ -56,6 +56,10 @@ if [[ "$os" == "Darwin" ]]; then
 	export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+if [ -f /bin/wslpath ]; then
+	USER_PATHS="$HOME/.local/bin:$USER_PATHS"
+fi
+
 ## inject additional dirs
 export PATH="$USER_PATHS:$PATH"
 
