@@ -12,3 +12,5 @@ scrollback-limit = 100000000
 window-decoration = false
 
 theme = "/home/avindra/.cache/wal/colors-ghostty"
+
+term = kitty
