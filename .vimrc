@@ -1,5 +1,11 @@
 set modeline
 
+" detect xml syntax in obs _service files
+augroup obs_service
+  au!
+  autocmd BufNewFile,BufRead _service   set syntax=xml
+augroup END
+
 " smartcase = use all lowercase for case-insensitive search
 set smartcase
 set backspace=indent,eol,start
