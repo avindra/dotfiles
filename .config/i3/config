@@ -18,6 +18,7 @@
 
 # Split into top/bottom by default (instead of left/right)
 default_orientation vertical
+workspace_layout tabbed
 
 set $alt Mod1
 set $esc Mod2
@@ -26,9 +27,9 @@ set $mod Mod4
 
 set $term ctxterm
 
-set $screenLeft DP-2
+set $screenLeft DP-4
 set $screenRight HDMI-0
-set $screenRight2 DP-0
+set $screenRight2 DP-2
 
 # Derive colors from XResources (integration with pywal)
 #
