@@ -36,6 +36,7 @@ nnoremap <F3>      :set hlsearch!<CR>
 nnoremap <F4>      :exe 'set nu!' &nu ? 'rnu!' : ''<CR>
 nnoremap <F5>    :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif <CR>
 nnoremap <F6>      :set spell!<CR>
+nnoremap <F11>      :Goyo<CR>
 
 filetype plugin on
 
@@ -47,19 +48,9 @@ source ~/.local/share/nvim/site/autoload/plug.vim
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mxw/vim-jsx'
-
-Plug 'dag/vim-fish'
-
-" TODO: remove extraneous fzf pkgs
 Plug '/usr/bin/fzf'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
-Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
-" Plug 'chrisbra/Colorizer.vim'
 
 call plug#end()
 
