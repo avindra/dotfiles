@@ -242,11 +242,17 @@ end
 # ref1: https://github.com/fish-shell/fish-shell/issues/751#issuecomment-18058960
 # ref2: https://github.com/fish-shell/fish-shell/issues/751#issuecomment-2282787121
 function bind_expand_all
-    set -l token (commandline -t)
-    if test -n "$token"
-        set -l value (eval __fish_list $token | tr \n ' ')
+    set -l tokens (commandline --tokens-expanded)
+    if test -n "$tokens"
+
+        set -l value (eval __fish_list $tokens | tr \n ' ')
+
         if test -n "$value" -a "$value" != ' '
-            commandline -t $value
+            set pos (math "1+" (commandline --cursor))
+            commandline -r $value
+
+            # restore cursor position
+            commandline --cursor $pos
             commandline -f backward-char
         end
     end
