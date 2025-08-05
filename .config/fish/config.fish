@@ -83,7 +83,7 @@ abbr -a -g xa xargs
 # git aliases
 abbr -a -g g git
 abbr -a -g rebase git rebase -i
-abbr -a -g s git status -uno
+abbr -a -g s git status -s -uno
 abbr -a -g a git add -u
 abbr -a -g r git reset HEAD
 abbr -a -g p git pull --rebase
@@ -231,7 +231,25 @@ fzf --fish | source
 # general shell exports
 ~/.exports | source
 
+function __fish_list
+    for item in $argv
+        echo $item | sed -e 's/ /\\\\ /g'
+    end
+end
 
-# todo: enable upon release
-# https://github.com/fish-shell/fish-shell/issues/751#issuecomment-2282787121
-# bind ctrl-alt-e 'commandline -rt -- (commandline -xt | string escape | string join " ")'
+# Expand tokens upon CTRL-ALT-E (i.e., as in Bash)
+#
+# ref1: https://github.com/fish-shell/fish-shell/issues/751#issuecomment-18058960
+# ref2: https://github.com/fish-shell/fish-shell/issues/751#issuecomment-2282787121
+function bind_expand_all
+    set -l token (commandline -t)
+    if test -n "$token"
+        set -l value (eval __fish_list $token | tr \n ' ')
+        if test -n "$value" -a "$value" != ' '
+            commandline -t $value
+            commandline -f backward-char
+        end
+    end
+end
+
+bind ctrl-alt-e bind_expand_all
