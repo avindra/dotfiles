@@ -56,9 +56,6 @@ call plug#end()
 
 colorscheme wal
 
-let g:jsx_ext_required = 0
-
-
 nmap <C-T> :FZF<CR>
 
 " buffer managent
