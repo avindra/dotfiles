@@ -242,7 +242,7 @@ end
 # ref1: https://github.com/fish-shell/fish-shell/issues/751#issuecomment-18058960
 # ref2: https://github.com/fish-shell/fish-shell/issues/751#issuecomment-2282787121
 function bind_expand_all
-    set -l tokens (commandline --tokens-expanded)
+    set -l tokens (commandline --tokens-raw)
     if test -n "$tokens"
 
         set -l value (eval __fish_list $tokens | tr \n ' ')
