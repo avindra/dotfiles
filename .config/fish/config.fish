@@ -94,6 +94,7 @@ abbr -a -g c git commit -v
 abbr -a -g C git commit --amend --no-edit
 # list files in commit https://stackoverflow.com/a/424142/270302
 abbr -a -g lsc git diff-tree --no-commit-id --name-only -r
+abbr -a -g loc "git ls-files | xargs wc -l | sort -s -n -k 1,1"
 
 # fish 3.2.0 includes a built-in diff. erase it to prefer ours
 functions -e diff
