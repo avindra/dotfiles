@@ -249,12 +249,11 @@ function bind_expand_all
         set -l value (eval __fish_list $tokens | tr \n ' ')
 
         if test -n "$value" -a "$value" != ' '
-            set pos (math "1+" (commandline --cursor))
+            set pos (commandline --cursor)
             commandline -r $value
 
             # restore cursor position
             commandline --cursor $pos
-            commandline -f backward-char
         end
     end
 end
