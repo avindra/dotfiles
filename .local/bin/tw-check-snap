@@ -8,43 +8,37 @@
  *
  * or we can check openqa:
  *   https://openqa.opensuse.org/snapshot-changes/opensuse/Tumbleweed/
-*/
+ */
 
 //const mirror = "provo-mirror.opensuse.org";
 //const mirror = "download.opensuse.org";
 const mirror = "cdn.opensuse.org";
 const link = `https://${mirror}/download/tumbleweed/iso/?jsontable`;
 
+const decoder = new TextDecoder("utf-8");
+const txt = decoder.decode(await Deno.readFile("/etc/os-release"));
 
-const decoder = new TextDecoder('utf-8');
-const txt = decoder.decode(await Deno.readFile('/etc/os-release'));
-
-const current = txt
-	.match(/VERSION_ID=(.+)\n/)[1]
-	.replace(/"/g, '');
-
+const current = Number(txt.match(/VERSION_ID=(.+)\n/)[1].replace(/"/g, ""));
 
 const r = await fetch(link);
 const records = (await r.json()).data;
 
-
 // https://stackoverflow.com/a/16714931/270302
-const now = parseInt(new Date().toISOString().slice(0,10).replace(/-/g,""));
+const now = parseInt(new Date().toISOString().slice(0, 10).replace(/-/g, ""));
 
 const record = records[records.length - 2];
 const available = parseInt(record.name.match(/Snapshot(.+)-/)[1]);
 
 function delta(date1, date2) {
-  const d1 = Math.floor(new Date(date1).getTime() / 1000);
-  const d2 = Math.floor(new Date(date2).getTime() / 1000);
-  return (d1 - d2) / 86400;
+	const d1 = Math.floor(new Date(date1).getTime() / 1000);
+	const d2 = Math.floor(new Date(date2).getTime() / 1000);
+	return (d1 - d2) / 86400;
 }
 
 function nDays(numDays) {
-  if (numDays == 1)
-    return "1 day";
+	if (numDays == 1) return "1 day";
 
-  return `${ numDays } days`;
+	return `${numDays} days`;
 }
 
 const a = delta(now, available);
@@ -57,10 +51,8 @@ console.log(`${available} is available (since ${ahead})`);
 console.log(`${current} is your patchset (${behind} behind)`);
 console.log(`${now} is today's date`);
 
-
 if (available == current) {
 	console.log(`You are up to date (${available})`);
 } else {
 	console.log(`You are behind, update to ${available}`);
 }
-
