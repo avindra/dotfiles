@@ -29,11 +29,7 @@ const now = parseInt(new Date().toISOString().slice(0, 10).replace(/-/g, ""));
 const record = records[records.length - 2];
 const available = parseInt(record.name.match(/Snapshot(.+)-/)[1]);
 
-function delta(date1, date2) {
-	const d1 = Math.floor(new Date(date1).getTime() / 1000);
-	const d2 = Math.floor(new Date(date2).getTime() / 1000);
-	return (d1 - d2) / 86400;
-}
+const delta = (date1, date2) => date1 - date2;
 
 function nDays(numDays) {
 	if (numDays == 1) return "1 day";
