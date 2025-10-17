@@ -115,3 +115,7 @@ stty -ixon
 
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
+
+# https://superuser.com/a/835047/59068
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
