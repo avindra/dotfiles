@@ -13,6 +13,9 @@ abbr -a -g cro   crontab -e
 abbr -a -g top htop
 abbr -a -g pc pcmanfm
 abbr -a -g su sudo su - --shell (which fish)
+# thanks, bread https://www.youtube.com/watch?v=90sZYRoe-fo
+abbr -a -g lsblk "lsblk | bat -l conf -p"
+abbr -a -g blkid "/usr/sbin/blkid | bat -l conf -p"
 
 # sane command defaults
 abbr -a -g chm chmod 755
