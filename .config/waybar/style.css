@@ -3,11 +3,11 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 22px;
 }
 
 window#waybar {
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    border-top: 3px solid rgba(100, 114, 125, 0.5);
 		background: transparent;
     color: @background;
     transition-property: background-color;
@@ -38,7 +38,7 @@ window#waybar.chromium {
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    box-shadow: inset 0 3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
@@ -47,11 +47,11 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px @color3;
+    box-shadow: inset 0 3px @color3;
 }
 
 button.active {
-    box-shadow: inset 0 -3px @foreground;
+    box-shadow: inset 0 3px @foreground;
 }
 
 /* you can set a style on hover for any module like this */
@@ -60,7 +60,6 @@ button.active {
 }
 
 #workspaces button {
-    padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
 }
@@ -71,7 +70,7 @@ button.active {
 
 #workspaces button.focused {
     background-color: red;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 3px #ffffff;
 }
 
 #workspaces button.urgent {
@@ -80,7 +79,11 @@ button.active {
 
 #mode {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 3px #ffffff;
+}
+
+#clock {
+	font-size: 24px;
 }
 
 #clock,
@@ -100,7 +103,7 @@ button.active {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 15px;
     color: #ffffff;
 }
 
