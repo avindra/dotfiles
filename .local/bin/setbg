@@ -19,12 +19,20 @@ else
 fi
 
 
+real=$(readlink $bgLink)
+
+# swww img --resize-crop $real
+
 # remove cache to be sure
-rm -rf ~/.cache/wal
+# rm -rf ~/.cache/wal
 ~/.local/bin/wal -a 95 -i $bg -n
 
 # post-wal: restart i3 and dunst to apply new color
 systemctl --user restart dunst
+
+hyprctl hyprpaper preload "$real"
+sleep 2
+hyprctl hyprpaper wallpaper ", $real"
 
 # reload isnt enough
 i3-msg restart

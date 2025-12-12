@@ -1,0 +1,3 @@
+output * adaptive_sync off
+
+include ~/.config/i3/shared.conf
