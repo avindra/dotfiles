@@ -51,6 +51,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 

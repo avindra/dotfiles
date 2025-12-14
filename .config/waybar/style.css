@@ -6,9 +6,15 @@
     font-size: 22px;
 }
 
+window#waybar.top {
+	background: transparent;
+    color: @background;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
 window#waybar {
-    border-top: 3px solid rgba(100, 114, 125, 0.5);
-		background: transparent;
+	background: transparent;
     color: @background;
     transition-property: background-color;
     transition-duration: .5s;
@@ -51,12 +57,7 @@ button:hover {
 }
 
 button.active {
-    box-shadow: inset 0 3px @foreground;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
+    box-shadow: inset 0 3px @color5;
 }
 
 #workspaces button {
@@ -123,7 +124,7 @@ button.active {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: @color4;
 }
 
 #battery {
@@ -154,6 +155,12 @@ button.active {
     animation-direction: alternate;
 }
 
+#custom-power {
+    background-color: @foreground;
+    color: @background;
+    padding-left: 10px;
+}
+
 #power-profiles-daemon {
     padding-right: 15px;
 }
@@ -178,12 +185,12 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: @color5;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: @color7;
+    color: @background;
 }
 
 #disk {
@@ -203,8 +210,13 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: @color2;
     color: #000000;
+}
+
+
+#pulseaudio:hover {
+    background-color: #a37800;
 }
 
 #pulseaudio.muted {
@@ -236,7 +248,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: @color3;
 }
 
 #temperature.critical {
@@ -244,7 +256,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @color11;
 }
 
 #tray > .passive {
@@ -316,6 +328,7 @@ label:focus {
 
 #privacy {
     padding: 0;
+	background-color: @background;
 }
 
 #privacy-item {

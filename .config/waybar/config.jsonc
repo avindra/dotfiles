@@ -1,7 +1,8 @@
 // -*- mode: jsonc -*-
 [
 {
-		"position":"top",
+	"position":"top",
+    "class":"top",
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
@@ -18,6 +19,7 @@
         "custom/power"
     ],
 		"output": "DP-3",
+
     // Modules configuration
     "keyboard-state": {
         "numlock": true,
@@ -55,8 +57,14 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-				"tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "format":  "{:%I:%M%p %Y-%m-%d }"
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format":  "{:%I:%M%p %a %x }",
+        "calendar": {
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
     },
     "cpu": {
         "format": "{usage}% ",
@@ -113,7 +121,6 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -140,18 +147,19 @@
     },
     "custom/power": {
         "format" : "⏻ ",
-		},
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
+			"shutdown": "/sbin/poweroff",
+			"reboot": "/sbin/reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
-		}
+        }
+	},
 },
 {
+    "class": "bottom",
     // "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
@@ -167,6 +175,11 @@
     "modules-center": [
         "hyprland/window"
     ],
+    "hyprland/window": {
+        "color": "red",
+        "background-color": "blue",
+        "format": "<span color='white'>{}</span>",
+    },
     "hyprland/workspaces": {
          "disable-scroll": false,
     //     "all-outputs": false,
@@ -182,5 +195,5 @@
              "default": ""
          }
     },
-    }
+    },
 ]
