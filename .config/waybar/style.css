@@ -1,5 +1,7 @@
 @import "../../.cache/wal/colors-waybar.css";
 
+@define-color  idleinhibitor  #2d3436;
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -34,6 +36,13 @@ window#waybar.hidden {
     background-color: @color2;
     color: @color5;
 }
+
+#custom-arrowend {
+    background-color: transparent;
+    color: @idleinhibitor;
+}
+
+
 /*
 window#waybar.empty {
     background-color: transparent;
@@ -279,7 +288,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: @idleinhibitor;
 }
 
 #idle_inhibitor.activated {

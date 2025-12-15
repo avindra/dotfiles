@@ -4,6 +4,7 @@
 	"position":"top",
     "class":"top",
     "modules-right": [
+        "custom/arrowend",
         "idle_inhibitor",
         "pulseaudio",
         "custom/arrow2",
@@ -30,8 +31,10 @@
 		"format": "",
 		"tooltip": false
 	},
-
-
+	"custom/arrowend": {
+		"format": "",
+		"tooltip": false
+	},
 
     // Modules configuration
     "keyboard-state": {
@@ -71,7 +74,7 @@
     "clock": {
         // "timezone": "America/New_York",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format":  "{:%I:%M%p %a %x }",
+        "format":  "{:%a, %b %d %I:%M %p}",
         "calendar": {
             "format": {
                 "months": "<span color='#ffead3'><b>{}</b></span>",
@@ -165,6 +168,7 @@
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
 			"shutdown": "/sbin/poweroff",
+			"logout": "hyprctl dispatch exit",
 			"reboot": "/sbin/reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
