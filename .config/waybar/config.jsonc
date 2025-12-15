@@ -6,7 +6,7 @@
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
-        "power-profiles-daemon",
+        "custom/arrow2",
         "cpu",
         "memory",
         "temperature",
@@ -14,11 +14,24 @@
         "keyboard-state",
         "battery",
         "battery#bat2",
+        "custom/arrow1",
         "clock",
         "tray",
         "custom/power"
     ],
 		"output": "DP-3",
+
+
+	"custom/arrow1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow2": {
+		"format": "",
+		"tooltip": false
+	},
+
+
 
     // Modules configuration
     "keyboard-state": {
@@ -176,8 +189,6 @@
         "hyprland/window"
     ],
     "hyprland/window": {
-        "color": "red",
-        "background-color": "blue",
         "format": "<span color='white'>{}</span>",
     },
     "hyprland/workspaces": {
