@@ -33,14 +33,13 @@ window#waybar.hidden {
 }
 
 #custom-arrow1 {
-    background-color: @color-temp;
+    background-color: @color-memory;
     color: @color-clock;
 }
 
-
 #custom-arrow2 {
     background-color: @color-audio;
-    color: @color-cpu;
+    color: @color-temp;
 }
 
 #custom-arrowend {

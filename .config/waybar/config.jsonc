@@ -8,13 +8,13 @@
         "idle_inhibitor",
         "pulseaudio",
         "custom/arrow2",
+        "temperature",
         "cpu",
         "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "battery",
-        "battery#bat2",
+        //"backlight",
+        //"keyboard-state",
+        //"battery",
+        //"battery#bat2",
         "custom/arrow1",
         "clock",
         "tray",
@@ -28,6 +28,10 @@
 		"tooltip": false
 	},
 	"custom/arrow2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow3": {
 		"format": "",
 		"tooltip": false
 	},
