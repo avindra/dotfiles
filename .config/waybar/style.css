@@ -1,6 +1,12 @@
 @import "../../.cache/wal/colors-waybar.css";
 
-@define-color  idleinhibitor  #2d3436;
+@define-color  color-idle     #2d3436;
+@define-color  color-clock    @color4;
+@define-color  color-cpu      @color5;
+@define-color  color-memory   @color7;
+@define-color  color-audio    @color2;
+@define-color  color-temp     @color3;
+@define-color  color-tray     @color11;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -27,19 +33,19 @@ window#waybar.hidden {
 }
 
 #custom-arrow1 {
-    background-color: @color3;
-    color: @color4;
+    background-color: @color-temp;
+    color: @color-clock;
 }
 
 
 #custom-arrow2 {
-    background-color: @color2;
-    color: @color5;
+    background-color: @color-audio;
+    color: @color-cpu;
 }
 
 #custom-arrowend {
     background-color: transparent;
-    color: @idleinhibitor;
+    color: @color-idle;
 }
 
 
@@ -143,7 +149,7 @@ button.active {
 }
 
 #clock {
-    background-color: @color4;
+    background-color: @color-clock;
 }
 
 #battery {
@@ -204,11 +210,11 @@ label:focus {
 }
 
 #cpu {
-    background-color: @color5;
+    background-color: @color-cpu;
 }
 
 #memory {
-    background-color: @color7;
+    background-color: @color-memory;
     color: @background;
 }
 
@@ -267,7 +273,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: @color3;
+    background-color: @color-temp;
 }
 
 #temperature.critical {
@@ -275,7 +281,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @color11;
+    background-color: @color-tray;
 }
 
 #tray > .passive {
@@ -288,7 +294,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: @idleinhibitor;
+    background-color: @color-idle;
 }
 
 #idle_inhibitor.activated {
