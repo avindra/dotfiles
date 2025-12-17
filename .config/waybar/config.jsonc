@@ -1,9 +1,17 @@
 // -*- mode: jsonc -*-
 [
 {
-	"position":"top",
-    "class":"top",
-    "modules-right": [
+    "class": "bottom",
+    "layer": "bottom", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "mode": "dock", // Waybar mode (dock|overlay)
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+
+		"output": "DP-3",
+
+     "modules-right": [
         "custom/arrowend",
         "idle_inhibitor",
         "pulseaudio",
@@ -20,7 +28,6 @@
         "tray",
         "custom/power"
     ],
-		"output": "DP-3",
 
 
 	"custom/arrow1": {
@@ -180,25 +187,25 @@
 	},
 },
 {
-    "class": "bottom",
-    // "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+	"position":"top",
+    "class":"bottom",
+    "layer": "top",
+    "mode": "dock",
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/mode",
         "hyprland/scratchpad",
         "custom/media"
     ],
-    "modules-center": [
+
+   "modules-center": [
         "hyprland/window"
     ],
+    /*
     "hyprland/window": {
-        "format": "<span color='white'>{}</span>",
+        "format": "{}",
     },
+    */
     "hyprland/workspaces": {
          "disable-scroll": false,
     //     "all-outputs": false,
@@ -214,5 +221,5 @@
              "default": ""
          }
     },
-    },
+},
 ]

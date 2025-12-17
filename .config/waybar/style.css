@@ -2,10 +2,10 @@
 
 @define-color  color-idle     #2d3436;
 @define-color  color-clock    @color4;
+@define-color  color-temp     shade(@color5, .9);
 @define-color  color-cpu      @color5;
 @define-color  color-memory   @color7;
 @define-color  color-audio    @color2;
-@define-color  color-temp     @color3;
 @define-color  color-tray     @color11;
 
 * {
@@ -13,14 +13,6 @@
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 22px;
 }
-
-window#waybar.top {
-	background: transparent;
-    color: @background;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
 window#waybar {
 	background: transparent;
     color: @background;
@@ -28,10 +20,22 @@ window#waybar {
     transition-duration: .5s;
 }
 
+
 window#waybar.hidden {
     opacity: 0.2;
 }
 
+.modules-left * {
+    text-shadow: 4px 4px 4px @background;
+}
+
+.modules-center * {
+    text-shadow: 4px 4px 4px @color10;
+}
+
+.modules-right {
+    margin-top:0px;
+}
 #custom-arrow1 {
     background-color: @color-memory;
     color: @color-clock;
@@ -77,16 +81,17 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 3px @color3;
+    box-shadow: inset 0 -4px @color3;
 }
 
 button.active {
-    box-shadow: inset 0 3px @color5;
+   box-shadow: inset 0 -4px @color5;
 }
 
 #workspaces button {
     background-color: transparent;
     color: #ffffff;
+    padding-bottom:7px;
 }
 
 #workspaces button:hover {
@@ -95,7 +100,7 @@ button.active {
 
 #workspaces button.focused {
     background-color: red;
-    box-shadow: inset 0 3px #ffffff;
+    box-shadow: inset 0 -4px #ffffff;
 }
 
 #workspaces button.urgent {
