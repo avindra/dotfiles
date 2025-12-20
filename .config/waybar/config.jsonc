@@ -201,11 +201,13 @@
    "modules-center": [
         "hyprland/window"
     ],
-    /*
     "hyprland/window": {
-        "format": "{}",
+        "separate-outputs": true,
+        "rewrite": {
+		    "(.*) — Mozilla Firefox": " $1",
+            "(.*) - Visual Studio Code": " $1",
+	    },
     },
-    */
     "hyprland/workspaces": {
          "disable-scroll": false,
     //     "all-outputs": false,
