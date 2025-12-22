@@ -137,9 +137,8 @@ button.active {
     color: #ffffff;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#window {
+	color: @color5;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
