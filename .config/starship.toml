@@ -1,3 +1,4 @@
+shell = ["sh"]
 
 [python]
 disabled = true

@@ -6,7 +6,7 @@ jobs:
     name: Shellcheck
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Run ShellCheck
       env:
         SHELLCHECK_OPTS: -e SC1090 -e SC1091
