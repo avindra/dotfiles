@@ -16,7 +16,12 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.enable_tab_bar = true
 
 	config.default_prog = { 'wsl' }
-
+	config.launch_menu = {
+		{
+			label = 'PowerShell',
+			args  = { 'pwsh.exe' },
+		}
+	}
 else
 	config.font_size = 22.0
 	config.window_decorations = "NONE"
