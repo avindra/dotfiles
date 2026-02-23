@@ -14,6 +14,9 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.use_fancy_tab_bar = true
 	config.show_new_tab_button_in_tab_bar = true
 	config.enable_tab_bar = true
+
+	config.default_prog = { 'wsl' }
+
 else
 	config.font_size = 22.0
 	config.window_decorations = "NONE"
