@@ -20,6 +20,10 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 		{
 			label = 'PowerShell',
 			args  = { 'pwsh.exe' },
+		},
+		{
+			label = 'Command Prompt',
+			args  = { 'cmd.exe' },
 		}
 	}
 else
