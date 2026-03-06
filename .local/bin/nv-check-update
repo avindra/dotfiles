@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+latest=$(curl -s https://download.nvidia.com/XFree86/Linux-x86_64/ | tail -10 | head -1 | cut -d/ -f2 | cut -d'>' -f2)
+
+
+current=$(nvidia-smi --version | \grep DRIVER | cut -d: -f2)
+
+current=$(echo "$current" | xargs)
+
+echo "latest = $latest"
+echo "current = $current"
+
+if [[ "$latest" = "$current" ]]; then
+	echo "You are up to date"
+else
+	echo "You are behind, update to ${latest}"
+fi
