@@ -1,2 +1,5 @@
 [wsl2]
 guiApplications=true
+
+[interop]
+enabled = true
