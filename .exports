@@ -26,3 +26,4 @@ export XZ_OPT="-T0"
 export MANPAGER="nvim +Man!"
 
 export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORM=wayland
