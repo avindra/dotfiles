@@ -55,6 +55,7 @@ abbr -a -g trace traceroute
 
 # build/development
 abbr -a -g m make
+abbr -a -g co code
 # js
 abbr -a -g js deno run
 abbr -a -g n node
