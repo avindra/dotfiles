@@ -1,5 +1,6 @@
 [wsl2]
 guiApplications=true
+virtiofs=true
 
 [interop]
 enabled = true
