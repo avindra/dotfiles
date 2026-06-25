@@ -1,0 +1,39 @@
+[general]
+show_welcome = false
+games_dir = '/mnt/4tb/Games'
+last_viewed_menu_index = 2
+
+[input]
+gamepad_mappings = [
+    { gamepad_id = '0300f5a35e040000120b00000f050000'}
+    ]
+
+[input.bindings]
+port1_driver = 'usb-xbox-gamepad'
+port1 = '0300f5a35e040000120b00000f050000'
+
+[display]
+renderer = 'VULKAN'
+
+[display.vulkan]
+preferred_physical_device = 'NVIDIA GeForce RTX 5080'
+
+[display.quality]
+surface_scale = 6
+
+[display.window]
+last_width = 1261
+last_height = 1347
+
+[net]
+enable = true
+
+[sys]
+mem_limit = '128'
+
+[sys.files]
+bootrom_path = '/home/avindra/Downloads/mcpx_1.0.bin'
+flashrom_path = '/home/avindra/Downloads/bios_retail_4627.bin'
+eeprom_path = '/home/avindra/.local/share/xemu/xemu/eeprom.bin'
+hdd_path = '/home/avindra/Downloads/xbox_harddisk-D5960.qcow2'
+
