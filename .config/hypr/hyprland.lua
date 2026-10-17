@@ -5,13 +5,6 @@
 
 ---@module 'hl'
 
--- https://wiki.hyprland.org/Configuring
-
--- source = ~/.cache/wal/colors-hyprland.conf -> requires manual conversion
--- local colors_hyprland = require("_cache.wal.colors_hyprland")
--- TODO: convert ~/.cache/wal/colors-hyprland.conf to .lua and use require()
-
--- source = ~/.config/hypr/monitors.conf -> requires manual conversion
 local monitors = require("monitors")
 
 --##################
@@ -226,7 +219,7 @@ hl.bind(mod .. " + " .. "M", hl.dsp.exit())
 
 hl.bind(mod .. " + " .. "C", hl.dsp.exec_cmd("firefox"))
 hl.bind(mod .. " + " .. "R", hl.dsp.window.float())
-hl.bind(mod .. " + " .. "W", hl.dsp.exec_cmd("hyprctl dispatch togglegroup"))
+hl.bind(mod .. " + " .. "W", hl.dsp.group.toggle())
 
 hl.bind("F12", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind("Print", hl.dsp.exec_cmd("screenshot"))
@@ -252,7 +245,7 @@ hl.bind(mod .. " + " .. "e", hl.dsp.layout("togglesplit"))
 
 hl.bind(mod .. " + " .. "F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + " .. "X", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mod .. " + " .. "SHIFT" .. " + " .. "X", hl.dsp.exec_cmd("hyprctl dispatch dpms toggle"))
+hl.bind(mod .. " + " .. "SHIFT + X", hl.dsp.dpms())
 hl.bind(mod .. " + " .. "Grave", hl.dsp.focus({ workspace = "previous" }))
 
 -- Move focus in group
