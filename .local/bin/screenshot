@@ -3,6 +3,11 @@
 # Make a screenshot
 #
 
+# flameshot  is currently broken
+# on multiple displays.
+#
+# using grimp + slurp for now
+
 grim -g "$(slurp)" - | wl-copy
 exit $?
 
