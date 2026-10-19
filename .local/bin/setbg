@@ -1,13 +1,11 @@
 #!/usr/bin/sh
 # Apply the desired background image, and theme
-# out the colors from it via pywal.
+# out the colors from it using a pallette
+# generator, such as wal
 #
 # if the wallpaper is not being set, then this
 # script will simply run the color effect again
 #
-#
-# background setting shifted to feh using:
-# https://github.com/dylanaraps/pywal/wiki/Getting-Started#using-a-custom-wallpaper-setter
 
 bgLink=~/.config/wallpaper
 bg=$1
@@ -21,20 +19,16 @@ fi
 
 real=$(readlink $bgLink)
 
-# swww img --resize-crop $real
-
-# remove cache to be sure
-# rm -rf ~/.cache/wal
-~/.local/bin/wal -a 95 -i $bg -n
-
 # post-wal: restart i3 and dunst to apply new color
 systemctl --user restart dunst
 
-hyprctl hyprpaper preload "$real"
-sleep 2
-hyprctl hyprpaper wallpaper ", $real"
+rwpspread --image ~/.config/wallpaper -b hyprpaper
 
-# reload isnt enough
-i3-msg restart
+~/.local/bin/wal -a 95 -i "$bg" -n
 
-feh --no-xinerama --bg-fill ~/.config/wallpaper
+# here be X11 dragons
+if [[ -z "$WAYLAND_DISPLAY" ]]; then
+	# reload isnt enough
+	i3-msg restart
+	feh --no-xinerama --bg-fill ~/.config/wallpaper
+fi
