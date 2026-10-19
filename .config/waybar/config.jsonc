@@ -179,7 +179,7 @@
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
 			"shutdown": "/sbin/poweroff",
-			"logout": "hyprctl dispatch exit",
+			"logout": "hyprctl eval 'hl.dispatch(hl.dsp.exit())'",
 			"reboot": "/sbin/reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"

@@ -3,6 +3,11 @@
 # Kills (9) the underlying process
 # of the next window you click on
 
+if set -q WAYLAND_DISPLAY
+	hyprctl kill
+	exit 0
+end
+
 set pid (xprop | grep -i pid | cut -d= -f2)
 
 if test -z "$pid"
