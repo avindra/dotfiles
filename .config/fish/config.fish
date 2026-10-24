@@ -1,5 +1,5 @@
 set fish_greeting "The Quieter you Become, the More you are able to Hear."
-
+fish_config prompt choose informative
 
 # sys management
 abbr -a -g poweroff /sbin/poweroff
@@ -130,15 +130,7 @@ abbr -a -g yt yt-dlp -S ext:mp4:m4a
 
 set os (uname -s)
 
-# use nvim where vim doesn't run well
-if [ "$os" = "Linux" ]
-	# easy vi access
-	abbr -a -g v vim
-	abbr -a -g vi vim
-else
-	abbr -a -g v nvim
-	abbr -a -g vi nvim
-end
+abbr -a -g v nvim
 
 # Several of the mappings below
 # serve only as emulatory pipes

@@ -48,7 +48,9 @@ source ~/.local/share/nvim/site/autoload/plug.vim
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
-Plug '/usr/bin/fzf'
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'ap/vim-css-color'
