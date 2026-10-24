@@ -54,12 +54,22 @@ Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'dylanaraps/wal.vim'
 Plug 'ap/vim-css-color'
+
+if has('nvim')
+	Plug 'RedsXDD/neopywal.nvim', { 'as': 'neopywal' }
+else
+	Plug 'dylanaraps/wal.vim'
+endif
 
 call plug#end()
 
-colorscheme wal
+if has('nvim')
+	colorscheme neopywal
+else
+	colorscheme wal
+endif
+
 
 nmap <C-T> :FZF<CR>
 
