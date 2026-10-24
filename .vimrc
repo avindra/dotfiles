@@ -2,8 +2,8 @@ set modeline
 
 " detect xml syntax in obs _service files
 augroup obs_service
-  au!
-  autocmd BufNewFile,BufRead _service   set syntax=xml
+	au!
+	autocmd BufNewFile,BufRead _service   set syntax=xml
 augroup END
 
 " smartcase = use all lowercase for case-insensitive search
@@ -24,6 +24,8 @@ set relativenumber
 
 " default of 4 is too big for terminal
 set tabstop=2
+set shiftwidth=2
+set autoindent
 
 " Disable help docs
 inoremap <F1>      <NOP>
