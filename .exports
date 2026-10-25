@@ -4,7 +4,7 @@
 # set of shell language is possible in this file.
 # todo: needs review
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Fuzzy finder uses fd by default (fast)
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
