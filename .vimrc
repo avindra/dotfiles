@@ -68,6 +68,7 @@ if has('nvim')
 	colorscheme neopywal
 else
 	colorscheme wal
+	highlight Comment cterm=italic
 endif
 
 
