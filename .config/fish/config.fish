@@ -223,7 +223,7 @@ dirp hook fish | source
 fzf --fish | source
 
 # general shell exports
-~/.exports | source
+source ~/.exports
 
 function __fish_list
     for item in $argv
