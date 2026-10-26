@@ -1,5 +1,6 @@
 .nvm
 .config/yarn
+.config/htop
 .local/share/fish
 .node-gyp
 .atom/packages
