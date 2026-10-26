@@ -100,3 +100,10 @@ autocmd! BufWritePost .vimrc source %
 
 autocmd FileType markdown  set spell
 
+" yank to clipboard in Windows (WSL)
+if system('uname -r') =~ "microsoft"
+	augroup Yank
+		autocmd!
+		autocmd TextYankPost * :call system('clip.exe', @")
+	augroup END
+endif
