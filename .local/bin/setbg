@@ -6,29 +6,38 @@
 # if the wallpaper is not being set, then this
 # script will simply run the color effect again
 #
+set -euo pipefail
 
 bgLink=~/.config/wallpaper
-bg=$1
+bg="${1:-}"
 
-if [[ -z "$bg" ]]; then
-	bg=$bgLink
-else
+if [[ -n "$bg" ]]; then
 	ln -sf $bg $bgLink
+else
+	bg=$bgLink
 fi
-
 
 real=$(readlink $bgLink)
 
-# post-wal: restart i3 and dunst to apply new color
-systemctl --user restart dunst
 
-rwpspread --image ~/.config/wallpaper -b hyprpaper
-
-~/.local/bin/wal -a 95 -i "$bg" -n
-
-# here be X11 dragons
-if [[ -z "$WAYLAND_DISPLAY" ]]; then
+if [[ -n "$WAYLAND_DISPLAY" ]]; then
+	rwpspread --image "$real"  -b hyprpaper
+else
+	# here be X11 dragons
 	# reload isnt enough
 	i3-msg restart
-	feh --no-xinerama --bg-fill ~/.config/wallpaper
+	feh --no-xinerama --bg-fill $real
 fi
+
+# 1: generate colors with wallust
+# 2: copy colors to pywal's json
+# 3: use pywal to generate templates
+# 4: reload colors in current terminal
+
+wallust pywal -a 95 -i "$real"  -n
+colors "$real"
+wal -R
+cat ~/.cache/wallust/sequences
+
+# post-wal: restart dunst to apply new color
+systemctl --user restart dunst

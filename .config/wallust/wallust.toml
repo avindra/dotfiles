@@ -1,0 +1,12 @@
+# wallust v4.1.0-alpha
+# backends: `full`, `resized`, `wal`, `thumb`, `fast-resize`, `fastresize`
+backend = "fast-resize"
+
+use16cols = true
+alpha = 95
+
+palette = "kmeans"
+check_contrast = true
+
+#saturation = 35
+#no_hooks = true
