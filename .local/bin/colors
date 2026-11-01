@@ -16,15 +16,9 @@ with open(Path.home() / ".cache/wallust/sequences", "r") as file:
 # Format matches: ]4;[0-15];#[HEX]
 pattern = r"\]4;([0-9]|1[0-5]);(#[0-9A-Fa-f]{6})"
 
-# Find all matches and store them in a dictionary mapping index -> hex code
 matches = re.findall(pattern, raw_text)
-color_dict = {int(index): hex_code for index, hex_code in matches}
-
-# Gather the 16 colors in sequential order (0 to 15)
-colors = []
-for i in range(16):
-    color = color_dict.get(i, "N/A")
-    colors.append(color)
+# flatten color matches into a one-dimensional array
+colors = list(map(lambda x: x[1], matches))
 
 wal16= Path.home() / '.cache/wal/colors.json'
 wal = {}
