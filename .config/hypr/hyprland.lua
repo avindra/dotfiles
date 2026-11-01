@@ -364,3 +364,28 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("setbg")
     hl.exec_cmd("localstartup")
 end)
+
+
+-- https://github.com/hyprwm/Hyprland/issues/2381#issuecomment-6097663011
+hl.bind(mod .. " + A", function ()
+    hl.config({
+        decoration = {
+            active_opacity = 0,
+            inactive_opacity = 0,
+            blur = {
+                enabled = false
+            }
+        }
+    })
+end)
+hl.bind(mod .. " + A", function ()
+    hl.config({
+        decoration = {
+            active_opacity = 1.0,
+            inactive_opacity = 1.0,
+            blur = {
+                enabled = true
+            }
+        }
+    })
+end, { release = true })
