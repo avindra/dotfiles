@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+
+set -euo pipefail
+
+themes=".local/lib/python3.13/site-packages/pywal/colorschemes/dark"
+
+choice=$(ls "$themes" | rofi -dmenu -p "Choose a theme")
+
+if [[ -n "$choice" ]]; then
+	echo "Settin theme to ... ${choice}"
+	cp "$themes/$choice" ~/.cache/wal/colors.json
+	wal -R
+fi

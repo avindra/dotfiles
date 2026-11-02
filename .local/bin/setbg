@@ -11,14 +11,25 @@ set -euo pipefail
 bgLink=~/.config/wallpaper
 bg="${1:-}"
 
+set_theme() {
+	wal -R
+
+	# post-wal: restart dunst to apply new color
+	systemctl --user restart dunst
+}
+
 if [[ -n "$bg" ]]; then
 	ln -sf $bg $bgLink
 else
 	bg=$bgLink
+	theme_wp=$(cat ~/.cache/wal/colors.json | jq '.wallpaper')
+	if [[ "$theme_wp" == '"None"' ]]; then
+		set_theme
+		exit 0
+	fi
 fi
 
 real=$(readlink $bgLink)
-
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
 	rwpspread --image "$real"  -b hyprpaper
@@ -36,8 +47,5 @@ fi
 
 wallust pywal -a 95 -i "$real"  -n
 colors "$real"
-wal -R
 cat ~/.cache/wallust/sequences
-
-# post-wal: restart dunst to apply new color
-systemctl --user restart dunst
+set_theme
