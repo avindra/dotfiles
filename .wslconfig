@@ -2,7 +2,3 @@
 guiApplications=true
 virtiofs=true
 networkingMode=mirrored
-
-[interop]
-enabled = true
-appendWindowsPath = true
