@@ -11,41 +11,45 @@ set -euo pipefail
 bgLink=~/.config/wallpaper
 bg="${1:-}"
 
-set_theme() {
+current_wp=$(readlink $bgLink)
+
+set_bg() {
+	if [[ -n "$WAYLAND_DISPLAY" ]]; then
+		rwpspread --image "$1"  -b hyprpaper
+	else
+		# here be X11 dragons
+		# reload isnt enough
+		i3-msg restart
+		feh --no-xinerama --bg-fill $1
+	fi
+}
+
+set_colors() {
 	wal -R
 
 	# post-wal: restart dunst to apply new color
 	systemctl --user restart dunst
 }
 
+selectedBg=$(cat ~/.cache/wal/colors.json | jq '.wallpaper')
+
 if [[ -n "$bg" ]]; then
 	ln -sf $bg $bgLink
+	selectedBg="$bg"
 else
 	bg=$bgLink
-	theme_wp=$(cat ~/.cache/wal/colors.json | jq '.wallpaper')
-	if [[ "$theme_wp" == '"None"' ]]; then
-		set_theme
-		exit 0
-	fi
 fi
 
-real=$(readlink $bgLink)
-
-if [[ -n "$WAYLAND_DISPLAY" ]]; then
-	rwpspread --image "$real"  -b hyprpaper
+if [[ "$selectedBg" == '"None"' ]]; then
+	set_bg $current_wp
+	set_colors
 else
-	# here be X11 dragons
-	# reload isnt enough
-	i3-msg restart
-	feh --no-xinerama --bg-fill $real
+	wallust pywal -a 95 -i "$current_wp"  -n
+	colors "$current_wp"
+	cat ~/.cache/wallust/sequences
+	set_bg "$current_wp"
+	set_colors
 fi
 
-# 1: generate colors with wallust
-# 2: copy colors to pywal's json
-# 3: use pywal to generate templates
-# 4: reload colors in current terminal
+set_colors
 
-wallust pywal -a 95 -i "$real"  -n
-colors "$real"
-cat ~/.cache/wallust/sequences
-set_theme
