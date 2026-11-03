@@ -11,8 +11,6 @@ set -euo pipefail
 bgLink=~/.config/wallpaper
 bg="${1:-}"
 
-current_wp=$(readlink $bgLink)
-
 set_bg() {
 	if [[ -n "$WAYLAND_DISPLAY" ]]; then
 		rwpspread --image "$1"  -b hyprpaper
@@ -32,22 +30,24 @@ set_colors() {
 }
 
 selectedBg=$(cat ~/.cache/wal/colors.json | jq '.wallpaper')
+linkedwp=$(readlink $bgLink)
 
 if [[ -n "$bg" ]]; then
-	ln -sf $bg $bgLink
 	selectedBg="$bg"
+	ln -sf $bg $bgLink
+	linkedwp="$bg"
 else
-	bg=$bgLink
+	bg=$linkedwp
 fi
 
 if [[ "$selectedBg" == '"None"' ]]; then
-	set_bg $current_wp
+	set_bg $linkedwp
 	set_colors
 else
-	wallust pywal -a 95 -i "$current_wp"  -n
-	colors "$current_wp"
+	wallust pywal -a 95 -i "$linkedwp"  -n
+	colors "$linkedwp"
 	cat ~/.cache/wallust/sequences
-	set_bg "$current_wp"
+	set_bg "$linkedwp"
 	set_colors
 fi
 
