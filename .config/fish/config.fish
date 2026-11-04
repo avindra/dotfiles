@@ -252,3 +252,7 @@ function bind_expand_all
 end
 
 bind ctrl-alt-e bind_expand_all
+
+if test -f /bin/wslpath
+	cat ~/.cache/wal/sequences
+end
