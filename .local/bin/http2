@@ -1,5 +1,4 @@
 #!/usr/bin/env -S deno run --allow-read --allow-net
-/* vim: set syntax=javascript: */
 import * as path from "https://deno.land/std@0.176.0/path/mod.ts";
 
 import { extname } from "https://deno.land/std@0.127.0/path/posix.ts";

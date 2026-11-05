@@ -1,6 +1,5 @@
 #!/usr/bin/env -S deno run -A
 
-/* vim: set syntax=javascript: */
 
 /**
  * this script pokes openSUSE servers to

@@ -107,3 +107,15 @@ if system('uname -r') =~ "microsoft"
 		autocmd TextYankPost * :call system('clip.exe', @")
 	augroup END
 endif
+
+augroup ShebangDetection
+  autocmd!
+  autocmd BufRead,BufNewFile *  call s:DetectShebang()
+augroup END
+
+function! s:DetectShebang()
+  let line = getline(1)
+  if line =~ '^#!.*bin.*deno'
+    setfiletype javascript
+  endif
+endfunction
