@@ -27,7 +27,7 @@ const records = (await r.json()).data;
 const now = parseInt(new Date().toISOString().slice(0, 10).replace(/-/g, ""));
 
 const record = records[records.length - 2];
-const available = parseInt(record.name.match(/Snapshot(.+)-/)[1]);
+const available = parseInt(record.name.match(/Snapshot(\d+)/)[1]);
 
 const delta = (date1, date2) => date1 - date2;
 
