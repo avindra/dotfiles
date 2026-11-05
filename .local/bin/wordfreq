@@ -3,6 +3,6 @@
 # Taken from The UNIX Programming Environment
 # Chapter 4 (Filters), page 124
 
-cat $@ | awk ' { for (i = 1; i <= NF; i++) num[$i]++}
+cat "$@" | awk ' { for (i = 1; i <= NF; i++) num[$i]++}
 END   { for (word in num) print word, num[word] }'
 
