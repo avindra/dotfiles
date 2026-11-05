@@ -3,4 +3,4 @@
 # Taken as-is from "The UNIX Programming Environment"
 # Chapter 4 (Filters), page 107
 
-cat $* | tr -sc A-Za-z '\012' | sort | uniq -c | sort -n | tail
+cat "$*" | tr -sc A-Za-z '\012' | sort | uniq -c | sort -n | tail

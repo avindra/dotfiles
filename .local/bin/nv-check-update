@@ -10,7 +10,7 @@ current=$(echo "$current" | xargs)
 echo "latest = $latest"
 echo "current = $current"
 
-if [[ "$latest" = "$current" ]]; then
+if [ "$latest" = "$current" ]; then
 	echo "You are up to date"
 else
 	echo "You are behind, update to ${latest}"

@@ -4,6 +4,7 @@
 # MacOS uses this shell by default,
 # so this file concerns only Apple.
 
+# shellcheck disable=SC3020
 unalias dir &>/dev/null
 . ~/.settings
 
