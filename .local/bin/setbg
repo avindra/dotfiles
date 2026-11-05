@@ -40,7 +40,7 @@ else
 	bg=$linkedwp
 fi
 
-if [ "$selectedBg" == '"None"' ]; then
+if [ "$selectedBg" = '"None"' ]; then
 	set_bg "$linkedwp"
 	set_colors
 else
