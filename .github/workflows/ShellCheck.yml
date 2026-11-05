@@ -11,4 +11,6 @@ jobs:
       env:
         SHELLCHECK_OPTS: -e SC1090 -e SC1091
       uses: ludeeus/action-shellcheck@master
+      with:
+        severity: error
 
