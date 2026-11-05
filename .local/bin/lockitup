@@ -1,4 +1,5 @@
 #!/usr/bin/sh
+# shellcheck disable=SC2317
 
 
 i3lock

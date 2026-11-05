@@ -12,13 +12,13 @@ bgLink=~/.config/wallpaper
 bg="${1:-}"
 
 set_bg() {
-	if [ -n "$WAYLAND_DISPLAY" ]]; then
+	if [ -n "$WAYLAND_DISPLAY" ]; then
 		rwpspread --image "$1"  -b hyprpaper
 	else
 		# here be X11 dragons
 		# reload isnt enough
 		i3-msg restart
-		feh --no-xinerama --bg-fill $1
+		feh --no-xinerama --bg-fill "$1"
 	fi
 }
 
@@ -34,14 +34,14 @@ linkedwp=$(readlink $bgLink)
 
 if [ -n "$bg" ]; then
 	selectedBg="$bg"
-	ln -sf $bg $bgLink
+	ln -sf "$bg" "$bgLink"
 	linkedwp="$bg"
 else
 	bg=$linkedwp
 fi
 
 if [ "$selectedBg" == '"None"' ]; then
-	set_bg $linkedwp
+	set_bg "$linkedwp"
 	set_colors
 else
 	wallust pywal -a 95 -i "$linkedwp"  -n

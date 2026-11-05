@@ -18,7 +18,7 @@ fi
 
 newsid=$(echo "$choice" | cut -d"	" -f1)
 echo "Changing to $newsid"
-pactl set-default-sink $newsid
+pactl set-default-sink "$newsid"
 
 
 # example line: 64	79	58 PipeWirefloat32le 2ch 48000Hz
