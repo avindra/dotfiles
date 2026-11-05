@@ -12,7 +12,7 @@ bgLink=~/.config/wallpaper
 bg="${1:-}"
 
 set_bg() {
-	if [[ -n "$WAYLAND_DISPLAY" ]]; then
+	if [ -n "$WAYLAND_DISPLAY" ]]; then
 		rwpspread --image "$1"  -b hyprpaper
 	else
 		# here be X11 dragons
@@ -32,7 +32,7 @@ set_colors() {
 selectedBg=$(cat ~/.cache/wal/colors.json | jq '.wallpaper')
 linkedwp=$(readlink $bgLink)
 
-if [[ -n "$bg" ]]; then
+if [ -n "$bg" ]; then
 	selectedBg="$bg"
 	ln -sf $bg $bgLink
 	linkedwp="$bg"
@@ -40,7 +40,7 @@ else
 	bg=$linkedwp
 fi
 
-if [[ "$selectedBg" == '"None"' ]]; then
+if [ "$selectedBg" == '"None"' ]; then
 	set_bg $linkedwp
 	set_colors
 else

@@ -1,4 +1,5 @@
 #!/usr/bin/sh -e
+# shellcheck disable=SC2317
 
 # Make a screenshot
 #
