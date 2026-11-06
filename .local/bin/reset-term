@@ -3,10 +3,27 @@
 # Send reset signal to tty of the focused terminal
 # see: https://gist.github.com/avindra/dd2c6f14ec6e03b05261d370ef60c9d8
 
-focus_pid=$(xdotool getactivewindow getwindowpid)
 
-tty=$(ps o tty= --ppid "$focus_pid" | tail -1)
+if [ -n "$WAYLAND_DISPLAY" ]; then
+	focus_pid=$(hyprctl activewindow |awk '/pid:/ {print $2}')
+else
+	focus_pid=$(xdotool getactivewindow getwindowpid)
+fi
 
-# todo: do not use echo flags, not posix compliant
-# shellcheck disable=SC3037
-echo -e "\ec" > "/dev/$tty"
+psInfo=$(ps o tty=,comm= --ppid "$focus_pid" | tail -1)
+
+tty=$(echo "$psInfo" | cut -d" " -f1)
+exe=$(echo "$psInfo" | cut -d" " -f6)
+
+if [ "$exe" = "kitten" ]; then
+	# exclude two kitten processes, the remaining
+	# one must be the pid of the shell
+	pids=$(pgrep -l -P "$focus_pid" | grep -v kitten)
+
+	shellPid=$(echo "$pids" | cut -d' ' -f1)
+	tty=$(readlink "/proc/${shellPid}/fd/0")
+else
+	tty="/dev/$tty"
+fi
+
+printf "\033c" > "$tty"
