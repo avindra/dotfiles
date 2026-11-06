@@ -19,7 +19,7 @@ if [ "$exe" = "kitten" ]; then
 	termPid=$(pgrep fish -P "$focus_pid")
 	tty=$(readlink "/proc/${termPid}/fd/0")
 else
-	tty="/dev/pts/${tty:3}"
+	tty="/dev/$tty"
 fi
 
 printf "\033c" > "$tty"
