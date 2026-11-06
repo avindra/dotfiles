@@ -16,7 +16,7 @@ tty=$(echo "$psInfo" | cut -d" " -f1)
 exe=$(echo "$psInfo" | cut -d" " -f6)
 
 if [ "$exe" = "kitten" ]; then
-	termPid=$(pgrep fish -P "$focus_pid")
+	termPid=$(pgrep 'fish|bash' -P "$focus_pid")
 	tty=$(readlink "/proc/${termPid}/fd/0")
 else
 	tty="/dev/$tty"
