@@ -220,6 +220,7 @@ hl.bind(mod .. " + " .. "M", hl.dsp.exit())
 hl.bind(mod .. " + " .. "C", hl.dsp.exec_cmd("firefox"))
 hl.bind(mod .. " + " .. "R", hl.dsp.window.float())
 hl.bind(mod .. " + " .. "W", hl.dsp.group.toggle())
+hl.bind("CONTROL + K", hl.dsp.exec_cmd("reset-term"))
 
 hl.bind("F12", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind("Print", hl.dsp.exec_cmd("screenshot"))
