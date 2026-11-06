@@ -12,8 +12,9 @@ fi
 
 psInfo=$(ps o tty=,comm= --ppid "$focus_pid" | tail -1)
 
-tty=$(echo "$psInfo" | cut -d" " -f1)
-exe=$(echo "$psInfo" | cut -d" " -f6)
+read -r tty exe << EOF
+$psInfo
+EOF
 
 if [ "$exe" = "kitten" ]; then
 	# exclude two kitten processes, the remaining
