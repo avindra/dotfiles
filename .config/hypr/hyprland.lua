@@ -360,9 +360,10 @@ hl.workspace_rule({
 
 -- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar & hyprpaper")
-    hl.exec_cmd("setbg")
-    hl.exec_cmd("localstartup")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd("setbg")
+	hl.exec_cmd("localstartup")
+	hl.exec_cmd("hyprctl dispatch 'hl.dsp.focus({ workspace = 1 })'")
 end)
 
 
