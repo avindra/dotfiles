@@ -40,16 +40,11 @@ else
 	bg=$linkedwp
 fi
 
-if [ "$selectedBg" = '"None"' ]; then
-	set_bg "$linkedwp"
-	set_colors
-else
+if [ "$selectedBg" != '"None"' ]; then
 	wallust pywal -a 95 -i "$linkedwp"  -n
 	colors "$linkedwp"
 	cat ~/.cache/wallust/sequences
-	set_bg "$linkedwp"
-	set_colors
 fi
 
+set_bg "$linkedwp"
 set_colors
-
