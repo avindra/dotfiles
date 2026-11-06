@@ -16,8 +16,12 @@ tty=$(echo "$psInfo" | cut -d" " -f1)
 exe=$(echo "$psInfo" | cut -d" " -f6)
 
 if [ "$exe" = "kitten" ]; then
-	termPid=$(pgrep 'fish|bash' -P "$focus_pid")
-	tty=$(readlink "/proc/${termPid}/fd/0")
+	# exclude two kitten processes, the remaining
+	# one must be the pid of the shell
+	pids=$(pgrep -l -P "$focus_pid" | grep -v kitten)
+
+	shellPid=$(echo "$pids" | cut -d' ' -f1)
+	tty=$(readlink "/proc/${shellPid}/fd/0")
 else
 	tty="/dev/$tty"
 fi
