@@ -224,6 +224,7 @@ hl.bind("CONTROL + K", hl.dsp.exec_cmd("reset-term"))
 
 hl.bind("F12", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind("Print", hl.dsp.exec_cmd("screenshot"))
+hl.bind(mod .. " + " .. "Print", hl.dsp.exec_cmd("flameshot gui"))
 
 local sink = "@DEFAULT_SINK@"
 
@@ -236,6 +237,7 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ toggle"))
 
 hl.bind(mod .. " + " .. "D", hl.dsp.exec_cmd("rofi -show combi 'run,window'"))
+hl.bind(mod .. " + " .. "Shift + D", hl.dsp.exec_cmd("rofi -show 'filebrowser'"))
 hl.bind(mod .. " + " .. "P", hl.dsp.window.pseudo())
 
 -- dwindle
