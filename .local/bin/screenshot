@@ -1,5 +1,4 @@
 #!/usr/bin/sh -e
-# shellcheck disable=SC2317
 
 # Take a screenshot on wayland
 #
