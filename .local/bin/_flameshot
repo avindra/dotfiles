@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+# The latest version of flameshot has borked
+# multi monitor support. For now, this script
+# will automatically pick the active monitor.
+
+monitor_id=$(hyprctl activewindow |awk '/monitor:/ {print $2}')
+
+flameshot screen --number "${monitor_id}" --edit

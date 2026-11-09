@@ -224,7 +224,7 @@ hl.bind("CONTROL + K", hl.dsp.exec_cmd("reset-term"))
 
 hl.bind("F12", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 hl.bind("Print", hl.dsp.exec_cmd("screenshot"))
-hl.bind(mod .. " + " .. "Print", hl.dsp.exec_cmd("flameshot gui"))
+hl.bind(mod .. " + " .. "Print", hl.dsp.exec_cmd("_flameshot"))
 
 local sink = "@DEFAULT_SINK@"
 
