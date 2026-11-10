@@ -63,7 +63,6 @@ abbr -a -g de deno
 abbr -a -g no node
 abbr -a -g y yarn install --ignore-engines --ignore-scripts
 abbr -a -g npmi npm install --no-fund --no-audit --ignore-engines --ignore-scripts
-abbr -a -g pn pnpm
 abbr -a -g clj planck
 # rust
 abbr -a -g car cargo run --release -j(nproc)
