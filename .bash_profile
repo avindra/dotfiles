@@ -3,7 +3,6 @@
 export LS_OPTIONS="$LS_OPTIONS --color=always"
 
 . ~/.settings
-[[ -f ~/.homeenv ]] && . ~/.homeenv
 
 GPG_TTY=$(tty)
 export GPG_TTY
