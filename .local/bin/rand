@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+od -An -N16 -tx /dev/urandom | tr -d ' '

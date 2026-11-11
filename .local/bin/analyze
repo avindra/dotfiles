@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+cd /tmp || exit 1
+systemd-analyze plot > plot.svg
+exec $BROWSER plot.svg

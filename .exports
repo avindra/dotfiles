@@ -8,6 +8,7 @@ export EDITOR='nvim'
 
 export FZF_DEFAULT_COMMAND='fzf-files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # Less defaults
 export LESS="-RFX"

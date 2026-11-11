@@ -175,8 +175,7 @@ switch $os
 		abbr -a -g ev  evince
 		abbr -a -g gim gimp
 		abbr -a -g mp  mpv
-		abbr -a -g po  podman
-		abbr -a -g pod podman
+		abbr -a -g pm  podman
 		abbr -a -g qdir qdirstat
 		abbr -a -g win  WINE_PREFIX=~/.wine32 wine
 		abbr -a -g dxvk WINE_PREFIX=~/.wine32 DXVK_HUD=full wine
