@@ -5,6 +5,7 @@
 # todo: needs review
 
 export EDITOR='nvim'
+export BROWSER='firefox'
 
 export FZF_DEFAULT_COMMAND='fzf-files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
