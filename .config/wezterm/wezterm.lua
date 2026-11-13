@@ -8,6 +8,17 @@ local config = {
 }
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+	local act = wezterm.action
+
+	config.keys = {
+		{
+			key = 'k',
+			mods = 'CTRL',
+			action = act.ResetTerminal
+		},
+	}
+
+	config.color_scheme = 'Batman'
 	config.font_size = 18.0
 	config.window_decorations = "INTEGRATED_BUTTONS|RESIZE|TITLE"
 	config.show_tabs_in_tab_bar = true
