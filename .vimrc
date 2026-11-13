@@ -45,24 +45,29 @@ filetype plugin on
 " Paste from and to system clipboard
 set clipboard=unnamed
 
+let manager = expand("~/.local/share/nvim/site/autoload/plug.vim")
+
 " Vim plugins
-source ~/.local/share/nvim/site/autoload/plug.vim
-call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'ap/vim-css-color'
+if filereadable(manager)
+	execute 'source' manager
+	call plug#begin('~/.local/share/nvim/plugged')
 
-if has('nvim')
-	Plug 'RedsXDD/neopywal.nvim', { 'as': 'neopywal' }
-else
-	Plug 'dylanaraps/wal.vim'
+	Plug 'editorconfig/editorconfig-vim'
+	Plug 'tpope/vim-sensible'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/goyo.vim'
+	Plug 'ap/vim-css-color'
+
+	if has('nvim')
+		Plug 'RedsXDD/neopywal.nvim', { 'as': 'neopywal' }
+	else
+		Plug 'dylanaraps/wal.vim'
+	endif
+
+	call plug#end()
 endif
-
-call plug#end()
 
 if has('nvim')
 	colorscheme neopywal
